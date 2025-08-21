@@ -1,5 +1,7 @@
 import ChooseSector from '@/components/choose-sector'
 import HeroCarousel from '@/components/Hero'
+import ChooseState from '@/components/State'
+
 import React from 'react'
 
 const Home = () => {
@@ -8,6 +10,7 @@ const Home = () => {
 
       <HeroCarousel />
       <ChooseSector />
+      <ChooseState />
 
     </main>
   )

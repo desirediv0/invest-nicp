@@ -152,7 +152,7 @@ const ChooseSector = () => {
                                     {sectorsData.slice(slideIndex * 4, slideIndex * 4 + 4).map((sector) => (
                                         <div
                                             key={sector.id}
-                                            className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300"
+                                            className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 max-h-min"
                                         >
                                             <div
                                                 className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors"
