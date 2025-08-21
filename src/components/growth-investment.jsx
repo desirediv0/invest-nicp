@@ -19,7 +19,7 @@ const GrowthInvestment = () => {
     ];
 
     return (
-        <div className='max-w-7xl mx-auto px-4 py-4 md:py-8'>
+        <div className='max-w-7xl mx-auto px-4 py-4 '>
             <HeadText
                 title={"EXPLORE CITIES OF"}
                 title2={"GROWTH & INVESTMENT"}

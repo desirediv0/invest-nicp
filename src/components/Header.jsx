@@ -40,9 +40,9 @@ export default function Header() {
                         : "bg-transparent backdrop-blur-sm",
                 )}
             >
-                <div className="container mx-auto px-4 py-2">
+                <div className="max-w-7xl mx-auto px-4 py-2">
                     <div className="flex items-center justify-between">
-                        <Image src={"/logo.gif"} alt="Logo" width={80} height={80} className="bg-white rounded-full" />
+
 
                         {/* Desktop Navigation - Hidden on mobile */}
                         <nav className="hidden lg:flex items-center space-x-8">
@@ -56,6 +56,8 @@ export default function Header() {
                                 </a>
                             ))}
                         </nav>
+
+                        <Image src={"/logo.gif"} alt="Logo" width={80} height={80} className="bg-white rounded-full" />
 
                         {/* Mobile menu button */}
                         <Button

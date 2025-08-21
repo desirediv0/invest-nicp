@@ -129,7 +129,7 @@ const ChooseSector = () => {
     }
 
     return (
-        <div className="py-12 px-4">
+        <div className="py-4 px-4">
             <HeadText
                 title={"Choose Your"}
                 title2={"Sector"}

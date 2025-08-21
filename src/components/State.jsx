@@ -184,7 +184,7 @@ const ChooseState = () => {
     }
 
     return (
-        <div className="w-full max-w-7xl mx-auto px-4 py-8">
+        <div className="w-full max-w-7xl mx-auto px-4 py-4">
             <HeadText
                 title={"CHOOSE YOUR"}
                 title2={"STATE/UT"}
