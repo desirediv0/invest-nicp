@@ -75,7 +75,7 @@ const HeroCarousel = () => {
                             <CarouselItem key={index} className="h-full p-0">
                                 <div
                                     className="relative h-[350px] md:h-[500px] w-full cursor-pointer group overflow-hidden"
-                                    onClick={() => handleSlideClick(slide.ctaLink)}
+                                // onClick={() => handleSlideClick(slide.ctaLink)}
                                 >
                                     {/* Background Image */}
                                     <Image
