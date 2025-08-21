@@ -23,7 +23,7 @@ export default function Header() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY
-            setIsScrolled(scrollTop > 40)
+            setIsScrolled(scrollTop > 100)
         }
 
         window.addEventListener("scroll", handleScroll)
@@ -31,7 +31,7 @@ export default function Header() {
     }, [])
 
     return (
-        <header className="sticky top-0 left-0 right-0 z-50">
+        <header className="fixed top-0 left-0 right-0 z-50">
             <div
                 className={cn(
                     "transition-all duration-300",
@@ -50,7 +50,7 @@ export default function Header() {
                                 <a
                                     key={item.name}
                                     href={item.href}
-                                    className="text-foreground hover:text-primary transition-colors duration-200 font-[family-name:var(--font-source-sans)] font-medium"
+                                    className={` transition-colors duration-200 font-[family-name:var(--font-source-sans)] font-medium ${isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"} px-3 py-2 rounded-md`}
                                 >
                                     {item.name}
                                 </a>

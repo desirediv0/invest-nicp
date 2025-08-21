@@ -1,13 +1,15 @@
+import ChooseSector from '@/components/choose-sector'
 import HeroCarousel from '@/components/Hero'
 import React from 'react'
 
 const Home = () => {
   return (
-    <div>
+    <main className='min-h-screen'>
 
       <HeroCarousel />
+      <ChooseSector />
 
-    </div>
+    </main>
   )
 }
 

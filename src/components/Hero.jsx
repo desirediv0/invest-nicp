@@ -1,14 +1,14 @@
 "use client"
 import Image from "next/image"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
-import { useRouter } from "next/navigation"
+// import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
 const HeroCarousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [api, setApi] = useState(null)
 
-    const router = useRouter()
+    // const router = useRouter()
 
     const slides = [
         {
@@ -54,9 +54,9 @@ const HeroCarousel = () => {
         }
     }, [api])
 
-    const handleSlideClick = (ctaLink) => {
-        router.push(ctaLink)
-    }
+    // const handleSlideClick = (ctaLink) => {
+    //     router.push(ctaLink)
+    // }
 
     return (
         <div className="relative w-full">
@@ -74,7 +74,7 @@ const HeroCarousel = () => {
                         {slides.map((slide, index) => (
                             <CarouselItem key={index} className="h-full p-0">
                                 <div
-                                    className="relative h-[350px] md:h-[500px] w-full cursor-pointer group overflow-hidden"
+                                    className="relative h-[400px] md:h-[600px] w-full cursor-pointer group overflow-hidden"
                                 // onClick={() => handleSlideClick(slide.ctaLink)}
                                 >
                                     {/* Background Image */}
@@ -88,7 +88,7 @@ const HeroCarousel = () => {
                                     />
 
                                     {/* Overlay Gradient */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-10" />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/50 z-10" />
 
                                     {/* Overlay Text Content */}
                                     <div className="absolute inset-0 z-20 flex flex-col justify-center items-start px-8 md:px-12 lg:px-16">
@@ -108,8 +108,8 @@ const HeroCarousel = () => {
                     </CarouselContent>
 
                     {/* Navigation Controls - Better positioned and sized */}
-                    <CarouselPrevious className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-10 sm:w-10 md:h-12 md:w-12 z-30 bg-white/10 hover:bg-white/20 border-white/20 text-white backdrop-blur-sm" />
-                    <CarouselNext className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 h-4 w-4 sm:h-10 sm:w-10 md:h-12 md:w-12 z-30 bg-white/10 hover:bg-white/20 border-white/20 text-white backdrop-blur-sm" />
+                    <CarouselPrevious className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 h-6 w-6 sm:h-10 sm:w-10 md:h-12 md:w-12 z-30 bg-white/10 hover:bg-white/20 border-white/20 text-white backdrop-blur-sm" />
+                    <CarouselNext className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 h-6 w-6 sm:h-10 sm:w-10 md:h-12 md:w-12 z-30 bg-white/10 hover:bg-white/20 border-white/20 text-white backdrop-blur-sm" />
 
                     {/* Dot Indicators - Better responsive sizing */}
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex space-x-2">
