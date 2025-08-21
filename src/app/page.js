@@ -1,4 +1,5 @@
 import ChooseSector from '@/components/choose-sector'
+import GrowthInvestment from '@/components/growth-investment'
 import HeroCarousel from '@/components/Hero'
 import ChooseState from '@/components/State'
 
@@ -10,7 +11,10 @@ const Home = () => {
 
       <HeroCarousel />
       <ChooseSector />
-      <ChooseState />
+      <div className="bg-gray-50">
+        <ChooseState />
+      </div>
+      <GrowthInvestment />
 
     </main>
   )
