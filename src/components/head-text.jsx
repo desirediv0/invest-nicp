@@ -1,6 +1,6 @@
 const HeadText = ({ title, title2, subtitle }) => {
     return (
-        <div className="text-center py-12 px-4 max-w-4xl mx-auto">
+        <div className="text-center py-8 px-4 max-w-4xl mx-auto">
             <div className="relative inline-block mb-6">
                 <h1 className="text-4xl md:text-6xl font-bold mb-2 uppercase tracking-tight">
                     {title}{" "}
