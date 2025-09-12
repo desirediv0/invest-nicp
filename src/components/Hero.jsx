@@ -1,132 +1,221 @@
 "use client"
+
+import { motion } from "framer-motion"
+import { TrendingUp, Globe, BarChart3, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
-// import { useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
+import { BorderBeam } from "./magicui/border-beam"
+import { banner1, banner2, banner3 } from "@/assets"
 
-const HeroCarousel = () => {
+const slides = [
+    {
+        img: banner1,
+        title: "Strategic Investments in India's Infrastructure",
+        subtitle: "BUILDING TOMORROW",
+    },
+    {
+        img: banner2,
+        title: "India's Industrial Corridors Drive Growth",
+        subtitle: "CONNECTING  PROSPERITY",
+    },
+    {
+        img: banner3,
+        title: "INVEST SMART - INVEST NOW",
+        subtitle: "Mission Growth",
+    },
+
+]
+
+export default function HomePage() {
     const [currentSlide, setCurrentSlide] = useState(0)
-    const [api, setApi] = useState(null)
 
-    // const router = useRouter()
-
-    const slides = [
-        {
-            ctaLink: "/category/protein",
-            img: "https://www.investnicp.com/images/India's%20Industrial%20Corridors%20Drive%20Growth%20Connecting%20Prosperity%20(1).png",
-
-            title: "Strategic Investments in India's Infrastructure",
-            subtitle: "BUILDING TOMORROW",
-        },
-        {
-            ctaLink: "/category/protein",
-            img: "https://www.investnicp.com/images/banner-3%20(5).png",
-
-            title: "INVEST SMART - INVEST  NOW",
-            subtitle: "Mission Growth",
-        },
-    ]
-
-
-
-    // Handle autoplay functionality
     useEffect(() => {
-        if (!api) return
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length)
+        }, 5000)
+        return () => clearInterval(timer)
+    }, [])
 
-        const interval = setInterval(() => {
-            api.scrollNext()
-        }, 3500)
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }
 
-        return () => clearInterval(interval)
-    }, [api])
-
-    // Update current slide index when carousel changes
-    useEffect(() => {
-        if (!api) return
-
-        const onSelect = () => {
-            setCurrentSlide(api.selectedScrollSnap())
-        }
-
-        api.on("select", onSelect)
-        return () => {
-            api.off("select", onSelect)
-        }
-    }, [api])
-
-    // const handleSlideClick = (ctaLink) => {
-    //     router.push(ctaLink)
-    // }
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    }
 
     return (
-        <div className="relative w-full">
-            {/* Mobile: Smaller height, Desktop: Larger height */}
-            <div className="relative overflow-hidden">
-                <Carousel
-                    setApi={setApi}
-                    className="h-full w-full"
-                    opts={{
-                        loop: true,
-                        align: "start",
-                    }}
-                >
-                    <CarouselContent className="h-full">
-                        {slides.map((slide, index) => (
-                            <CarouselItem key={index} className="h-full p-0">
-                                <div
-                                    className="relative h-[400px] md:h-[500px] w-full cursor-pointer group overflow-hidden"
-                                // onClick={() => handleSlideClick(slide.ctaLink)}
-                                >
-                                    {/* Background Image */}
-                                    <Image
-                                        src={slide.img || "/placeholder.svg"}
-                                        alt={slide.title || "Hero banner"}
-                                        fill
-                                        className="object-cover md:object-fill transition-transform duration-700 "
-                                        priority={index === 0}
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                                    />
-
-                                    {/* Overlay Gradient */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/50 z-10" />
-
-                                    {/* Overlay Text Content */}
-                                    <div className="absolute inset-0 z-20 flex flex-col justify-center items-start px-8 md:px-12 lg:px-16">
-                                        <div className="max-w-2xl">
-                                            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4 leading-tight">
-                                                {slide.title}
-                                            </h1>
-                                            <p className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 leading-relaxed">
-                                                {slide.subtitle}
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-
-                    {/* Navigation Controls - Better positioned and sized */}
-                    <CarouselPrevious className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 h-6 w-6 sm:h-10 sm:w-10 md:h-12 md:w-12 z-30 bg-white/10 hover:bg-white/20 border-white/20 text-white backdrop-blur-sm" />
-                    <CarouselNext className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 h-6 w-6 sm:h-10 sm:w-10 md:h-12 md:w-12 z-30 bg-white/10 hover:bg-white/20 border-white/20 text-white backdrop-blur-sm" />
-
-                    {/* Dot Indicators - Better responsive sizing */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex space-x-2">
-                        {slides.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => api?.scrollTo(index)}
-                                className={`w-2 h-2  rounded-full transition-all duration-300 ${index === currentSlide ? "bg-white scale-125 shadow-lg" : "bg-white/50 hover:bg-white/70"
-                                    }`}
-                                aria-label={`Go to slide ${index + 1}`}
+        <div className="min-h-screen bg-background">
+            <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 z-0">
+                    {slides.map((slide, index) => (
+                        <motion.div
+                            key={index}
+                            className="absolute inset-0"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: index === currentSlide ? 1 : 0 }}
+                            transition={{ duration: 1 }}
+                        >
+                            <Image
+                                src={slide.img || "/placeholder.svg"}
+                                alt={slide.title}
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
                             />
-                        ))}
-                    </div>
-                </Carousel>
-            </div>
+                        </motion.div>
+                    ))}
+                    <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-purple-900/20 to-black/20" />
+                </div>
+
+                {/* BorderBeam Animation */}
+                <div className="absolute inset-0 z-10 pointer-events-none">
+                    <BorderBeam
+                        duration={6}
+                        size={400}
+                        className="from-transparent via-red-500 to-transparent"
+                        colorFrom="#ff3d00"
+                        colorTo="#ff6d00"
+                    />
+                </div>
+
+                <button
+                    onClick={prevSlide}
+                    className="hidden md:block absolute left-8 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 backdrop-blur-sm rounded-full p-3 text-white transition-all duration-300"
+                >
+                    <ChevronLeft className="w-6 h-6" />
+                </button>
+
+                <button
+                    onClick={nextSlide}
+                    className="hidden md:block absolute right-8 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 backdrop-blur-sm rounded-full p-3 text-white transition-all duration-300"
+                >
+                    <ChevronRight className="w-6 h-6" />
+                </button>
+
+                {/* Main Content */}
+                <div className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-28 md:mt-10 ">
+                    <motion.div
+                        key={currentSlide}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                        className="mb-8"
+                    >
+                        <motion.div className="inline-block bg-black/60 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-white/20">
+                            <p className="text-lg md:text-xl font-semibold text-white tracking-wide uppercase">
+                                {slides[currentSlide].subtitle}
+                            </p>
+                        </motion.div>
+                        <div className="bg-black/50 backdrop-blur-sm rounded-2xl px-8 py-6 mx-auto inline-block">
+                            <motion.h1
+                                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-0 tracking-tight capitalize"
+                                style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.9)" }}
+                            >
+                                {slides[currentSlide].title}
+                            </motion.h1>
+                        </div>
+                    </motion.div>
+
+                    {/* Stats Cards */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 1 }}
+                        className=" grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto relative bg-black/40 backdrop-blur-md border border-white/30 rounded-2xl p-8 text-white group shadow-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20"
+                    >
+                        {/* Card 1 - Improved contrast with darker background and better text colors */}
+                        <div
+
+                            className="relative bg-transparent p-8 text-white group"
+                        >
+
+                            <div className="relative z-10">
+                                <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center mb-6 mx-auto border border-blue-300/50">
+                                    <TrendingUp className="w-8 h-8 text-blue-200" />
+                                </div>
+                                <h3 className="text-2xl font-bold mb-4 text-white">4th Largest Economy</h3>
+                                <p className="text-sm text-gray-200 mb-2">Estimated GDP Growth: 6.2% (FY25)</p>
+                                <p className="text-sm text-gray-200">Fastest Among Large Economies</p>
+                            </div>
+
+                        </div>
+
+                        {/* Card 2 - Improved contrast with darker background and better text colors */}
+                        <div
+
+                            className="relative bg-transparent p-8 text-white group"
+                        >
+                            <div className="relative z-10">
+                                <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center mb-6 mx-auto border border-blue-300/50">
+                                    <BarChart3 className="w-8 h-8 text-blue-200" />
+                                </div>
+                                <h3 className="text-2xl font-bold mb-4 text-white">Robust FDI</h3>
+                                <p className="text-sm text-gray-200 mb-2">69.14% of total FDI inflows (since</p>
+                                <p className="text-sm text-gray-200">April 2000) came after 2014</p>
+                            </div>
+
+                        </div>
+
+                        {/* Card 3 - Improved contrast with darker background and better text colors */}
+                        <div
+
+                            className="relative bg-transparent p-8 text-white group"
+                        >
+                            <div className="relative z-10">
+                                <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center mb-6 mx-auto border border-blue-300/50">
+                                    <Globe className="w-8 h-8 text-blue-200" />
+                                </div>
+                                <h3 className="text-2xl font-bold mb-4 text-white">Booming Exports</h3>
+                                <p className="text-sm text-gray-200 mb-2">Total: 433.09 Bn during FY 2023-24</p>
+                                <p className="text-sm text-gray-200">Record-breaking performance</p>
+                            </div>
+
+                        </div>
+                        <BorderBeam
+                            duration={2}
+                            size={800}
+                            colorFrom="#4D4DFF"
+                            colorTo="#39FF14"
+                            delay={1}
+                        />
+                    </motion.div>
+                </div>
+
+                {/* Floating Particles Animation */}
+                <div className="absolute inset-0 z-5 pointer-events-none">
+                    {[...Array(20)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute w-2 h-2 bg-white/30 rounded-full"
+                            style={{
+                                left: `${Math.random() * 100}%`,
+                                top: `${Math.random() * 100}%`,
+                            }}
+                            animate={{
+                                y: [-20, -100, -20],
+                                opacity: [0, 1, 0],
+                            }}
+                            transition={{
+                                duration: 3 + Math.random() * 2,
+                                repeat: Number.POSITIVE_INFINITY,
+                                delay: Math.random() * 2,
+                            }}
+                        />
+                    ))}
+                </div>
+
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+                    {slides.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentSlide(index)}
+                            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
+                                }`}
+                        />
+                    ))}
+                </div>
+            </section>
         </div>
     )
 }
-
-export default HeroCarousel

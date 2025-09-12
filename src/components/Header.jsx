@@ -7,13 +7,12 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 
 const navigationItems = [
-    { name: "Home", href: "#" },
-    { name: "Sectors", href: "#" },
-    { name: "States/UT's", href: "#" },
-    { name: "Business Cities", href: "#" },
-    { name: "Services", href: "#" },
-    { name: "Resources", href: "#" },
-    { name: "Contact Us", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Investment Opportunities", href: "/investment-opportunities" },
+    { name: "Insights Updates", href: "/insights-updates" },
+    { name: "What We Do", href: "/what-we-do" },
+    { name: "Contact Us", href: "/contact-us" },
 ]
 
 export default function Header() {

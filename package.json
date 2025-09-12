@@ -15,9 +15,11 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.540.0",
+    "motion": "^12.23.12",
     "next": "14.2.30",
     "react": "^18",
     "react-dom": "^18",
+    "sharp": "^0.34.3",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7"
   },
