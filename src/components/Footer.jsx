@@ -1,6 +1,7 @@
 "use client"
-import { Twitter, Linkedin, MapPin, Phone, Mail, Building2, Users, Award, Briefcase } from "lucide-react"
+import { Twitter, Linkedin, MapPin, Phone, Mail, Users, Award, Briefcase } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 
 export default function BusinessFooter() {
@@ -44,12 +45,10 @@ export default function BusinessFooter() {
                     {/* Office Section */}
                     <div className="space-y-6">
                         <div className="border-l-4 border-orange-500 pl-6">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-12 h-12 bg-orange-500 flex items-center justify-center">
-                                    <Building2 className="w-6 h-6 text-white" />
-                                </div>
-                                <h3 className="text-xl font-bold text-white uppercase tracking-wider">Office</h3>
-                            </div>
+                            <Link href="/" className="flex items-center gap-3 mb-4">
+                                <Image src={"/logo2.png"} alt="NICP Logo" width={120} height={60} className="h-16 w-auto object-contain" />
+                                <span className="text-2xl font-bold text-white uppercase tracking-wider">NICP</span>
+                            </Link>
                         </div>
 
                         <div className="space-y-4">
@@ -76,10 +75,10 @@ export default function BusinessFooter() {
                         <div className="pt-4 border-t border-gray-700">
                             <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider">Follow Us</p>
                             <div className="flex gap-3">
-                                <a href="#" className="w-10 h-10 bg-gray-700 hover:bg-orange-500 flex items-center justify-center transition-colors">
+                                <a target="_blank" href="https://x.com/investnicp" className="w-10 h-10 bg-gray-700 hover:bg-orange-500 flex items-center justify-center transition-colors">
                                     <Twitter size={18} className="text-white" />
                                 </a>
-                                <a href="#" className="w-10 h-10 bg-gray-700 hover:bg-orange-500 flex items-center justify-center transition-colors">
+                                <a target="_blank" href="https://www.linkedin.com/company/investnicp/posts/?feedView=all" className="w-10 h-10 bg-gray-700 hover:bg-orange-500 flex items-center justify-center transition-colors">
                                     <Linkedin size={18} className="text-white" />
                                 </a>
                             </div>
@@ -126,9 +125,9 @@ export default function BusinessFooter() {
                         </div>
 
                         <nav className="space-y-2">
-                            <a href="#" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
+                            <Link href="/" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
                                 HOME
-                            </a>
+                            </Link>
                             <a href="#" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
                                 SECTORS
                             </a>
@@ -141,9 +140,10 @@ export default function BusinessFooter() {
                             <a href="#" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
                                 SERVICES
                             </a>
-                            <a href="#" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
+                            <Link href="/contact-us" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
                                 CONTACT US
-                            </a>
+                            </Link>
+
                         </nav>
                     </div>
 
@@ -231,9 +231,9 @@ export default function BusinessFooter() {
                             Copyright © 2023 <span className="text-orange-400 font-semibold">NICP</span> - All Rights Reserved.
                         </p>
                         <div className="flex flex-wrap gap-6 text-xs text-gray-500">
-                            <a href="#" className="hover:text-orange-400 transition-colors">Privacy Policy</a>
-                            <a href="#" className="hover:text-orange-400 transition-colors">Terms of Service</a>
-                            <a href="#" className="hover:text-orange-400 transition-colors">Sitemap</a>
+                            <Link href="/privacy-policy" className="hover:text-orange-400 transition-colors">Privacy Policy</Link>
+                            <Link href="/terms-and-conditions" className="hover:text-orange-400 transition-colors">Terms of Service</Link>
+
                         </div>
                     </div>
                 </div>
