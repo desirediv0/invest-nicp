@@ -1,8 +1,10 @@
 "use client"
-import { Twitter, Linkedin, MapPin, Users, Award, Briefcase } from "lucide-react"
+import { Linkedin, MapPin, Users, Award, Briefcase } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { FaXTwitter } from "react-icons/fa6";
+
 
 export default function BusinessFooter() {
     const [formData, setFormData] = useState({
@@ -70,7 +72,7 @@ export default function BusinessFooter() {
                             <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider">Follow Us</p>
                             <div className="flex gap-3">
                                 <a target="_blank" href="https://x.com/investnicp" className="w-10 h-10 bg-gray-700 hover:bg-orange-500 flex items-center justify-center transition-colors">
-                                    <Twitter size={18} className="text-white" />
+                                    <FaXTwitter size={18} className="text-white" />
                                 </a>
                                 <a target="_blank" href="https://www.linkedin.com/company/investnicp/posts/?feedView=all" className="w-10 h-10 bg-gray-700 hover:bg-orange-500 flex items-center justify-center transition-colors">
                                     <Linkedin size={18} className="text-white" />

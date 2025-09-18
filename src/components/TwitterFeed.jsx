@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Twitter, Heart, MessageCircle, Repeat2, Share } from 'lucide-react';
-import Image from 'next/image';
+import { useState } from 'react';
+import { Heart, MessageCircle, Repeat2, Share } from 'lucide-react';
+import { FaXTwitter } from "react-icons/fa6";
 
 const TwitterFeed = () => {
     // Fake data for UI
@@ -66,14 +66,7 @@ const TwitterFeed = () => {
         return `${diffInDays}d`;
     };
 
-    const formatNumber = (num) => {
-        if (num >= 1000) {
-            return (num / 1000).toFixed(1) + 'K';
-        }
-        return num.toString();
-    };
 
-    // Remove loading and error states for fake data
 
     return (
         <div className="space-y-4">
@@ -126,12 +119,12 @@ const TwitterFeed = () => {
 
             <div className="text-center pt-4">
                 <a
-                    href="https://twitter.com/nicdc01"
+                    href="https://x.com/nicdc01"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-blue-400 hover:bg-blue-500 text-white rounded-lg transition-colors"
+                    className="inline-flex items-center px-4 py-2 bg-black hover:bg-black/80 text-white rounded-lg transition-colors"
                 >
-                    <Twitter className="h-4 w-4 mr-2" />
+                    <FaXTwitter className="h-4 w-4 mr-2" />
                     View More on Twitter
                 </a>
             </div>

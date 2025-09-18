@@ -4,7 +4,8 @@ import React from 'react'
 import PageHero from '@/components/PageHero'
 import TwitterFeed from '@/components/TwitterFeed'
 import LinkedInFeed from '@/components/LinkedInFeed'
-import { Linkedin, Twitter, ExternalLink } from 'lucide-react'
+import { Linkedin, ExternalLink } from 'lucide-react'
+import { FaXTwitter } from "react-icons/fa6";
 
 const InsightsUpdates = () => {
     return (
@@ -62,11 +63,11 @@ const InsightsUpdates = () => {
 
                         {/* Twitter Section */}
                         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div className="bg-gradient-to-r from-blue-400 to-blue-500 p-6">
+                            <div className="bg-gradient-to-r from-black to-black p-6">
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center space-x-3">
                                         <div className="bg-white/20 p-2 rounded-lg">
-                                            <Twitter className="h-6 w-6 text-white" />
+                                            <FaXTwitter className="h-6 w-6 text-white" />
                                         </div>
                                         <div>
                                             <h3 className="text-xl font-semibold text-white">Twitter</h3>
@@ -112,13 +113,13 @@ const InsightsUpdates = () => {
                                     LinkedIn
                                 </a>
                                 <a
-                                    href="https://twitter.com/nicdc01"
+                                    href="https://x.com/nicdc01"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center px-6 py-3 bg-blue-400 hover:bg-blue-500 text-white rounded-lg transition-colors"
+                                    className="flex items-center px-6 py-3 bg-black hover:bg-black/80 text-white rounded-lg transition-colors"
                                 >
-                                    <Twitter className="h-5 w-5 mr-2" />
-                                    Twitter
+                                    <FaXTwitter className="h-5 w-5 mr-2" />
+                                    Twitter (X)
                                 </a>
                             </div>
                         </div>
