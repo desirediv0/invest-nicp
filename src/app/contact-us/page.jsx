@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import PageHero from '@/components/PageHero'
-import { MapPin, Phone, Mail, Clock, Building2, Users, Send, MessageSquare } from 'lucide-react'
+import { MapPin, Phone, Mail, Building2, Users, Send, MessageSquare } from 'lucide-react'
 import Link from 'next/link'
 
 const ContactUs = () => {
