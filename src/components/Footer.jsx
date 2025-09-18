@@ -1,5 +1,5 @@
 "use client"
-import { Twitter, Linkedin, MapPin, Phone, Mail, Users, Award, Briefcase } from "lucide-react"
+import { Twitter, Linkedin, MapPin, Users, Award, Briefcase } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
