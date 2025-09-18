@@ -14,8 +14,8 @@ const HeadText = ({ title, title2, subtitle }) => {
                         className="whitespace-nowrap flex items-end gap-3 justify-center text-left text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight leading-tight text-gray-900"
                         style={{ justifyContent: "center" }}
                     >
-                        <span className="block leading-tight">{title}</span>
-                        <span className="text-orange-500 relative block leading-tight">
+                        <span className="block leading-tight uppercase">{title}</span>
+                        <span className="text-orange-500 relative block leading-tight uppercase">
                             {title2}
                             <span
                                 className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 rounded-full bg-gradient-to-r from-orange-400 to-orange-500"

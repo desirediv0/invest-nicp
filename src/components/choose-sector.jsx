@@ -451,7 +451,7 @@ const InvestmentSectors = () => {
     }
 
     return (
-        <div className="min-h-screen bg-white py-16 px-4">
+        <div className="min-h-screen bg-white py-4 px-4">
             {/* Header Section */}
             <div className="max-w-7xl mx-auto text-center mb-16">
                 <HeadText
