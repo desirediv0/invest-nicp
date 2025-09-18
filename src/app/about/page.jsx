@@ -247,7 +247,7 @@ const AboutUs = () => {
                             {/* Background Pattern */}
                             <div className="absolute inset-0 opacity-10">
                                 <Image
-                                    src="/assets/banner1.jpg"
+                                    src="/skyline.jpg"
                                     alt="Background"
                                     fill
                                     className="object-cover"
