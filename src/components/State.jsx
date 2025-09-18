@@ -572,7 +572,7 @@ const ChooseState = () => {
 
     return (
         <div
-            className="w-full max-w-7xl mx-auto px-4 py-16 bg-background"
+            className="w-full max-w-7xl mx-auto px-4 py-5 bg-background"
             onMouseEnter={() => pauseAutoplay(0)}
             onMouseLeave={() => {
                 // only resume when dialog is not open

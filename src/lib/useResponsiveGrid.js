@@ -2,22 +2,20 @@ import { useState, useEffect } from "react"
 
 // Hook returns itemsPerPage and a Tailwind grid class string.
 // Breakpoints (Tailwind-like):
-// >=1280px -> cols=4 -> itemsPerPage=16
-// >=768px  -> cols=3 -> itemsPerPage=12
-// >=640px  -> cols=2 -> itemsPerPage=8
-// <640px   -> cols=1 -> itemsPerPage=4
+// Layout requested: wide row with multiple columns
+// >=1024px -> cols=8 -> itemsPerPage=8  (desktop: 8 columns in a single row)
+// <1024px  -> cols=4 -> itemsPerPage=4  (mobile: 4 columns in a single row)
 export default function useResponsiveGrid() {
     const getLayout = () => {
-        if (typeof window === "undefined") return { cols: 4, itemsPerPage: 16 }
+        // during SSR (no window) return a sensible default: 4 cols, 4 items per page
+        if (typeof window === "undefined") return { cols: 4, itemsPerPage: 4 }
         const w = window.innerWidth
-        if (w >= 1280) return { cols: 4, itemsPerPage: 16 }
-        if (w >= 768) return { cols: 3, itemsPerPage: 12 }
-        if (w >= 640) return { cols: 2, itemsPerPage: 8 }
-        return { cols: 1, itemsPerPage: 4 }
+        if (w >= 1024) return { cols: 8, itemsPerPage: 8 }
+        return { cols: 4, itemsPerPage: 4 }
     }
 
     // initialize to server-default layout (avoid calling window during initial render)
-    const serverDefault = { cols: 4, itemsPerPage: 16 }
+    const serverDefault = { cols: 4, itemsPerPage: 4 }
     const [layout, setLayout] = useState(serverDefault)
 
     useEffect(() => {
@@ -39,7 +37,8 @@ export default function useResponsiveGrid() {
     }, [])
 
     // grid class string that matches the intended responsive columns
-    const gridClass = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
+    // grid that becomes 8 columns on large screens (lg >=1024px) and 4 columns on smaller screens
+    const gridClass = "grid grid-cols-4 lg:grid-cols-8 gap-6"
 
     return { itemsPerPage: layout.itemsPerPage, cols: layout.cols, gridClass }
 }
