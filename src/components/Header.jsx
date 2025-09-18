@@ -52,13 +52,13 @@ const navigationItems = [
             },
         ]
     },
-    {
-        name: "What We Do", href: "/what-we-do", children: [
-            { name: "Market Entry & Expansion", href: "/what-we-do#market-entry" },
-            { name: "Workshops", href: "/what-we-do#workshops" },
-            { name: "Seminars", href: "/what-we-do#seminars" },
-        ]
-    },
+    // {
+    //     name: "What We Do", href: "/what-we-do", children: [
+    //         { name: "Market Entry & Expansion", href: "/what-we-do#market-entry" },
+    //         { name: "Workshops", href: "/what-we-do#workshops" },
+    //         { name: "Seminars", href: "/what-we-do#seminars" },
+    //     ]
+    // },
     { name: "Contact Us", href: "/contact-us" },
 ]
 
