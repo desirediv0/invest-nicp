@@ -34,7 +34,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "IT", "Manufacturing"],
         investmentOpportunities: "Strong opportunities in agriculture, IT parks, ports and renewable energy",
-        growthRate: "",
         majorCities: ["Amaravati", "Visakhapatnam", "Vijayawada"],
         economicAchievements:
             "Andhra Pradesh has seen significant economic growth with a focus on agriculture, IT, and manufacturing sectors.",
@@ -51,7 +50,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Tourism", "Handicrafts"],
         investmentOpportunities: "Tourism and handicrafts with scope for niche agri-products",
-        growthRate: "",
         majorCities: ["Kohima", "Dimapur"],
         economicAchievements: "Predominantly agrarian economy with potential for growth in tourism and handicrafts.",
         infrastructureHighlights: "Improving road networks and connectivity in a hilly terrain.",
@@ -67,7 +65,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Hydropower", "Tourism"],
         investmentOpportunities: "Hydropower and eco-tourism",
-        growthRate: "",
         majorCities: ["Itanagar", "Naharlagun"],
         economicAchievements: "Developing its economy with an emphasis on hydropower projects and tourism.",
         infrastructureHighlights: "Expanding road connectivity in a geographically challenging region.",
@@ -83,7 +80,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Mining", "Agriculture", "Manufacturing"],
         investmentOpportunities: "Ports, mining, and downstream industries",
-        growthRate: "",
         majorCities: ["Bhubaneswar", "Cuttack", "Paradip"],
         economicAchievements: "Steady growth with a focus on mining, agriculture, and manufacturing.",
         infrastructureHighlights: "Developing ports, highways, and power infrastructure.",
@@ -96,7 +92,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tea", "Oil", "Agro-Processing"],
         investmentOpportunities: "Logistics and agro-processing",
-        growthRate: "",
         majorCities: ["Guwahati", "Dibrugarh"],
         economicAchievements: "Economic growth driven by tea, oil, and agriculture.",
         infrastructureHighlights: "Expanding road and rail networks, improving connectivity.",
@@ -109,7 +104,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Food Processing"],
         investmentOpportunities: "Agri-processing and agro-exports",
-        growthRate: "",
         majorCities: ["Chandigarh", "Ludhiana", "Amritsar"],
         economicAchievements: "Strong agriculture-based economy, with a growing services sector.",
         infrastructureHighlights: "Modern transportation and irrigation facilities.",
@@ -122,7 +116,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Small-scale Industries"],
         investmentOpportunities: "Food processing and skill development",
-        growthRate: "",
         majorCities: ["Patna", "Gaya"],
         economicAchievements: "Gradual economic growth with an emphasis on agriculture and small-scale industries.",
         infrastructureHighlights: "Improvement in road and electricity infrastructure.",
@@ -135,7 +128,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Mining", "Agriculture"],
         investmentOpportunities: "Tourism infrastructure and mining value-chains",
-        growthRate: "",
         majorCities: ["Jaipur", "Jodhpur", "Udaipur"],
         economicAchievements: "Diverse economy with agriculture, tourism, and mining sectors.",
         infrastructureHighlights: "Developing tourism infrastructure, transportation, and irrigation projects.",
@@ -148,7 +140,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Mining", "Steel", "Power"],
         investmentOpportunities: "Mining and downstream manufacturing",
-        growthRate: "",
         majorCities: ["Raipur", "Bilaspur"],
         economicAchievements: "Rapid industrial growth, especially in the mining and steel sectors.",
         infrastructureHighlights: "Development of industrial and transport infrastructure.",
@@ -161,7 +152,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Organic Agriculture"],
         investmentOpportunities: "Eco-tourism and organic farming",
-        growthRate: "",
         majorCities: ["Gangtok"],
         economicAchievements: "Developing a sustainable economy with a focus on tourism and organic agriculture.",
         infrastructureHighlights: "Improving road connectivity in mountainous terrain.",
@@ -174,7 +164,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Services", "Trade"],
         investmentOpportunities: "Services, education, and healthcare",
-        growthRate: "",
         majorCities: ["New Delhi"],
         economicAchievements: "Strong economy driven by the service sector and trade.",
         infrastructureHighlights: "Modern transportation, educational institutions, and healthcare facilities.",
@@ -187,7 +176,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Manufacturing", "Services", "Automotive"],
         investmentOpportunities: "Manufacturing and exports",
-        growthRate: "",
         majorCities: ["Chennai", "Coimbatore"],
         economicAchievements: "Robust manufacturing and services sector with strong infrastructure.",
         infrastructureHighlights: "Well-developed industrial hubs, ports, and educational institutions.",
@@ -200,7 +188,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Mining"],
         investmentOpportunities: "Tourism and hospitality",
-        growthRate: "",
         majorCities: ["Panaji", "Margao"],
         economicAchievements: "Tourism and mining contribute significantly to the economy.",
         infrastructureHighlights: "Modernized tourism infrastructure and transportation.",
@@ -213,7 +200,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Tourism"],
         investmentOpportunities: "Tourism and agri-value chains",
-        growthRate: "",
         majorCities: ["Agartala"],
         economicAchievements: "Economic growth with an emphasis on agriculture and tourism.",
         infrastructureHighlights: "Developing road and rail connectivity in a hilly region.",
@@ -226,7 +212,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Manufacturing", "Petrochemicals", "Ports"],
         investmentOpportunities: "Manufacturing, petrochemicals and port-led growth",
-        growthRate: "",
         majorCities: ["Ahmedabad", "Surat"],
         economicAchievements: "Vibrant economy with a focus on manufacturing, petrochemicals, and ports.",
         infrastructureHighlights: "World-class industrial and port facilities.",
@@ -239,7 +224,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["IT", "Agriculture", "Manufacturing"],
         investmentOpportunities: "IT parks and agro-processing",
-        growthRate: "",
         majorCities: ["Hyderabad"],
         economicAchievements: "Rapid economic growth, driven by IT, agriculture, and manufacturing sectors.",
         infrastructureHighlights: "Well-developed IT parks, transportation, and educational institutions.",
@@ -252,7 +236,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Automotive", "Manufacturing"],
         investmentOpportunities: "Automotive and manufacturing clusters",
-        growthRate: "",
         majorCities: ["Gurugram", "Faridabad"],
         economicAchievements: "Rapid industrial growth with a focus on agriculture and manufacturing.",
         infrastructureHighlights: "Modern infrastructure and connectivity.",
@@ -265,7 +248,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Industry", "Services"],
         investmentOpportunities: "Industrial corridors and agro-processing",
-        growthRate: "",
         majorCities: ["Lucknow", "Kanpur", "Noida"],
         economicAchievements: "Mixed economy with agriculture, industry, and services sectors.",
         infrastructureHighlights: "Expanding transportation networks and industrial areas.",
@@ -278,7 +260,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Agriculture"],
         investmentOpportunities: "Eco-tourism and horticulture",
-        growthRate: "",
         majorCities: ["Shimla", "Dharamshala"],
         economicAchievements: "Steady growth in agriculture and tourism sectors.",
         infrastructureHighlights: "Developing road networks in the hilly terrain, improving healthcare and education.",
@@ -291,7 +272,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Agriculture"],
         investmentOpportunities: "Tourism and small-scale industries",
-        growthRate: "",
         majorCities: ["Dehradun", "Nainital"],
         economicAchievements: "Developing its economy with a focus on tourism, agriculture, and small-scale industries.",
         infrastructureHighlights: "Improving road connectivity in a hilly region, promoting tourism.",
@@ -304,7 +284,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Mining", "Manufacturing"],
         investmentOpportunities: "Mining and mineral-based industries",
-        growthRate: "",
         majorCities: ["Ranchi", "Jamshedpur"],
         economicAchievements: "Economic growth driven by mining and mineral resources.",
         infrastructureHighlights: "Improving road and rail connectivity in a resource-rich region.",
@@ -317,7 +296,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Manufacturing", "Services"],
         investmentOpportunities: "Ports, manufacturing and services",
-        growthRate: "",
         majorCities: ["Kolkata", "Howrah"],
         economicAchievements: "Diverse economy with a focus on agriculture, manufacturing, and services.",
         infrastructureHighlights: "Well-developed transportation networks, ports, and educational institutions.",
@@ -330,7 +308,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["IT", "Manufacturing", "Agriculture"],
         investmentOpportunities: "IT and tech manufacturing",
-        growthRate: "",
         majorCities: ["Bengaluru", "Mysore"],
         economicAchievements: "Strong economy with a focus on IT, manufacturing, and agriculture.",
         infrastructureHighlights: "Well-developed road networks, IT hubs, and educational institutions.",
@@ -343,7 +320,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Tourism", "Fisheries"],
         investmentOpportunities: "Eco-tourism and fisheries",
-        growthRate: "",
         majorCities: ["Port Blair"],
         economicAchievements: "Developing tourism and fisheries sectors.",
         infrastructureHighlights: "Improving connectivity, eco-tourism, and sustainable resource management.",
@@ -356,7 +332,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Services"],
         investmentOpportunities: "Healthcare, tourism and services",
-        growthRate: "",
         majorCities: ["Thiruvananthapuram", "Kochi"],
         economicAchievements: "High human development indicators, driven by tourism, remittances, and services.",
         infrastructureHighlights: "Quality healthcare, education, and modern transportation.",
@@ -369,7 +344,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Services", "Education"],
         investmentOpportunities: "Education and services",
-        growthRate: "",
         majorCities: ["Chandigarh"],
         economicAchievements: "A prosperous city with a diverse economy, including government services and education.",
         infrastructureHighlights: "Well-planned city with modern infrastructure and educational institutions.",
@@ -382,7 +356,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Finance", "Industry", "Agriculture"],
         investmentOpportunities: "Finance, industry and infrastructure",
-        growthRate: "",
         majorCities: ["Mumbai", "Pune"],
         economicAchievements: "Economic powerhouse with a diverse economy, including finance, industry, and agriculture.",
         infrastructureHighlights: "Well-developed transport, industrial hubs, and educational institutions.",
@@ -395,7 +368,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Small-scale Industry"],
         investmentOpportunities: "Local industry development",
-        growthRate: "",
         majorCities: ["Silvassa"],
         economicAchievements: "Developing agriculture and small-scale industries.",
         infrastructureHighlights: "Improving road networks and promoting local industries.",
@@ -408,7 +380,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Manufacturing"],
         investmentOpportunities: "Agri-processing and industry",
-        growthRate: "",
         majorCities: ["Bhopal", "Indore"],
         economicAchievements: "Gradual economic growth with an emphasis on agriculture and manufacturing.",
         infrastructureHighlights: "Expanding road and rail networks, improving connectivity.",
@@ -421,7 +392,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Tourism", "Small Industry"],
         investmentOpportunities: "Tourism and small-scale industry",
-        growthRate: "",
         majorCities: ["Daman"],
         economicAchievements: "Focus on tourism and small-scale industries.",
         infrastructureHighlights: "Improving transportation and tourism infrastructure.",
@@ -434,7 +404,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Handicrafts"],
         investmentOpportunities: "Handicrafts and agri-value chains",
-        growthRate: "",
         majorCities: ["Imphal"],
         economicAchievements: "Developing its economy with a focus on agriculture and handicrafts.",
         infrastructureHighlights: "Improving road connectivity in a hilly region.",
@@ -447,7 +416,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Agriculture", "Tourism", "Handicrafts"],
         investmentOpportunities: "Tourism and horticulture",
-        growthRate: "",
         majorCities: ["Srinagar", "Jammu"],
         economicAchievements: "Transitioning economy with agriculture, horticulture, and handicrafts.",
         infrastructureHighlights: "Developing connectivity and tourism infrastructure.",
@@ -460,7 +428,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Tourism", "Minerals"],
         investmentOpportunities: "Eco-tourism and mineral value chains",
-        growthRate: "",
         majorCities: ["Shillong"],
         economicAchievements: "Agriculture, tourism, and mineral resources contribute to the economy.",
         infrastructureHighlights: "Developing transportation and tourism infrastructure.",
@@ -473,7 +440,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Fisheries", "Tourism"],
         investmentOpportunities: "Fisheries and eco-tourism",
-        growthRate: "",
         majorCities: ["Kavaratti"],
         economicAchievements: "Economic growth through fisheries and tourism.",
         infrastructureHighlights: "Improving transportation networks and eco-tourism.",
@@ -486,7 +452,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Handicrafts"],
         investmentOpportunities: "Handicrafts and niche agriculture",
-        growthRate: "",
         majorCities: ["Aizawl"],
         economicAchievements: "Gradual economic growth with a focus on agriculture and handicrafts.",
         infrastructureHighlights: "Improving road connectivity in a hilly region.",
@@ -499,7 +464,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Tourism", "Services"],
         investmentOpportunities: "Tourism and services",
-        growthRate: "",
         majorCities: ["Puducherry"],
         economicAchievements: "Growing economy with tourism, agriculture, and services sectors.",
         infrastructureHighlights: "Well-developed transportation and healthcare facilities.",
@@ -586,7 +550,7 @@ const ChooseState = () => {
             />
 
             <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12"
+                className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4 mt-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -616,188 +580,31 @@ const ChooseState = () => {
                                 />
 
                                 <CardContent className="p-0">
-                                    {/* Header Section - simplified to match choose-sector styling */}
-                                    <div className="relative h-36 bg-gray-100 overflow-hidden">
+                                    {/* Image Section */}
+                                    <div className="relative h-32 bg-gray-100 overflow-hidden">
                                         {state.cardImage ? (
                                             <Image src={state.cardImage} alt={state.name} fill className="object-cover" />
                                         ) : (
                                             <div className="absolute inset-0 bg-gray-100" />
                                         )}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                                        <div className="absolute bottom-4 left-4 right-4 z-10">
-                                            <div className="flex items-center gap-3">
-                                                <div className="w-12 h-12 bg-white/90 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 border">
-                                                    {state.mapIcon ? (
-                                                        <Image src={state.mapIcon} alt="map" width={20} height={20} className="object-contain" />
-                                                    ) : (
-                                                        <IoLocationOutline className="w-6 h-6" />
-                                                    )}
-                                                </div>
-                                                <div className="flex-1">
-                                                    <div className="flex items-center gap-2 mb-1">
-                                                        <h3 className="text-lg font-bold text-gray-900 leading-tight line-clamp-2">{state.name}</h3>
-                                                        <Badge
-                                                            variant={state.type === "ut" ? "secondary" : "outline"}
-                                                            className={`text-xs font-medium px-3 py-1 ${state.type === "ut"
-                                                                ? "bg-accent/20 text-accent-foreground border-accent/30"
-                                                                : "bg-secondary/20 text-secondary-foreground border-secondary/30"
-                                                                }`}
-                                                        >
-                                                            {state.type === "ut" ? "UT" : "State"}
-                                                        </Badge>
-                                                    </div>
-                                                    <div className="flex items-center gap-2 text-sm text-gray-700">
-                                                        <IoTrendingUpOutline className="w-5 h-5 text-green-600" />
-                                                        <span className="font-semibold">Growth: {state.growthRate || "—"}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                                     </div>
 
-                                    {/* Quick Info */}
-                                    <div className="p-6 bg-card">
-                                        <div className="space-y-5">
-                                            <div>
-                                                <div className="flex items-center gap-2 mb-4">
-                                                    <IoBusinessOutline className="w-5 h-5 text-primary" />
-                                                    <span className="text-sm font-bold text-card-foreground">Key Industries</span>
-                                                </div>
-                                                <div className="flex flex-wrap gap-2">
-                                                    {state.keyIndustries.slice(0, 3).map((industry) => (
-                                                        <Badge
-                                                            key={industry}
-                                                            variant="outline"
-                                                            className="text-xs border-primary/30 text-primary hover:bg-primary/10 transition-colors px-3 py-1"
-                                                        >
-                                                            {industry}
-                                                        </Badge>
-                                                    ))}
-                                                    {state.keyIndustries.length > 3 && (
-                                                        <Badge
-                                                            variant="outline"
-                                                            className="text-xs border-accent/30 text-accent hover:bg-accent/10"
-                                                        >
-                                                            +{state.keyIndustries.length - 3} more
-                                                        </Badge>
-                                                    )}
-                                                </div>
-                                            </div>
-
-                                            <div className="pt-4 border-t border-border">
-                                                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                                                    {state.investmentOpportunities}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Expanded Details */}
-                                    <AnimatePresence>
-                                        {selectedState === state.id && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.5, ease: "easeInOut" }}
-                                                className="overflow-hidden"
+                                    {/* Name Section */}
+                                    <div className="p-3 bg-card">
+                                        <div className="flex items-center justify-between">
+                                            <h3 className="text-sm font-bold text-gray-900 leading-tight">{state.name}</h3>
+                                            <Badge
+                                                variant={state.type === "ut" ? "secondary" : "outline"}
+                                                className={`text-xs font-medium px-2 py-1  ${state.type === "ut"
+                                                    ? "bg-accent/20 text-accent-foreground border-accent/30"
+                                                    : "bg-secondary/20 text-secondary-foreground border-secondary/30 "
+                                                    }`}
                                             >
-                                                <div className="p-6 bg-muted/30 border-t border-border backdrop-blur-sm">
-                                                    <div className="space-y-6">
-                                                        {/* Economic Achievements */}
-                                                        <div className="bg-card border border-primary/20 shadow-sm p-5">
-                                                            <div className="flex items-center gap-3 mb-4">
-                                                                <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
-                                                                    <IoTrophyOutline className="w-5 h-5 text-primary" />
-                                                                </div>
-                                                                <span className="font-bold text-card-foreground">Economic Achievements</span>
-                                                            </div>
-                                                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                                                {state.economicAchievements}
-                                                            </p>
-                                                        </div>
-
-                                                        {/* Infrastructure */}
-                                                        <div className="bg-card border border-secondary/20 shadow-sm p-5">
-                                                            <div className="flex items-center gap-3 mb-4">
-                                                                <div className="w-10 h-10 bg-secondary/10 flex items-center justify-center">
-                                                                    <IoConstructOutline className="w-5 h-5 text-secondary" />
-                                                                </div>
-                                                                <span className="font-bold text-card-foreground">Infrastructure Highlights</span>
-                                                            </div>
-                                                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                                                {state.infrastructureHighlights}
-                                                            </p>
-                                                        </div>
-
-                                                        {/* Demographics */}
-                                                        <div className="bg-card border border-accent/20 shadow-sm p-5">
-                                                            <div className="flex items-center gap-3 mb-4">
-                                                                <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
-                                                                    <IoPeopleOutline className="w-5 h-5 text-accent" />
-                                                                </div>
-                                                                <span className="font-bold text-card-foreground">Demographics & Workforce</span>
-                                                            </div>
-                                                            <p className="text-sm text-muted-foreground leading-relaxed">{state.demographics}</p>
-                                                        </div>
-
-                                                        {/* Government Policies */}
-                                                        <div className="bg-card border border-primary/20 shadow-sm p-5">
-                                                            <div className="flex items-center gap-3 mb-4">
-                                                                <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
-                                                                    <IoDocumentTextOutline className="w-5 h-5 text-primary" />
-                                                                </div>
-                                                                <span className="font-bold text-card-foreground">Investment Policies</span>
-                                                            </div>
-                                                            <p className="text-sm text-muted-foreground leading-relaxed">{state.policies}</p>
-                                                        </div>
-
-                                                        {/* All Industries */}
-                                                        <div className="bg-card border border-secondary/20 shadow-sm p-5">
-                                                            <div className="flex items-center gap-3 mb-4">
-                                                                <div className="w-10 h-10 bg-secondary/10 flex items-center justify-center">
-                                                                    <IoBusinessOutline className="w-5 h-5 text-secondary" />
-                                                                </div>
-                                                                <span className="font-bold text-card-foreground">All Key Industries</span>
-                                                            </div>
-                                                            <div className="flex flex-wrap gap-2">
-                                                                {state.keyIndustries.map((industry) => (
-                                                                    <Badge
-                                                                        key={industry}
-                                                                        variant="outline"
-                                                                        className="text-xs border-secondary/30 text-secondary hover:bg-secondary/10 transition-colors"
-                                                                    >
-                                                                        {industry}
-                                                                    </Badge>
-                                                                ))}
-                                                            </div>
-                                                        </div>
-
-                                                        {/* Major Cities */}
-                                                        <div className="bg-card border border-accent/20 shadow-sm p-5">
-                                                            <div className="flex items-center gap-3 mb-4">
-                                                                <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
-                                                                    <IoStorefrontOutline className="w-5 h-5 text-accent" />
-                                                                </div>
-                                                                <span className="font-bold text-card-foreground">Major Cities</span>
-                                                            </div>
-                                                            <div className="flex flex-wrap gap-2">
-                                                                {state.majorCities.map((city) => (
-                                                                    <Badge
-                                                                        key={city}
-                                                                        variant="secondary"
-                                                                        className="text-xs bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
-                                                                    >
-                                                                        {city}
-                                                                    </Badge>
-                                                                ))}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
+                                                {state.type === "ut" ? "UT" : ""}
+                                            </Badge>
+                                        </div>
+                                    </div>
                                 </CardContent>
                             </Card>
                         </motion.div>
@@ -829,72 +636,155 @@ const ChooseState = () => {
                                 animate={{ y: 0, opacity: 1, scale: 1 }}
                                 exit={{ y: 20, opacity: 0, scale: 0.98 }}
                                 transition={{ duration: 0.35 }}
-                                // remove rounded corners to match request
-                                className="relative max-w-5xl w-full mx-4 bg-white shadow-2xl overflow-hidden"
+                                className="relative w-full max-w-4xl mx-4 my-4 bg-white shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
                                 role="dialog"
                                 aria-modal="true"
                             >
-                                <div className="p-6 border-b flex items-start justify-between">
-                                    <div>
-                                        <h2 className="text-2xl font-bold">{statesData.find(s => s.id === selectedState)?.name}</h2>
-                                        <p className="text-sm text-muted-foreground mt-1">Detailed overview</p>
+                                <div className="p-4 md:p-6 border-b flex items-start justify-between">
+                                    <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
+                                        <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-100 overflow-hidden flex-shrink-0">
+                                            {statesData.find(s => s.id === selectedState)?.cardImage ? (
+                                                <Image
+                                                    src={statesData.find(s => s.id === selectedState)?.cardImage}
+                                                    alt={statesData.find(s => s.id === selectedState)?.name}
+                                                    width={64}
+                                                    height={64}
+                                                    className="object-cover w-full h-full"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-gray-100" />
+                                            )}
+                                        </div>
+                                        <div className="min-w-0 flex-1">
+                                            <h2 className="text-lg md:text-2xl font-bold flex items-center gap-2 flex-wrap">
+                                                <span className="truncate">{statesData.find(s => s.id === selectedState)?.name}</span>
+                                                <Badge
+                                                    variant={statesData.find(s => s.id === selectedState)?.type === "ut" ? "secondary" : "outline"}
+                                                    className="text-xs flex-shrink-0"
+                                                >
+                                                    {statesData.find(s => s.id === selectedState)?.type === "ut" ? "UT" : "State"}
+                                                </Badge>
+                                            </h2>
+                                            <p className="text-sm text-muted-foreground mt-1">Detailed overview</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <button onClick={() => { setIsDialogOpen(false); setSelectedState(null) }} className="text-gray-500 hover:text-gray-800">Close</button>
+                                    <div className="flex-shrink-0">
+                                        <button
+                                            onClick={() => { setIsDialogOpen(false); setSelectedState(null) }}
+                                            className="text-gray-500 hover:text-gray-800 p-2 text-xl"
+                                        >
+                                            ✕
+                                        </button>
                                     </div>
                                 </div>
 
-                                <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    {/* Left: Image grid (4 images in 2x2) */}
-                                    <div className="grid grid-cols-2 grid-rows-2 gap-3">
-                                        {(() => {
-                                            const g = statesData.find(s => s.id === selectedState)?.gallery || []
-                                            const imgs = [g[0], g[1], g[2], g[3]]
-                                            return imgs.map((src, i) => (
-                                                <div key={i} className="w-full h-40 relative bg-gray-100 overflow-hidden">
-                                                    {src ? (
-                                                        <Image src={src} alt={`img-${i}`} fill className="object-cover" />
-                                                    ) : (
-                                                        <Image src="/placeholder.svg" alt={`img-${i}`} fill className="object-contain p-4" />
-                                                    )}
-                                                </div>
-                                            ))
-                                        })()}
-                                    </div>
+                                <div className="p-4 md:p-6">
+                                    {(() => {
+                                        const currentItem = statesData.find(item => item.id === selectedState)
+                                        if (!currentItem) return null
 
-                                    {/* Right: Detail grid (4x4 style but adapted for content) */}
-                                    <div className="grid grid-cols-1 gap-3">
-                                        <div className="grid grid-cols-2 gap-3">
-                                            <div className="p-3 bg-gray-50 rounded border">
-                                                <h4 className="text-sm font-semibold mb-1">Economic Achievements</h4>
-                                                <p className="text-sm text-muted-foreground">{statesData.find(s => s.id === selectedState)?.economicAchievements}</p>
-                                            </div>
-                                            <div className="p-3 bg-gray-50 rounded border">
-                                                <h4 className="text-sm font-semibold mb-1">Infrastructure Highlights</h4>
-                                                <p className="text-sm text-muted-foreground">{statesData.find(s => s.id === selectedState)?.infrastructureHighlights}</p>
-                                            </div>
-                                        </div>
+                                        return (
+                                            <div className="space-y-4 md:space-y-6">
+                                                {/* Investment Opportunities */}
+                                                {currentItem.investmentOpportunities && (
+                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-4 md:p-5">
+                                                        <div className="flex items-center gap-3 mb-4">
+                                                            <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
+                                                                <IoTrendingUpOutline className="w-5 h-5 text-primary" />
+                                                            </div>
+                                                            <span className="font-bold text-card-foreground">Investment Opportunities</span>
+                                                        </div>
+                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                            {currentItem.investmentOpportunities}
+                                                        </p>
+                                                    </div>
+                                                )}
 
-                                        <div className="grid grid-cols-2 gap-3">
-                                            <div className="p-3 bg-gray-50 rounded border">
-                                                <h4 className="text-sm font-semibold mb-1">Demographics</h4>
-                                                <p className="text-sm text-muted-foreground">{statesData.find(s => s.id === selectedState)?.demographics}</p>
-                                            </div>
-                                            <div className="p-3 bg-gray-50 rounded border">
-                                                <h4 className="text-sm font-semibold mb-1">Government Policies</h4>
-                                                <p className="text-sm text-muted-foreground">{statesData.find(s => s.id === selectedState)?.policies}</p>
-                                            </div>
-                                        </div>
+                                                {/* Major Cities */}
+                                                {currentItem.majorCities && currentItem.majorCities.length > 0 && (
+                                                    <div className="bg-accent/5 border border-accent/20 shadow-sm p-4 md:p-5">
+                                                        <div className="flex items-center gap-3 mb-4">
+                                                            <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
+                                                                <IoStorefrontOutline className="w-5 h-5 text-accent" />
+                                                            </div>
+                                                            <span className="font-bold text-card-foreground">Major Cities</span>
+                                                        </div>
+                                                        <div className="flex flex-wrap gap-2">
+                                                            {currentItem.majorCities.map((city) => (
+                                                                <Badge
+                                                                    key={city}
+                                                                    variant="secondary"
+                                                                    className="text-xs bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+                                                                >
+                                                                    {city}
+                                                                </Badge>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
 
-                                        <div className="mt-2">
-                                            <h4 className="text-sm font-semibold mb-2">Key Industries</h4>
-                                            <div className="grid grid-cols-4 gap-2">
-                                                {statesData.find(s => s.id === selectedState)?.keyIndustries.map((k) => (
-                                                    <div key={k} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded text-center">{k}</div>
-                                                ))}
+                                                {/* Economic Achievements */}
+                                                {currentItem.economicAchievements && (
+                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-4 md:p-5">
+                                                        <div className="flex items-center gap-3 mb-4">
+                                                            <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
+                                                                <IoTrophyOutline className="w-5 h-5 text-primary" />
+                                                            </div>
+                                                            <span className="font-bold text-card-foreground">Economic Achievements</span>
+                                                        </div>
+                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                            {currentItem.economicAchievements}
+                                                        </p>
+                                                    </div>
+                                                )}
+
+                                                {/* Infrastructure */}
+                                                {currentItem.infrastructureHighlights && (
+                                                    <div className="bg-secondary/5 border border-secondary/20 shadow-sm p-4 md:p-5">
+                                                        <div className="flex items-center gap-3 mb-4">
+                                                            <div className="w-10 h-10 bg-secondary/10 flex items-center justify-center">
+                                                                <IoConstructOutline className="w-5 h-5 text-secondary" />
+                                                            </div>
+                                                            <span className="font-bold text-card-foreground">Infrastructure Highlights</span>
+                                                        </div>
+                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                            {currentItem.infrastructureHighlights}
+                                                        </p>
+                                                    </div>
+                                                )}
+
+                                                {/* Demographics */}
+                                                {currentItem.demographics && (
+                                                    <div className="bg-accent/5 border border-accent/20 shadow-sm p-4 md:p-5">
+                                                        <div className="flex items-center gap-3 mb-4">
+                                                            <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
+                                                                <IoPeopleOutline className="w-5 h-5 text-accent" />
+                                                            </div>
+                                                            <span className="font-bold text-card-foreground">Demographics & Workforce</span>
+                                                        </div>
+                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                            {currentItem.demographics}
+                                                        </p>
+                                                    </div>
+                                                )}
+
+                                                {/* Government Policies */}
+                                                {currentItem.policies && (
+                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-4 md:p-5">
+                                                        <div className="flex items-center gap-3 mb-4">
+                                                            <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
+                                                                <IoDocumentTextOutline className="w-5 h-5 text-primary" />
+                                                            </div>
+                                                            <span className="font-bold text-card-foreground">Investment Policies</span>
+                                                        </div>
+                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                            {currentItem.policies}
+                                                        </p>
+                                                    </div>
+                                                )}
                                             </div>
-                                        </div>
-                                    </div>
+                                        )
+                                    })()}
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -913,7 +803,7 @@ const ChooseState = () => {
                             setTimeout(() => setIsAutoPlaying(true), 10000)
                         }}
                         className={`transition-all duration-300 ${index === currentPage
-                            ? "w-12 h-4 bg-primary shadow-lg"
+                            ? "w-12 h-4 bg-orange-500 shadow-lg"
                             : "w-4 h-4 bg-muted-foreground/30 hover:bg-primary/60 hover:scale-125"
                             }`}
                         whileHover={{ scale: 1.2 }}
