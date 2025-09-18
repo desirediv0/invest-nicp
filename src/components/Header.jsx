@@ -1,23 +1,75 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Menu, X } from "lucide-react"
+import { FiChevronDown, FiEye } from "react-icons/fi"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import Link from "next/link"
 
 const navigationItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Investment Opportunities", href: "/investment-opportunities" },
-    { name: "Insights Updates", href: "/insights-updates" },
-    { name: "What We Do", href: "/what-we-do" },
+    {
+        name: "About", href: "/about", children: [
+            { name: "Mission", href: "/about#mission" },
+            { name: "Vision", href: "/about#vision" },
+            { name: "Opportunities", href: "/about#opportunities" },
+        ]
+    },
+    {
+        name: "Investment Opportunities", href: "/investment-opportunities", children: [
+            { name: "IO - Sectors", href: "/investment-opportunities#sectors" },
+            { name: "IO - States", href: "/investment-opportunities#states" },
+        ]
+    },
+    {
+        name: "Insights Updates", href: "/insights-updates", children: [
+            { name: "City Info", href: "/insights-updates#city-info" },
+            { name: "Resources", href: "/insights-updates#resources" },
+        ]
+    },
+    {
+        name: "Initiatives", href: "/initiatives", children: [
+            { name: "Initiatives List", href: "/initiatives#list" },
+        ]
+    },
+    {
+        name: "Resources", href: "/resources", children: [
+            { name: "GOI and Ministries", href: "/resources#goinministries" },
+            { name: "Schemes", href: "/resources#schemes" },
+            { name: "Authorities, Associations & Councils", href: "/resources#authorities" },
+            { name: "SIP Agencies", href: "/resources#sip" },
+            {
+                name: "Policies", href: "/resources#policies", children: [
+                    { name: "Alternative Investment Fund", href: "/resources/policies#aif" },
+                    { name: "FDI Policy", href: "/resources/policies#fdi" },
+                    { name: "FDI Policy 2020", href: "/resources/policies#fdi2020" },
+                    { name: "DPIIT", href: "/resources/policies#dpiit" },
+                    { name: "India Industrial Corridors", href: "/resources/policies#corridors" },
+                    { name: "Smart City Description", href: "/resources/policies#smartcity" },
+                    { name: "Smart City Guideness", href: "/resources/policies#smartcity-guidance" },
+                    { name: "RERA Act", href: "/resources/policies#rera" },
+                ]
+            },
+        ]
+    },
+    {
+        name: "What We Do", href: "/what-we-do", children: [
+            { name: "Market Entry & Expansion", href: "/what-we-do#market-entry" },
+            { name: "Workshops", href: "/what-we-do#workshops" },
+            { name: "Seminars", href: "/what-we-do#seminars" },
+        ]
+    },
     { name: "Contact Us", href: "/contact-us" },
 ]
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
+    const [mobileOpenIndex, setMobileOpenIndex] = useState(null)
+    const [desktopOpenIndex, setDesktopOpenIndex] = useState(null)
+    const [desktopOpenSubIndex, setDesktopOpenSubIndex] = useState(null)
+    const closeTimerRef = useRef(null)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,35 +91,128 @@ export default function Header() {
                         : "bg-transparent backdrop-blur-sm",
                 )}
             >
-                <div className="max-w-7xl mx-auto px-4 py-2">
+                <div className=" px-4 py-2">
                     <div className="flex items-center justify-between">
+                        {/* Logo on the left */}
+                        <div className="flex items-center gap-4">
+                            <Link href="/" className="flex items-center">
+                                <Image src={"/logo.gif"} alt="Logo" width={85} height={85} className="bg-white rounded-full" />
+                            </Link>
+                        </div>
 
-
-                        {/* Desktop Navigation - Hidden on mobile */}
-                        <nav className="hidden lg:flex items-center space-x-8">
-                            {navigationItems.map((item) => (
-                                <a
+                        {/* Desktop Navigation - placed to the right of logo */}
+                        <nav className="hidden lg:flex items-center space-x-6">
+                            {navigationItems.map((item, index) => (
+                                <div
                                     key={item.name}
-                                    href={item.href}
-                                    className={` transition-colors duration-200 font-[family-name:var(--font-source-sans)] font-medium ${isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"} px-3 py-2 rounded-md`}
+                                    className="relative"
+                                    onMouseEnter={() => {
+                                        if (closeTimerRef.current) {
+                                            clearTimeout(closeTimerRef.current)
+                                            closeTimerRef.current = null
+                                        }
+                                        setDesktopOpenIndex(index)
+                                        setDesktopOpenSubIndex(null)
+                                    }}
+                                    onMouseLeave={() => {
+                                        // small delay to avoid flicker when moving between menus
+                                        closeTimerRef.current = setTimeout(() => {
+                                            setDesktopOpenIndex(null)
+                                            setDesktopOpenSubIndex(null)
+                                        }, 180)
+                                    }}
                                 >
-                                    {item.name}
-                                </a>
+                                    <Link
+                                        href={item.href}
+                                        className={cn(
+                                            "transition-colors duration-200 font-[family-name:var(--font-source-sans)] font-medium px-3 py-2 rounded-md flex items-center gap-2",
+                                            isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+                                        )}
+                                        aria-expanded={desktopOpenIndex === index}
+                                    >
+                                        {item.name}
+                                        {item.children && <FiChevronDown className={`ml-1 transition-transform duration-200 text-sm ${desktopOpenIndex === index ? "rotate-180" : ""}`} />}
+                                    </Link>
+
+                                    {/* Desktop dropdown (controlled) */}
+                                    {item.children && (
+                                        <div
+                                            className={cn(
+                                                "absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-border transition-all duration-200 z-40 transform-gpu",
+                                                desktopOpenIndex === index ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1 pointer-events-none"
+                                            )}
+                                        >
+                                            <div className="py-2">
+                                                {item.children.map((sub, sidx) => (
+                                                    <div
+                                                        key={sub.name}
+                                                        className="relative"
+                                                        onMouseEnter={() => {
+                                                            if (closeTimerRef.current) {
+                                                                clearTimeout(closeTimerRef.current)
+                                                                closeTimerRef.current = null
+                                                            }
+                                                            // only set sub index when its parent is open
+                                                            if (desktopOpenIndex === index) setDesktopOpenSubIndex(sidx)
+                                                        }}
+                                                        onMouseLeave={() => {
+                                                            closeTimerRef.current = setTimeout(() => setDesktopOpenSubIndex(null), 120)
+                                                        }}
+                                                    >
+                                                        <Link
+                                                            href={sub.href}
+                                                            className="px-4 py-2 text-sm text-foreground hover:bg-muted flex items-center justify-between"
+                                                        >
+                                                            <span className="flex items-center gap-3">
+                                                                {/* show eye icon for Resources children */}
+                                                                {item.name === "Resources" && <FiEye className="text-lg text-slate-400" />}
+                                                                {sub.name}
+                                                            </span>
+                                                            {sub.children && <FiChevronDown className={`text-xs text-slate-400 ${desktopOpenSubIndex === sidx ? "rotate-180" : ""}`} />}
+                                                        </Link>
+
+                                                        {/* second level dropdown (controlled) */}
+                                                        {sub.children && (
+                                                            <div
+                                                                className={cn(
+                                                                    "absolute top-0 left-full ml-2 w-64 bg-white rounded-md shadow-lg border border-border transition-all duration-200 z-50 transform-gpu",
+                                                                    desktopOpenIndex === index && desktopOpenSubIndex === sidx ? "opacity-100 visible translate-x-0" : "opacity-0 invisible -translate-x-1 pointer-events-none"
+                                                                )}
+                                                            >
+                                                                <div className="py-2">
+                                                                    {sub.children.map((s2) => (
+                                                                        <Link
+                                                                            key={s2.name}
+                                                                            href={s2.href}
+                                                                            className="block px-4 py-2 text-sm text-foreground hover:bg-muted"
+                                                                        >
+                                                                            {s2.name}
+                                                                        </Link>
+                                                                    ))}
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             ))}
                         </nav>
 
-                        <Image src={"/logo.gif"} alt="Logo" width={80} height={80} className="bg-white rounded-full" />
-
-                        {/* Mobile menu button */}
-                        <Button
-                            variant="ghost"
-                            size="icon"
-                            className="lg:hidden"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            aria-label="Toggle mobile menu"
-                        >
-                            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                        </Button>
+                        {/* Right side: mobile toggle and spacer */}
+                        <div className="flex items-center gap-3">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="lg:hidden"
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                aria-label="Toggle mobile menu"
+                            >
+                                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,15 +226,66 @@ export default function Header() {
                 <div className="container mx-auto px-4">
                     {/* Mobile Navigation */}
                     <nav className="lg:hidden py-4 space-y-2">
-                        {navigationItems.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className="block py-2 px-4 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors duration-200 font-[family-name:var(--font-source-sans)]"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                {item.name}
-                            </a>
+                        {navigationItems.map((item, idx) => (
+                            <div key={item.name} className="border-b border-border">
+                                <div className="flex items-center justify-between">
+                                    <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="py-3 px-4 flex-1 text-foreground font-[family-name:var(--font-source-sans)]">
+                                        {item.name}
+                                    </Link>
+
+                                    {item.children && (
+                                        <button
+                                            className="px-4 py-3 text-foreground"
+                                            onClick={() => setMobileOpenIndex(mobileOpenIndex === idx ? null : idx)}
+                                            aria-expanded={mobileOpenIndex === idx}
+                                            aria-controls={`mobile-submenu-${idx}`}
+                                        >
+                                            <FiChevronDown className={`transition-transform duration-200 ${mobileOpenIndex === idx ? "rotate-180" : ""}`} />
+                                        </button>
+                                    )}
+                                </div>
+
+                                {/* Mobile submenu (expand) */}
+                                {item.children && mobileOpenIndex === idx && (
+                                    <div id={`mobile-submenu-${idx}`} className="pl-6 pb-2">
+                                        {item.children.map((sub, sidx) => (
+                                            <div key={sub.name}>
+                                                <Link
+                                                    href={sub.href}
+                                                    onClick={() => {
+                                                        setIsMobileMenuOpen(false)
+                                                        setMobileOpenIndex(null)
+                                                    }}
+                                                    className="py-2 px-4 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors duration-200 flex items-center gap-2"
+                                                >
+                                                    {/* eye icon for Resources children */}
+                                                    {item.name === "Resources" && <FiEye className="text-green-600" />}
+                                                    {sub.name}
+                                                </Link>
+
+                                                {/* nested mobile submenu (sub.children) */}
+                                                {sub.children && (
+                                                    <div className="pl-6">
+                                                        {sub.children.map((s2) => (
+                                                            <Link
+                                                                key={s2.name}
+                                                                href={s2.href}
+                                                                onClick={() => {
+                                                                    setIsMobileMenuOpen(false)
+                                                                    setMobileOpenIndex(null)
+                                                                }}
+                                                                className="block py-2 px-4 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors duration-200"
+                                                            >
+                                                                {s2.name}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </nav>
                 </div>

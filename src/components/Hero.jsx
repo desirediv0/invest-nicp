@@ -45,8 +45,8 @@ export default function HomePage() {
     }
 
     return (
-        <div className="min-h-screen bg-background">
-            <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
+        <div className="bg-background">
+            <section className="relative h-[60vh] lg:h-[70vh] overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 z-0">
                     {slides.map((slide, index) => (
                         <motion.div
@@ -65,7 +65,8 @@ export default function HomePage() {
                             />
                         </motion.div>
                     ))}
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-purple-900/20 to-black/20" />
+                    {/* Top gradient overlay - only cover top 50vh for stronger foreground contrast */}
+                    <div className="absolute top-0 left-0 right-0 h-[50vh] bg-gradient-to-br from-black/30 via-purple-900/25 to-black/10" />
                 </div>
 
                 {/* BorderBeam Animation */}
@@ -94,27 +95,29 @@ export default function HomePage() {
                 </button>
 
                 {/* Main Content */}
-                <div className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-28 md:mt-10 ">
+                <div className="relative z-20 text-center px-4 max-w-6xl mx-auto flex flex-col items-center justify-center h-full">
                     <motion.div
                         key={currentSlide}
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
-                        className="mb-8"
+                        className="my-8"
                     >
-                        <motion.div className="flex flex-col bg-black/60 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-white/20 w-fit mx-auto">
-                            <p className="text-lg md:text-xl font-semibold text-white tracking-wide uppercase ">
-                                {slides[currentSlide].subtitle}
-                            </p>
-                        </motion.div>
-                        <div className="px-8 py-6 mx-auto inline-block">
+
+
+                        <div className="px-4 py-2 mx-auto inline-block max-w-[95vw]">
                             <motion.h1
-                                className=" text-2xl md:text-4xl lg:text-6xl md:text-nowrap font-bold text-white mb-0 tracking-tight capitalize"
-                                style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.9)" }}
+                                className="whitespace-nowrap truncate text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold text-white mb-0 tracking-tight capitalize leading-tight"
+                                style={{ textShadow: "1px 1px 6px rgba(0,0,0,0.8)" }}
                             >
-                                {slides[currentSlide].title}
+                                {slides[currentSlide].subtitle}
                             </motion.h1>
                         </div>
+                        <motion.div className="flex flex-col  px-6 py-4 my-4  w-fit mx-auto">
+                            <p className="text-2xl md:text-3xl  font-semibold text-white tracking-wide uppercase">
+                                {slides[currentSlide].title}
+                            </p>
+                        </motion.div>
                     </motion.div>
 
                 </div>
