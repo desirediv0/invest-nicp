@@ -25,7 +25,6 @@ const navigationItems = [
     {
         name: "Insights Updates", href: "/insights-updates", children: [
             { name: "City Info", href: "/insights-updates#city-info" },
-            { name: "Resources", href: "/insights-updates#resources" },
         ]
     },
     {

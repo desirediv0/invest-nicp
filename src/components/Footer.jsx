@@ -61,14 +61,8 @@ export default function BusinessFooter() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-3 hover:bg-gray-800/50 p-3 transition-colors">
-                                <Phone className="w-5 h-5 text-orange-400 flex-shrink-0" />
-                                <p className="text-gray-300 text-sm">+91-9891015220</p>
-                            </div>
-                            <div className="flex items-center gap-3 hover:bg-gray-800/50 p-3 transition-colors">
-                                <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
-                                <p className="text-gray-300 text-sm">info@investnicp.com</p>
-                            </div>
+
+
                         </div>
 
                         {/* Social Links */}
@@ -96,19 +90,39 @@ export default function BusinessFooter() {
                             </div>
                         </div>
 
-                        <div className="bg-gray-800 p-6 border border-gray-700 hover:border-orange-500/50 transition-colors">
-                            <div className="bg-white p-4 mb-4">
-                                <Image
-                                    src="/placeholder.svg"
-                                    alt="ReHo India Logo"
-                                    width={120}
-                                    height={60}
-                                    className="h-16 w-auto mx-auto object-contain"
-                                />
-                            </div>
-                            <div className="text-center">
-                                <h4 className="text-white font-semibold mb-1">ReHo India</h4>
-                                <p className="text-orange-400 text-sm uppercase tracking-wide">Smart Property Investment</p>
+                        <div className=" p-6   hover:border-orange-500/50 transition-colors">
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-2 text-orange-400">
+                                    <span className="text-xl">📞</span>
+                                    <h4 className="text-white font-semibold text-sm">
+                                        Connect with Bharat Industrial Corridor and Smart Cities (BICSC) Investment
+                                    </h4>
+                                </div>
+
+                                <div className="space-y-3 text-sm">
+                                    <div className="flex items-center gap-2 text-gray-300">
+                                        <span className="text-base">📧</span>
+                                        <span>Email: connect[at]bicsc[dot]com</span>
+                                    </div>
+
+                                    <div className="flex items-center gap-2 text-gray-300">
+                                        <span className="text-base">🌐</span>
+                                        <div className="flex flex-col">
+                                            <span>Website:</span>
+                                            <div className="space-x-2 mt-1">
+                                                <a href="https://www.bicsc.com" target="_blank" rel="noopener noreferrer"
+                                                    className="text-orange-400 hover:text-orange-300 transition-colors">
+                                                    www.bicsc.com
+                                                </a>
+                                                <span className="text-gray-400">|</span>
+                                                <a href="https://www.investnicp.com" target="_blank" rel="noopener noreferrer"
+                                                    className="text-orange-400 hover:text-orange-300 transition-colors">
+                                                    www.investnicp.com
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -128,18 +142,8 @@ export default function BusinessFooter() {
                             <Link href="/" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
                                 HOME
                             </Link>
-                            <a href="#" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
-                                SECTORS
-                            </a>
-                            <a href="#" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
-                                STATES/UTS
-                            </a>
-                            <a href="#" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
-                                BUSINESS CITIES
-                            </a>
-                            <a href="#" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
-                                SERVICES
-                            </a>
+
+
                             <Link href="/contact-us" className="block text-gray-300 hover:text-orange-400 hover:bg-gray-800/50 px-4 py-2 transition-all duration-200 border-l-2 border-transparent hover:border-orange-500 text-sm font-medium">
                                 CONTACT US
                             </Link>
