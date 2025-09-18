@@ -1,382 +1,566 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import useResponsiveGrid from "@/lib/useResponsiveGrid"
+import { motion, AnimatePresence } from "framer-motion"
 import HeadText from "./head-text"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import {
-    ChevronDown,
-    Cpu,
-    Car,
-    Plane,
-    Banknote,
-    Dna,
-    Hammer,
-    Smartphone,
-    Wrench,
-    Factory,
-    Leaf,
-    Shield,
-    Shirt,
-    Hotel,
-    Heart,
-    Building,
-    Package,
-    Cog,
-    Pill,
-    Sheet as Steel,
-    Phone,
-} from "lucide-react"
-import Image from "next/image"
-import Autoplay from "embla-carousel-autoplay"
-import { motion } from "framer-motion"
-import { BorderBeam } from "./magicui/border-beam"
-import { autocomponents, automobiles, aviation, banking, biotechnology, cement, chemicals, consumerdurables, defencemanufacturing, esdm, healthcare, infrastructure, itbpm, manufacturing, pharmaceuticals, renewablenergy, steel, telecommunications, textiles, tourism } from "@/assets"
-
+    GiFarmTractor,
+    GiProcessor,
+    GiCarWheel,
+    GiFactory,
+    GiCarDoor,
+    GiSmartphone,
+    GiCommercialAirplane,
+    GiMedicalPack,
+    GiBanknote,
+    GiMining,
+    GiDna2,
+    GiCardboardBox,
+    GiToolbox,
+    GiOilPump,
+    GiChemicalDrop,
+    GiMedicines,
+    GiWashingMachine,
+    GiCargoShip,
+    GiShield,
+    GiElectric,
+    GiShoppingCart,
+    GiSteamLocomotive,
+    GiGraduateCap,
+    GiHouse,
+    GiCircuitry,
+    GiWindTurbine,
+    GiGears,
+    GiShop,
+    GiWallet,
+    GiRoad,
+    GiSoap,
+    GiMicroscope,
+    GiDiamondRing,
+    GiHeadphones,
+    GiHeartPlus,
+    GiSteelClaws,
+    GiModernCity,
+    GiTvTower,
+    GiClothes,
+    GiPalmTree,
+} from "react-icons/gi"
 
 const sectorsData = [
     {
-        id: "auto-components",
-        name: "Auto Components",
-        icon: <Wrench className="w-6 h-6" />,
-        image: autocomponents,
+        id: "agriculture",
+        name: "Agriculture & Allied Industries",
+        icon: <GiFarmTractor className="w-8 h-8" />,
+        image: "/modern-agriculture-farming-technology.jpg",
         description:
-            "The auto components industry produces engine parts, drive transmission, body parts, suspension, and braking systems. Benefits from cost competitiveness, skilled labor, and robust supply chain.",
-        majorStates: ["Tamil Nadu", "Maharashtra", "Haryana", "Karnataka"],
-        growth: "15% CAGR expected",
-    },
-    {
-        id: "automobiles",
-        name: "Automobiles",
-        icon: <Car className="w-6 h-6" />,
-        image: automobiles,
-        description:
-            "India is one of the largest automobile markets globally, producing two-wheelers, passenger vehicles, commercial vehicles, and electric vehicles (EVs).",
-        majorStates: ["Maharashtra", "Tamil Nadu", "Haryana", "Gujarat"],
-        growth: "8-10% annual growth",
-    },
-    {
-        id: "aviation",
-        name: "Aviation",
-        icon: <Plane className="w-6 h-6" />,
-        image: aviation,
-        description:
-            "Rapid growth in domestic and international air travel, cargo services, and aircraft maintenance. Supported by UDAN scheme for regional connectivity.",
-        majorStates: ["Delhi NCR", "Maharashtra", "Karnataka", "Telangana"],
-        growth: "12% passenger growth",
-    },
-    {
-        id: "banking",
-        name: "Banking & Financial Services",
-        icon: <Banknote className="w-6 h-6" />,
-        image: banking,
-        description:
-            "Crucial role in financial inclusion, economic growth, and credit distribution across sectors. Includes public, private, and digital banking.",
-        majorStates: ["Maharashtra", "Tamil Nadu", "Delhi NCR", "Karnataka"],
-        growth: "Digital transformation",
-    },
-    {
-        id: "biotechnology",
-        name: "Biotechnology",
-        icon: <Dna className="w-6 h-6" />,
-        image: biotechnology,
-        description:
-            "Rapidly growing sector driven by healthcare, agriculture, industrial biotechnology, and bio-services. India is a top biotech destination in Asia.",
-        majorStates: ["Karnataka", "Telangana", "Maharashtra", "Tamil Nadu"],
-        growth: "22% CAGR projected",
-    },
-    {
-        id: "cement",
-        name: "Cement",
-        icon: <Hammer className="w-6 h-6" />,
-        image: cement,
-        description:
-            "India is the second-largest cement producer globally. Critical for infrastructure and real estate development with major players like UltraTech and ACC.",
-        majorStates: ["Andhra Pradesh", "Rajasthan", "Madhya Pradesh", "Tamil Nadu"],
-        growth: "Infrastructure boom",
-    },
-    {
-        id: "chemicals",
-        name: "Chemicals & Petrochemicals",
-        icon: <Factory className="w-6 h-6" />,
-        image: chemicals,
-        description:
-            "Spans basic chemicals, petrochemicals, fertilizers, paints, dyes, and specialty chemicals. Supports agriculture, textiles, and consumer goods.",
-        majorStates: ["Gujarat", "Maharashtra", "Tamil Nadu", "Andhra Pradesh"],
-        growth: "9% annual growth",
-    },
-    {
-        id: "consumer-durables",
-        name: "Consumer Durables",
-        icon: <Package className="w-6 h-6" />,
-        image: consumerdurables,
-        description:
-            "Household appliances and electronics driven by rising incomes, urbanization, and digital penetration. Includes TVs, refrigerators, ACs, washing machines.",
-        majorStates: ["Uttar Pradesh", "Tamil Nadu", "Maharashtra", "Andhra Pradesh"],
-        growth: "Rising middle class",
-    },
-    {
-        id: "defence-manufacturing",
-        name: "Defence Manufacturing",
-        icon: <Shield className="w-6 h-6" />,
-        image: defencemanufacturing,
-        description:
-            "Focus on indigenization under 'Make in India' and 'Atmanirbhar Bharat'. Production of arms, ammunition, aircraft, warships, and defence electronics.",
-        majorStates: ["Maharashtra", "Tamil Nadu", "Uttar Pradesh", "Telangana"],
-        growth: "Self-reliance push",
-    },
-    {
-        id: "esdm",
-        name: "Electronics & Semiconductors",
-        icon: <Cpu className="w-6 h-6" />,
-        image: esdm,
-        description:
-            "Design and manufacturing of electronics including semiconductors, mobile phones, LED lighting, and consumer electronics. Supported by PLI schemes.",
-        majorStates: ["Uttar Pradesh", "Tamil Nadu", "Karnataka", "Andhra Pradesh"],
-        growth: "PLI scheme boost",
-    },
-    {
-        id: "healthcare",
-        name: "Healthcare & Medical Devices",
-        icon: <Heart className="w-6 h-6" />,
-        image: healthcare,
-        description:
-            "Expanding with digital health initiatives, telemedicine, medical device manufacturing, and medical tourism. Strong private and public sector presence.",
-        majorStates: ["Tamil Nadu", "Maharashtra", "Karnataka", "Delhi NCR"],
-        growth: "Medical tourism hub",
-    },
-    {
-        id: "infrastructure",
-        name: "Infrastructure",
-        icon: <Building className="w-6 h-6" />,
-        image: infrastructure,
-        description:
-            "Booming with smart cities, highways, railways, and urban development. Driven by National Infrastructure Pipeline and government initiatives.",
-        majorStates: ["Maharashtra", "Gujarat", "Uttar Pradesh", "Tamil Nadu"],
-        growth: "$1.4 trillion pipeline",
+            "Technology-driven practices, sustainable farming, and increased government support. Investment opportunities in agri-tech startups, food processing, and export-oriented agriculture.",
+        growth: "Tech-driven transformation",
     },
     {
         id: "it-bpm",
-        name: "IT & Software Services",
-        icon: <Smartphone className="w-6 h-6" />,
-        image: itbpm,
+        name: "IT & BPM",
+        icon: <GiProcessor className="w-8 h-8" />,
+        image: "/it-technology-data-center-servers.jpg",
         description:
-            "Global leader in IT services, software development, and BPM. Opportunities in AI, cloud computing, and digital transformation services.",
-        majorStates: ["Karnataka", "Maharashtra", "Telangana", "Tamil Nadu"],
-        growth: "Digital transformation",
+            "Digital transformation, cloud computing, and cybersecurity. AI-driven solutions, increased outsourcing, and global tech leadership.",
+        growth: "AI & Cloud dominance",
+    },
+    {
+        id: "auto-components",
+        name: "Auto Components",
+        icon: <GiCarWheel className="w-8 h-8" />,
+        image: "/automotive-parts-manufacturing.jpg",
+        description:
+            "Global manufacturing hub with focus on electric vehicle components, lightweight materials, and supply chain optimization.",
+        growth: "EV components boom",
     },
     {
         id: "manufacturing",
         name: "Manufacturing",
-        icon: <Cog className="w-6 h-6" />,
-        image: manufacturing,
+        icon: <GiFactory className="w-8 h-8" />,
+        image: "/modern-manufacturing-factory-automation.jpg",
         description:
-            "Evolving with 'Make in India' initiatives. Focus on automation, smart manufacturing, and sustainable practices across multiple sectors.",
-        majorStates: ["Maharashtra", "Tamil Nadu", "Gujarat", "Uttar Pradesh"],
+            "Make in India initiatives with automation, smart manufacturing, and sustainable practices for export competitiveness.",
         growth: "Industry 4.0 adoption",
+    },
+    {
+        id: "automobiles",
+        name: "Automobiles",
+        icon: <GiCarDoor className="w-8 h-8" />,
+        image: "/electric-vehicles-automotive-industry.jpg",
+        description:
+            "Transitioning towards electric vehicles and connected mobility solutions with high investment prospects in EV manufacturing.",
+        growth: "Electric mobility shift",
+    },
+    {
+        id: "media-entertainment",
+        name: "Media & Entertainment",
+        icon: <GiSmartphone className="w-8 h-8" />,
+        image: "/digital-media-streaming-entertainment.jpg",
+        description:
+            "Digital streaming and OTT platforms driving content creation, online advertising, and global content exports.",
+        growth: "OTT & Digital content",
+    },
+    {
+        id: "aviation",
+        name: "Aviation",
+        icon: <GiCommercialAirplane className="w-8 h-8" />,
+        image: "/placeholder-p7bu8.png",
+        description:
+            "Recovering with investments in airport infrastructure, regional connectivity, and fleet expansion offering growth potential.",
+        growth: "Infrastructure expansion",
+    },
+    {
+        id: "medical-devices",
+        name: "Medical Devices",
+        icon: <GiMedicalPack className="w-8 h-8" />,
+        image: "/placeholder-68qj6.png",
+        description:
+            "Growing emphasis on indigenous manufacturing with investments in healthcare equipment and quality standards.",
+        growth: "Self-sufficiency focus",
+    },
+    {
+        id: "banking",
+        name: "Banking",
+        icon: <GiBanknote className="w-8 h-8" />,
+        image: "/placeholder-um8j5.png",
+        description:
+            "Digital banking evolution with fintech integration and customer-centric services driving transformation.",
+        growth: "Digital transformation",
+    },
+    {
+        id: "metals-mining",
+        name: "Metals & Mining",
+        icon: <GiMining className="w-8 h-8" />,
+        image: "/placeholder-x79x8.png",
+        description:
+            "Vital for infrastructure with sustainable mining practices, technology adoption, and global metal supply potential.",
+        growth: "Sustainable practices",
+    },
+    {
+        id: "biotechnology",
+        name: "Biotechnology",
+        icon: <GiDna2 className="w-8 h-8" />,
+        image: "/placeholder-d5d7i.png",
+        description:
+            "Growth in pharmaceuticals, vaccines, and genetic research with opportunities in biopharmaceuticals and biotech startups.",
+        growth: "22% CAGR projected",
+    },
+    {
+        id: "msme",
+        name: "MSME",
+        icon: <GiCardboardBox className="w-8 h-8" />,
+        image: "/placeholder-0o2sd.png",
+        description:
+            "Crucial economic role with technology adoption, access to finance, and digital empowerment for export growth.",
+        growth: "Digital empowerment",
+    },
+    {
+        id: "cement",
+        name: "Cement",
+        icon: <GiToolbox className="w-8 h-8" />,
+        image: "/placeholder-ry4sz.png",
+        description:
+            "Robust industry driven by infrastructure development with investments in sustainable practices and capacity expansion.",
+        growth: "Infrastructure boom",
+    },
+    {
+        id: "oil-gas",
+        name: "Oil & Gas",
+        icon: <GiOilPump className="w-8 h-8" />,
+        image: "/placeholder-6lha9.png",
+        description:
+            "Strategic investments in exploration, renewables, and oil refining with focus on energy diversification.",
+        growth: "Energy diversification",
+    },
+    {
+        id: "chemicals",
+        name: "Chemicals",
+        icon: <GiChemicalDrop className="w-8 h-8" />,
+        image: "/placeholder-7rk3i.png",
+        description:
+            "Growing demand in pharmaceuticals, agrochemicals, and specialty chemicals with R&D and green chemistry focus.",
+        growth: "Green chemistry focus",
     },
     {
         id: "pharmaceuticals",
         name: "Pharmaceuticals",
-        icon: <Pill className="w-6 h-6" />,
-        image: pharmaceuticals,
+        icon: <GiMedicines className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
         description:
-            "World's largest supplier of generic medicines and vaccines. Strong in bulk drugs, formulations, biotechnology, and R&D with skilled workforce.",
-        majorStates: ["Telangana", "Maharashtra", "Gujarat", "Himachal Pradesh"],
+            "Thriving with research and generics focus, innovation in drug discovery, and global drug supply leadership.",
         growth: "Global supply hub",
+    },
+    {
+        id: "consumer-durables",
+        name: "Consumer Durables",
+        icon: <GiWashingMachine className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Driven by increasing disposable income with investments in innovative products and smart home solutions.",
+        growth: "Smart home revolution",
+    },
+    {
+        id: "ports",
+        name: "Ports",
+        icon: <GiCargoShip className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Pivotal for trade with investments in port infrastructure, logistics, and digital integration for efficient cargo handling.",
+        growth: "Digital integration",
+    },
+    {
+        id: "defence-manufacturing",
+        name: "Defence Manufacturing",
+        icon: <GiShield className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Expanding with self-reliance push, abundant opportunities in defense production and cybersecurity solutions.",
+        growth: "Self-reliance push",
+    },
+    {
+        id: "power",
+        name: "Power",
+        icon: <GiElectric className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Transitioning to renewable energy with investments in solar, wind, and energy storage for sustainable power generation.",
+        growth: "Renewable dominance",
+    },
+    {
+        id: "e-commerce",
+        name: "E-Commerce",
+        icon: <GiShoppingCart className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Booming market with investments in logistics, digital payments, and AI-driven personalization for enhanced experiences.",
+        growth: "AI personalization",
+    },
+    {
+        id: "railways",
+        name: "Railways",
+        icon: <GiSteamLocomotive className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Modernizing with high-speed trains, electrification, and digital ticketing for efficient connectivity.",
+        growth: "High-speed modernization",
+    },
+    {
+        id: "education-training",
+        name: "Education & Training",
+        icon: <GiGraduateCap className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Digital transformation with investments in edtech, online tutoring, and personalized tech-driven learning.",
+        growth: "EdTech revolution",
+    },
+    {
+        id: "real-estate",
+        name: "Real Estate",
+        icon: <GiHouse className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Adapting to urbanization with investments in affordable housing, smart cities, and sustainable construction.",
+        growth: "Smart cities focus",
+    },
+    {
+        id: "electronic-system",
+        name: "Electronic System",
+        icon: <GiCircuitry className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Aiming for global electronics manufacturing hub with investments in semiconductor fabrication and R&D.",
+        growth: "Semiconductor focus",
     },
     {
         id: "renewable-energy",
         name: "Renewable Energy",
-        icon: <Leaf className="w-6 h-6" />,
-        image: renewablenergy,
+        icon: <GiWindTurbine className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
         description:
-            "Rapidly expanding with solar, wind, and green hydrogen opportunities. One of the world's largest renewable energy producers driving sustainable growth.",
-        majorStates: ["Rajasthan", "Tamil Nadu", "Gujarat", "Karnataka"],
+            "Rapid growth in solar and wind power with substantial shift to renewable energy and reduced carbon emissions.",
         growth: "500 GW target by 2030",
     },
     {
-        id: "steel",
-        name: "Steel & Metals",
-        icon: <Steel className="w-6 h-6" />,
-        image: steel,
+        id: "engineering-capital-goods",
+        name: "Engineering & Capital Goods",
+        icon: <GiGears className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
         description:
-            "Second-largest steel producer globally. Critical for infrastructure, construction, automotive, and machinery with integrated plants and mini-mills.",
-        majorStates: ["Jharkhand", "Odisha", "Chhattisgarh", "Maharashtra"],
-        growth: "Infrastructure demand",
+            "Supporting infrastructure and manufacturing with investments in automation, advanced machinery, and smart manufacturing.",
+        growth: "Smart manufacturing",
+    },
+    {
+        id: "retail",
+        name: "Retail",
+        icon: <GiShop className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Significant growth driven by e-commerce with investments in omni-channel retail and data-driven personalization.",
+        growth: "Omni-channel growth",
+    },
+    {
+        id: "financial-services",
+        name: "Financial Services",
+        icon: <GiWallet className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Rapid evolution with digital banking, fintech, and AI-driven services for enhanced financial inclusion.",
+        growth: "AI-driven services",
+    },
+    {
+        id: "roads",
+        name: "Roads",
+        icon: <GiRoad className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Improving infrastructure with emphasis on expressways and digital traffic management for enhanced connectivity.",
+        growth: "Digital traffic systems",
+    },
+    {
+        id: "fmcg",
+        name: "FMCG",
+        icon: <GiSoap className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Steady sector with investments in product diversification, e-commerce channels, and sustainable packaging.",
+        growth: "Sustainable packaging",
+    },
+    {
+        id: "science-technology",
+        name: "Science & Technology",
+        icon: <GiMicroscope className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Advancing with research and innovation in cutting-edge technology and scientific breakthroughs for global leadership.",
+        growth: "Global tech leadership",
+    },
+    {
+        id: "gems-jewellery",
+        name: "Gems & Jewellery",
+        icon: <GiDiamondRing className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Global leader with investments in technology, design innovation, and ethical sourcing for enhanced brand value.",
+        growth: "Ethical sourcing focus",
+    },
+    {
+        id: "services",
+        name: "Services",
+        icon: <GiHeadphones className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Diverse sector including IT, healthcare, and financial services with digitalization and telehealth focus.",
+        growth: "Digital services boom",
+    },
+    {
+        id: "healthcare",
+        name: "Healthcare",
+        icon: <GiHeartPlus className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Growing with health awareness and government initiatives, improved accessibility and AI-driven diagnostics.",
+        growth: "AI diagnostics revolution",
+    },
+    {
+        id: "steel",
+        name: "Steel",
+        icon: <GiSteelClaws className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description: "Growing with emphasis on quality and exports, advanced steel production and sustainable practices.",
+        growth: "Advanced production",
+    },
+    {
+        id: "infrastructure",
+        name: "Infrastructure",
+        icon: <GiModernCity className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description: "Priority for economic growth with robust, sustainable infrastructure and smart urban planning.",
+        growth: "$1.4 trillion pipeline",
     },
     {
         id: "telecommunications",
         name: "Telecommunications",
-        icon: <Phone className="w-6 h-6" />,
-        image: telecommunications,
+        icon: <GiTvTower className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
         description:
-            "One of the largest telecom markets globally with 5G rollout and digital transformation. Focus on network infrastructure, IoT solutions, and digital services.",
-        majorStates: ["Maharashtra", "Karnataka", "Delhi NCR", "Tamil Nadu"],
+            "Evolving with 5G technology and digital services, faster networks and IoT integration for digital inclusion.",
         growth: "5G revolution",
     },
     {
-        id: "textiles",
-        name: "Textiles & Apparel",
-        icon: <Shirt className="w-6 h-6" />,
-        image: textiles,
+        id: "insurance",
+        name: "Insurance",
+        icon: <GiShield className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
         description:
-            "Major export earner covering cotton, silk, wool, jute, and synthetic fibers. Opportunities in technical textiles, sustainable fashion, and value-added products.",
-        majorStates: ["Tamil Nadu", "Gujarat", "Maharashtra", "West Bengal"],
+            "Evolving with digital insurance products and enhanced customer engagement through AI-assisted underwriting.",
+        growth: "Digital transformation",
+    },
+    {
+        id: "textiles",
+        name: "Textiles",
+        icon: <GiClothes className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
+        description:
+            "Expanding with sustainable fashion focus, investments in eco-friendly materials and global textile exports.",
         growth: "Sustainable fashion",
     },
     {
-        id: "tourism",
+        id: "tourism-hospitality",
         name: "Tourism & Hospitality",
-        icon: <Hotel className="w-6 h-6" />,
-        image: tourism,
+        icon: <GiPalmTree className="w-8 h-8" />,
+        image: "/placeholder.svg?height=200&width=300",
         description:
-            "Immense potential with cultural heritage, adventure tourism, and hospitality services. Key for employment and regional development.",
-        majorStates: ["Rajasthan", "Uttar Pradesh", "Kerala", "Goa"],
+            "Recovering post-pandemic with investments in experiential tourism, unique travel experiences, and sustainable tourism.",
         growth: "Experience economy",
     },
 ]
 
-const ChooseSector = () => {
-    const [currentSlide, setCurrentSlide] = useState(0)
+const InvestmentSectors = () => {
+    const [currentPage, setCurrentPage] = useState(0)
     const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-    const [openAccordion, setOpenAccordion] = useState("")
+    const [selectedSector, setSelectedSector] = useState(null)
+
+    const { itemsPerPage } = useResponsiveGrid()
+    const totalPages = Math.ceil(sectorsData.length / itemsPerPage)
 
     useEffect(() => {
         if (!isAutoPlaying) return
 
         const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % Math.ceil(sectorsData.length / 9))
-            setOpenAccordion("")
-        }, 5000)
+            setCurrentPage((prev) => (prev + 1) % totalPages)
+            setSelectedSector(null)
+        }, 4000)
 
         return () => clearInterval(interval)
-    }, [isAutoPlaying])
+    }, [isAutoPlaying, totalPages])
 
-    const handleAccordionChange = (value) => {
-        setOpenAccordion(value === openAccordion ? "" : value)
+    // Reset page when itemsPerPage changes (prevents out-of-range pages)
+    useEffect(() => {
+        setCurrentPage(0)
+    }, [itemsPerPage])
+
+    const getCurrentPageSectors = () => {
+        const startIndex = currentPage * itemsPerPage
+        return sectorsData.slice(startIndex, startIndex + itemsPerPage)
+    }
+
+    const handleSectorClick = (sectorId) => {
+        setSelectedSector(selectedSector === sectorId ? null : sectorId)
     }
 
     return (
-        <div className="py-16 px-4 bg-gradient-to-br from-background via-muted/20 to-background">
-            <HeadText
-                title="Choose Your"
-                title2="Investment Sector"
-                subtitle="Explore India's most promising sectors with comprehensive data on growth opportunities, major states, and market potential tailored to your investment goals."
-            />
+        <div className="min-h-screen bg-white py-16 px-4">
+            {/* Header Section */}
+            <div className="max-w-7xl mx-auto text-center mb-16">
+                <HeadText
+                    title={"Choose Your"}
+                    title2={"Investment Sector"}
+                    subtitle={"Explore India\'s most promising sectors with comprehensive data on growth opportunities, major markets, and investment potential tailored to your strategic goals."}
+                />
+            </div>
 
+            {/* Main Grid Container */}
             <div
                 className="max-w-7xl mx-auto"
                 onMouseEnter={() => setIsAutoPlaying(false)}
                 onMouseLeave={() => setIsAutoPlaying(true)}
             >
-                <Carousel className="w-full" plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}>
-                    <CarouselContent>
-                        {Array.from({ length: Math.ceil(sectorsData.length / 9) }).map((_, slideIndex) => (
-                            <CarouselItem key={slideIndex}>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-4">
-                                    {sectorsData.slice(slideIndex * 9, slideIndex * 9 + 9).map((sector, index) => (
-                                        <motion.div
-                                            key={sector.id}
-                                            initial={{ opacity: 0, y: 50 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                                            className="relative group"
-                                        >
-                                            <div className="bg-card rounded-2xl shadow-lg border border-border overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                                                <BorderBeam
-                                                    duration={8 + index}
-                                                    size={200}
-                                                    className="from-transparent via-blue-500 to-transparent opacity-60"
-                                                />
-
-                                                <div
-                                                    className="flex items-center justify-between p-6 cursor-pointer hover:bg-muted/50 transition-colors"
-                                                    onClick={() => handleAccordionChange(sector.id)}
-                                                >
-                                                    <div className="flex items-center gap-4">
-                                                        <div className="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-                                                            {sector.icon}
-                                                        </div>
-                                                        <div>
-                                                            <h3 className="text-lg font-bold text-foreground group-hover:text-blue-500 transition-colors">
-                                                                {sector.name}
-                                                            </h3>
-                                                            <p className="text-sm text-muted-foreground font-medium">{sector.growth}</p>
-                                                        </div>
-                                                    </div>
-                                                    <ChevronDown
-                                                        className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${openAccordion === sector.id ? "rotate-180 text-blue-500" : ""
-                                                            }`}
-                                                    />
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={currentPage}
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.5 }}
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                    >
+                        {getCurrentPageSectors().map((sector, index) => (
+                            <motion.div
+                                key={sector.id}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.05 }}
+                                className="group cursor-pointer"
+                                onClick={() => handleSectorClick(sector.id)}
+                            >
+                                <div className="bg-white border-2 border-gray-200 hover:border-orange-500 transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 overflow-hidden">
+                                    {/* Sector Image */}
+                                    <div className="relative h-48 overflow-hidden">
+                                        <img
+                                            src={sector.image || "/placeholder.svg"}
+                                            alt={sector.name}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                                        <div className="absolute bottom-4 left-4 right-4">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-12 h-12 bg-white/90 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                                                    {sector.icon}
                                                 </div>
-
-                                                {openAccordion === sector.id && (
-                                                    <motion.div
-                                                        initial={{ height: 0, opacity: 0 }}
-                                                        animate={{ height: "auto", opacity: 1 }}
-                                                        exit={{ height: 0, opacity: 0 }}
-                                                        transition={{ duration: 0.3 }}
-                                                        className="border-t border-border"
-                                                    >
-                                                        <div className="relative h-48 w-full overflow-hidden">
-                                                            <Image
-                                                                src={sector.image || "/placeholder.svg"}
-                                                                alt={sector.name}
-                                                                fill
-                                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                                            />
-                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                                                        </div>
-
-                                                        <div className="p-6 space-y-4">
-                                                            <p className="text-sm text-muted-foreground leading-relaxed">{sector.description}</p>
-
-                                                            <div className="space-y-2">
-                                                                <h4 className="text-sm font-semibold text-foreground">Major States:</h4>
-                                                                <div className="flex flex-wrap gap-2">
-                                                                    {sector.majorStates.map((state) => (
-                                                                        <span
-                                                                            key={state}
-                                                                            className="px-3 py-1 bg-blue-500/10 text-blue-500 text-xs font-medium rounded-full border border-blue-500/20"
-                                                                        >
-                                                                            {state}
-                                                                        </span>
-                                                                    ))}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </motion.div>
-                                                )}
+                                                <div className="flex-1">
+                                                    <h3 className="text-white font-bold text-lg leading-tight line-clamp-2">{sector.name}</h3>
+                                                </div>
                                             </div>
-                                        </motion.div>
-                                    ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Card Content */}
+                                    <div className="p-6">
+                                        <div className="flex items-center justify-between mb-3">
+                                            <span className="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1">
+                                                {sector.growth}
+                                            </span>
+                                        </div>
+
+                                        {/* Expandable Content */}
+                                        <AnimatePresence>
+                                            {selectedSector === sector.id && (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.3 }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <div className="pt-4 border-t border-gray-100">
+                                                        <p className="text-sm text-gray-600 leading-relaxed">{sector.description}</p>
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
                                 </div>
-                            </CarouselItem>
+                            </motion.div>
                         ))}
-                    </CarouselContent>
+                    </motion.div>
+                </AnimatePresence>
 
-                    <CarouselPrevious className="left-4 bg-card/80 backdrop-blur-sm border-border hover:bg-blue-500 hover:text-blue-500" />
-                    <CarouselNext className="right-4 bg-card/80 backdrop-blur-sm border-border hover:bg-blue-500 hover:text-blue-500" />
-                </Carousel>
-
-                <div className="flex justify-center gap-3 mt-8">
-                    {Array.from({ length: Math.ceil(sectorsData.length / 9) }).map((_, index) => (
+                {/* Pagination Dots */}
+                <div className="flex justify-center gap-3 mt-12">
+                    {Array.from({ length: totalPages }).map((_, index) => (
                         <button
                             key={index}
-                            className={`w-3 h-3 rounded-full transition-all duration-300 ${currentSlide === index
-                                ? "bg-blue-500 scale-125 shadow-lg"
-                                : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                            className={`w-4 h-4 transition-all duration-300 ${currentPage === index ? "bg-orange-500 scale-125 shadow-lg" : "bg-gray-300 hover:bg-gray-400"
                                 }`}
                             onClick={() => {
-                                setCurrentSlide(index)
-                                setOpenAccordion("")
+                                setCurrentPage(index)
+                                setSelectedSector(null)
                             }}
                         />
                     ))}
+                </div>
+
+                {/* Page Counter */}
+                <div className="text-center mt-6">
+                    <span className="text-sm text-gray-500">
+                        Page {currentPage + 1} of {totalPages} • {sectorsData.length} Investment Sectors
+                    </span>
                 </div>
             </div>
         </div>
     )
 }
 
-export default ChooseSector
+export default InvestmentSectors

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { TrendingUp, Globe, BarChart3, ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { BorderBeam } from "./magicui/border-beam"
@@ -102,14 +102,14 @@ export default function HomePage() {
                         transition={{ duration: 1 }}
                         className="mb-8"
                     >
-                        <motion.div className="inline-block bg-black/60 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-white/20">
-                            <p className="text-lg md:text-xl font-semibold text-white tracking-wide uppercase">
+                        <motion.div className="flex flex-col bg-black/60 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-white/20 w-fit mx-auto">
+                            <p className="text-lg md:text-xl font-semibold text-white tracking-wide uppercase ">
                                 {slides[currentSlide].subtitle}
                             </p>
                         </motion.div>
-                        <div className="bg-black/50 backdrop-blur-sm rounded-2xl px-8 py-6 mx-auto inline-block">
+                        <div className="px-8 py-6 mx-auto inline-block">
                             <motion.h1
-                                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-0 tracking-tight capitalize"
+                                className=" text-2xl md:text-4xl lg:text-6xl md:text-nowrap font-bold text-white mb-0 tracking-tight capitalize"
                                 style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.9)" }}
                             >
                                 {slides[currentSlide].title}
@@ -117,69 +117,6 @@ export default function HomePage() {
                         </div>
                     </motion.div>
 
-                    {/* Stats Cards */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 100 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 1 }}
-                        className=" grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto relative bg-black/40 backdrop-blur-md border border-white/30 rounded-2xl p-8 text-white group shadow-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20"
-                    >
-                        {/* Card 1 - Improved contrast with darker background and better text colors */}
-                        <div
-
-                            className="relative bg-transparent p-8 text-white group"
-                        >
-
-                            <div className="relative z-10">
-                                <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center mb-6 mx-auto border border-blue-300/50">
-                                    <TrendingUp className="w-8 h-8 text-blue-200" />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-4 text-white">4th Largest Economy</h3>
-                                <p className="text-sm text-gray-200 mb-2">Estimated GDP Growth: 6.2% (FY25)</p>
-                                <p className="text-sm text-gray-200">Fastest Among Large Economies</p>
-                            </div>
-
-                        </div>
-
-                        {/* Card 2 - Improved contrast with darker background and better text colors */}
-                        <div
-
-                            className="relative bg-transparent p-8 text-white group"
-                        >
-                            <div className="relative z-10">
-                                <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center mb-6 mx-auto border border-blue-300/50">
-                                    <BarChart3 className="w-8 h-8 text-blue-200" />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-4 text-white">Robust FDI</h3>
-                                <p className="text-sm text-gray-200 mb-2">69.14% of total FDI inflows (since</p>
-                                <p className="text-sm text-gray-200">April 2000) came after 2014</p>
-                            </div>
-
-                        </div>
-
-                        {/* Card 3 - Improved contrast with darker background and better text colors */}
-                        <div
-
-                            className="relative bg-transparent p-8 text-white group"
-                        >
-                            <div className="relative z-10">
-                                <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center mb-6 mx-auto border border-blue-300/50">
-                                    <Globe className="w-8 h-8 text-blue-200" />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-4 text-white">Booming Exports</h3>
-                                <p className="text-sm text-gray-200 mb-2">Total: 433.09 Bn during FY 2023-24</p>
-                                <p className="text-sm text-gray-200">Record-breaking performance</p>
-                            </div>
-
-                        </div>
-                        <BorderBeam
-                            duration={2}
-                            size={800}
-                            colorFrom="#4D4DFF"
-                            colorTo="#39FF14"
-                            delay={1}
-                        />
-                    </motion.div>
                 </div>
 
                 {/* Floating Particles Animation */}
