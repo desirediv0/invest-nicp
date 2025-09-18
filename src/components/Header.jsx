@@ -34,20 +34,20 @@ const navigationItems = [
     },
     {
         name: "Resources", href: "/resources", children: [
-            { name: "GOI and Ministries", href: "/resources#goinministries" },
-            { name: "Schemes", href: "/resources#schemes" },
-            { name: "Authorities, Associations & Councils", href: "/resources#authorities" },
-            { name: "SIP Agencies", href: "/resources#sip" },
+            { name: "GOI and Ministries", href: "/resources/goinministries" },
+            { name: "Schemes", href: "/resources/schemes" },
+            { name: "Authorities, Associations & Councils", href: "/resources/authorities" },
+            { name: "SIP Agencies", href: "/resources/sip" },
             {
                 name: "Policies", href: "/resources#policies", children: [
-                    { name: "Alternative Investment Fund", href: "/resources/policies#aif" },
-                    { name: "FDI Policy", href: "/resources/policies#fdi" },
-                    { name: "FDI Policy 2020", href: "/resources/policies#fdi2020" },
-                    { name: "DPIIT", href: "/resources/policies#dpiit" },
-                    { name: "India Industrial Corridors", href: "/resources/policies#corridors" },
-                    { name: "Smart City Description", href: "/resources/policies#smartcity" },
-                    { name: "Smart City Guideness", href: "/resources/policies#smartcity-guidance" },
-                    { name: "RERA Act", href: "/resources/policies#rera" },
+                    { name: "Alternative Investment Fund", href: "/aif.pdf" },
+                    { name: "FDI Policy", href: "/fdi.pdf" },
+                    { name: "FDI Policy 2020", href: "/fdi2020.pdf" },
+                    { name: "DPIIT", href: "/dpiit.pdf" },
+                    { name: "India Industrial Corridors", href: "/corridors.pdf" },
+                    { name: "Smart City Description", href: "/smartcity.pdf" },
+                    { name: "Smart City Guideness", href: "/smartcity-guidance.pdf" },
+                    { name: "RERA Act", href: "/rera.pdf" },
                 ]
             },
         ]
