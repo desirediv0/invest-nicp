@@ -1,6 +1,8 @@
 "use client"
-import { FaWhatsapp, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
+import { FaWhatsapp, FaLinkedinIn } from 'react-icons/fa'
 import { useState } from 'react'
+import { FaXTwitter } from "react-icons/fa6";
+
 
 export default function FloatingSocialButtons() {
     const [isExpanded, setIsExpanded] = useState(false)
@@ -15,7 +17,7 @@ export default function FloatingSocialButtons() {
         },
         {
             name: 'Twitter',
-            icon: <FaTwitter className="w-6 h-6" />,
+            icon: <FaXTwitter className="w-6 h-6" />,
             url: 'https://x.com/investnicp',
             bgColor: 'bg-black hover:bg-gray-800',
             delay: 'animation-delay-200'
