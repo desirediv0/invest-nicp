@@ -49,10 +49,10 @@ const Resources = () => {
                 backgroundImage="/skyline.jpg"
             />
 
-            <div className="min-h-screen bg-gray-50 py-16">
+            <div className="min-h-screen bg-gray-50 py-4">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Header Section */}
-                    <div className="bg-white shadow-lg p-8 md:p-12 mb-12">
+                    <div className="bg-white shadow-lg p-8  mb-4">
                         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
                             Investment <span className="text-orange-500">Resources Hub</span>
                         </h1>
@@ -62,7 +62,7 @@ const Resources = () => {
                     </div>
 
                     {/* Resource Categories Grid */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {resourceCategories.map((category, index) => (
                             <Link
                                 key={index}
