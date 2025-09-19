@@ -478,9 +478,9 @@ const InvestmentSectors = () => {
     }
 
     return (
-        <div className="min-h-screen bg-white py-4 px-4">
+        <div className=" bg-white py-4 px-4">
             {/* Header Section */}
-            <div className="max-w-7xl mx-auto text-center mb-16">
+            <div className="max-w-7xl mx-auto text-center mb-4">
                 <HeadText
                     title={"Choose Your"}
                     title2={"Investment Sector"}
@@ -569,12 +569,17 @@ const InvestmentSectors = () => {
                         setIsAutoPlaying(false)
                     }
                 }}>
-                    <DialogContent>
-                        <DialogTitle>{sectorsData.find(s => s.id === selectedSector)?.name}</DialogTitle>
+                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto w-[95vw] sm:w-full">
+                        <div className="flex justify-between items-start mb-4">
+                            <DialogTitle className="text-lg font-semibold text-gray-900 pr-4">
+                                {sectorsData.find(s => s.id === selectedSector)?.name}
+                            </DialogTitle>
+                        </div>
+
                         <DialogDescription>
-                            <div className="mt-4 space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="w-full h-56 bg-gray-100 overflow-hidden relative">
+                            <div className="space-y-6">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <div className="w-full h-48 sm:h-56 bg-gray-100 overflow-hidden relative rounded-lg">
                                         {sectorsData.find(s => s.id === selectedSector)?.image ? (
                                             <Image
                                                 src={sectorsData.find(s => s.id === selectedSector)?.image}
@@ -587,9 +592,12 @@ const InvestmentSectors = () => {
                                         )}
                                     </div>
                                     <div>
-                                        <p className="text-sm text-gray-700 mb-4">{sectorsData.find(s => s.id === selectedSector)?.description}</p>
-                                        <div className="text-sm">
-                                            <span className="font-semibold">Growth:</span> <span className="text-green-600">{sectorsData.find(s => s.id === selectedSector)?.growth}</span>
+                                        <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+                                            {sectorsData.find(s => s.id === selectedSector)?.description}
+                                        </p>
+                                        <div className="text-sm bg-green-50 p-3 rounded-lg border border-green-200">
+                                            <span className="font-semibold text-green-800">Growth Outlook:</span>
+                                            <span className="text-green-600 ml-2">{sectorsData.find(s => s.id === selectedSector)?.growth}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -597,11 +605,13 @@ const InvestmentSectors = () => {
                                 {/* Major States Section */}
                                 {sectorsData.find(s => s.id === selectedSector)?.majorStates && (
                                     <div>
-                                        <h4 className="font-semibold text-lg mb-3 text-gray-800">Major States</h4>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <h4 className="font-semibold text-lg mb-4 text-gray-800 border-b border-gray-200 pb-2">
+                                            Major Investment States
+                                        </h4>
+                                        <div className="grid grid-cols-1 gap-4">
                                             {sectorsData.find(s => s.id === selectedSector)?.majorStates.map((state, index) => (
-                                                <div key={index} className="bg-gray-50 p-3 rounded-lg border-l-4 border-orange-500">
-                                                    <p className="text-sm text-gray-700">{state}</p>
+                                                <div key={index} className="bg-gradient-to-r from-orange-50 to-white p-4 rounded-lg border border-orange-100 hover:shadow-md transition-shadow">
+                                                    <p className="text-sm text-gray-700 leading-relaxed">{state}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -609,8 +619,11 @@ const InvestmentSectors = () => {
                                 )}
                             </div>
                         </DialogDescription>
-                        <div className="mt-6 text-right">
-                            <DialogClose className="text-sm text-gray-600">Close</DialogClose>
+
+                        <div className="mt-6 pt-4 border-t border-gray-200 flex justify-center">
+                            <DialogClose className="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors text-sm font-medium">
+                                Close Details
+                            </DialogClose>
                         </div>
                     </DialogContent>
                 </Dialog>

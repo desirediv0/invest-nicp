@@ -18,8 +18,8 @@ const navigationItems = [
     },
     {
         name: "Investment Opportunities", href: "/investment-opportunities", children: [
-            { name: "IO - Sectors", href: "/investment-opportunities/sectors" },
-            { name: "IO - States", href: "/investment-opportunities/states" },
+            { name: "Sectors", href: "/investment-opportunities/sectors" },
+            { name: "States", href: "/investment-opportunities/states" },
         ]
     },
     {
@@ -36,8 +36,6 @@ const navigationItems = [
         name: "Resources", href: "/resources", children: [
             { name: "GOI and Ministries", href: "/resources/goinministries" },
             { name: "Schemes", href: "/resources/schemes" },
-            { name: "Authorities, Associations & Councils", href: "/resources/authorities" },
-            { name: "SIP Agencies", href: "/resources/sip" },
             {
                 name: "Policies", href: "/resources#policies", children: [
                     { name: "Alternative Investment Fund", href: "/aif.pdf" },
@@ -50,15 +48,12 @@ const navigationItems = [
                     { name: "RERA Act", href: "/rera.pdf" },
                 ]
             },
+            { name: "Authorities, Associations & Councils", href: "/resources/authorities" },
+            { name: "SIP Agencies", href: "/resources/sip" },
+
         ]
     },
-    // {
-    //     name: "What We Do", href: "/what-we-do", children: [
-    //         { name: "Market Entry & Expansion", href: "/what-we-do#market-entry" },
-    //         { name: "Workshops", href: "/what-we-do#workshops" },
-    //         { name: "Seminars", href: "/what-we-do#seminars" },
-    //     ]
-    // },
+
     { name: "Contact Us", href: "/contact-us" },
 ]
 

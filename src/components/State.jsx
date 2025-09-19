@@ -616,7 +616,7 @@ const ChooseState = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="fixed inset-0 z-50 flex items-center justify-center"
+                            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
                         >
                             {/* Backdrop */}
                             <motion.button
@@ -633,65 +633,70 @@ const ChooseState = () => {
                                 animate={{ y: 0, opacity: 1, scale: 1 }}
                                 exit={{ y: 20, opacity: 0, scale: 0.98 }}
                                 transition={{ duration: 0.35 }}
-                                className="relative w-full max-w-4xl mx-4 my-4 bg-white shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
+                                className="relative w-full max-w-4xl bg-white rounded-lg shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
                                 role="dialog"
                                 aria-modal="true"
                             >
-                                <div className="p-4 md:p-6 border-b flex items-start justify-between">
-                                    <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
-                                        <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-100 overflow-hidden flex-shrink-0">
-                                            {statesData.find(s => s.id === selectedState)?.cardImage ? (
-                                                <Image
-                                                    src={statesData.find(s => s.id === selectedState)?.cardImage}
-                                                    alt={statesData.find(s => s.id === selectedState)?.name}
-                                                    width={64}
-                                                    height={64}
-                                                    className="object-cover w-full h-full"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-gray-100" />
-                                            )}
+                                <div className="p-3 sm:p-4 md:p-6 border-b bg-gradient-to-r from-orange-50 to-white">
+                                    <div className="flex items-start justify-between gap-3">
+                                        <div className="flex items-center gap-3 flex-1 min-w-0">
+                                            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0 border-2 border-orange-200">
+                                                {statesData.find(s => s.id === selectedState)?.cardImage ? (
+                                                    <Image
+                                                        src={statesData.find(s => s.id === selectedState)?.cardImage}
+                                                        alt={statesData.find(s => s.id === selectedState)?.name}
+                                                        width={64}
+                                                        height={64}
+                                                        className="object-cover w-full h-full"
+                                                    />
+                                                ) : (
+                                                    <div className="w-full h-full bg-gray-100" />
+                                                )}
+                                            </div>
+                                            <div className="min-w-0 flex-1">
+                                                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-1">
+                                                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 truncate">
+                                                        {statesData.find(s => s.id === selectedState)?.name}
+                                                    </h2>
+                                                    <Badge
+                                                        variant={statesData.find(s => s.id === selectedState)?.type === "ut" ? "secondary" : "outline"}
+                                                        className="text-xs w-fit bg-orange-100 text-orange-700 border-orange-300"
+                                                    >
+                                                        {statesData.find(s => s.id === selectedState)?.type === "ut" ? "Union Territory" : "State"}
+                                                    </Badge>
+                                                </div>
+                                                <p className="text-xs sm:text-sm text-gray-600">Investment & Economic Overview</p>
+                                            </div>
                                         </div>
-                                        <div className="min-w-0 flex-1">
-                                            <h2 className="text-lg md:text-2xl font-bold flex items-center gap-2 flex-wrap">
-                                                <span className="truncate">{statesData.find(s => s.id === selectedState)?.name}</span>
-                                                <Badge
-                                                    variant={statesData.find(s => s.id === selectedState)?.type === "ut" ? "secondary" : "outline"}
-                                                    className="text-xs flex-shrink-0"
-                                                >
-                                                    {statesData.find(s => s.id === selectedState)?.type === "ut" ? "UT" : "State"}
-                                                </Badge>
-                                            </h2>
-                                            <p className="text-sm text-muted-foreground mt-1">Detailed overview</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex-shrink-0">
                                         <button
                                             onClick={() => { setIsDialogOpen(false); setSelectedState(null) }}
-                                            className="text-gray-500 hover:text-gray-800 p-2 text-xl"
+                                            className="text-gray-400 hover:text-gray-600 transition-colors p-2 -m-2 flex-shrink-0"
+                                            aria-label="Close dialog"
                                         >
-                                            ✕
+                                            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                            </svg>
                                         </button>
                                     </div>
                                 </div>
 
-                                <div className="p-4 md:p-6">
+                                <div className="p-3 sm:p-4 md:p-6">
                                     {(() => {
                                         const currentItem = statesData.find(item => item.id === selectedState)
                                         if (!currentItem) return null
 
                                         return (
-                                            <div className="space-y-4 md:space-y-6">
+                                            <div className="space-y-3 sm:space-y-4 md:space-y-6">
                                                 {/* Investment Opportunities */}
                                                 {currentItem.investmentOpportunities && (
-                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
-                                                                <IoTrendingUpOutline className="w-5 h-5 text-primary" />
+                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
+                                                        <div className="flex items-center gap-3 mb-3">
+                                                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                                                <IoTrendingUpOutline className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                                                             </div>
-                                                            <span className="font-bold text-card-foreground">Investment Opportunities</span>
+                                                            <span className="font-bold text-card-foreground text-sm sm:text-base">Investment Opportunities</span>
                                                         </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                                                             {currentItem.investmentOpportunities}
                                                         </p>
                                                     </div>
@@ -699,19 +704,19 @@ const ChooseState = () => {
 
                                                 {/* Major Cities */}
                                                 {currentItem.majorCities && currentItem.majorCities.length > 0 && (
-                                                    <div className="bg-accent/5 border border-accent/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
-                                                                <IoStorefrontOutline className="w-5 h-5 text-accent" />
+                                                    <div className="bg-accent/5 border border-accent/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
+                                                        <div className="flex items-center gap-3 mb-3">
+                                                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                                                                <IoStorefrontOutline className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
                                                             </div>
-                                                            <span className="font-bold text-card-foreground">Major Cities</span>
+                                                            <span className="font-bold text-card-foreground text-sm sm:text-base">Major Cities</span>
                                                         </div>
-                                                        <div className="flex flex-wrap gap-2">
+                                                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                                             {currentItem.majorCities.map((city) => (
                                                                 <Badge
                                                                     key={city}
                                                                     variant="secondary"
-                                                                    className="text-xs bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+                                                                    className="text-xs bg-accent/10 text-accent hover:bg-accent/20 transition-colors px-2 py-1"
                                                                 >
                                                                     {city}
                                                                 </Badge>
@@ -722,14 +727,14 @@ const ChooseState = () => {
 
                                                 {/* Economic Achievements */}
                                                 {currentItem.economicAchievements && (
-                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
-                                                                <IoTrophyOutline className="w-5 h-5 text-primary" />
+                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
+                                                        <div className="flex items-center gap-3 mb-3">
+                                                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                                                <IoTrophyOutline className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                                                             </div>
-                                                            <span className="font-bold text-card-foreground">Economic Achievements</span>
+                                                            <span className="font-bold text-card-foreground text-sm sm:text-base">Economic Achievements</span>
                                                         </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                                                             {currentItem.economicAchievements}
                                                         </p>
                                                     </div>
@@ -737,14 +742,14 @@ const ChooseState = () => {
 
                                                 {/* Infrastructure */}
                                                 {currentItem.infrastructureHighlights && (
-                                                    <div className="bg-secondary/5 border border-secondary/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-secondary/10 flex items-center justify-center">
-                                                                <IoConstructOutline className="w-5 h-5 text-secondary" />
+                                                    <div className="bg-secondary/5 border border-secondary/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
+                                                        <div className="flex items-center gap-3 mb-3">
+                                                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
+                                                                <IoConstructOutline className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" />
                                                             </div>
-                                                            <span className="font-bold text-card-foreground">Infrastructure Highlights</span>
+                                                            <span className="font-bold text-card-foreground text-sm sm:text-base">Infrastructure Highlights</span>
                                                         </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                                                             {currentItem.infrastructureHighlights}
                                                         </p>
                                                     </div>
@@ -752,14 +757,14 @@ const ChooseState = () => {
 
                                                 {/* Demographics */}
                                                 {currentItem.demographics && (
-                                                    <div className="bg-accent/5 border border-accent/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
-                                                                <IoPeopleOutline className="w-5 h-5 text-accent" />
+                                                    <div className="bg-accent/5 border border-accent/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
+                                                        <div className="flex items-center gap-3 mb-3">
+                                                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                                                                <IoPeopleOutline className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
                                                             </div>
-                                                            <span className="font-bold text-card-foreground">Demographics & Workforce</span>
+                                                            <span className="font-bold text-card-foreground text-sm sm:text-base">Demographics & Workforce</span>
                                                         </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                                                             {currentItem.demographics}
                                                         </p>
                                                     </div>
@@ -767,14 +772,14 @@ const ChooseState = () => {
 
                                                 {/* Government Policies */}
                                                 {currentItem.policies && (
-                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
-                                                                <IoDocumentTextOutline className="w-5 h-5 text-primary" />
+                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
+                                                        <div className="flex items-center gap-3 mb-3">
+                                                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                                                <IoDocumentTextOutline className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                                                             </div>
-                                                            <span className="font-bold text-card-foreground">Investment Policies</span>
+                                                            <span className="font-bold text-card-foreground text-sm sm:text-base">Investment Policies</span>
                                                         </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                                                             {currentItem.policies}
                                                         </p>
                                                     </div>
@@ -782,6 +787,16 @@ const ChooseState = () => {
                                             </div>
                                         )
                                     })()}
+
+                                    {/* Close Button */}
+                                    <div className="mt-6 pt-4 border-t border-gray-200 flex justify-center">
+                                        <button
+                                            onClick={() => { setIsDialogOpen(false); setSelectedState(null) }}
+                                            className="px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors text-sm font-medium shadow-md min-w-[120px]"
+                                        >
+                                            Close Details
+                                        </button>
+                                    </div>
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -800,7 +815,7 @@ const ChooseState = () => {
                             setTimeout(() => setIsAutoPlaying(true), 10000)
                         }}
                         className={`transition-all duration-300 ${index === currentPage
-                            ? "w-12 h-4 bg-orange-500 shadow-lg"
+                            ? "w-4 h-4 bg-orange-500 shadow-lg"
                             : "w-4 h-4 bg-muted-foreground/30 hover:bg-primary/60 hover:scale-125"
                             }`}
                         whileHover={{ scale: 1.2 }}
