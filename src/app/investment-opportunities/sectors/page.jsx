@@ -205,7 +205,7 @@ const SectorsPage = () => {
     return (
         <div>
             <PageHero
-                title="Investment Opportunities by Sectors"
+                title="Investment opportunities in Sectors"
                 breadcrumbs={[
                     { label: "Investment Opportunities", href: "/investment-opportunities" },
                     { label: "Sectors" }
@@ -218,7 +218,7 @@ const SectorsPage = () => {
                     {/* Header */}
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                            Investment Opportunities by <span className="text-orange-500">Sectors</span>
+                            Investment Opportunities in <span className="text-orange-500">Sectors</span>
                         </h2>
                         <p className="text-gray-700 text-lg max-w-3xl mx-auto">
                             Explore India&apos;s high-growth investment sectors with comprehensive analysis of market potential,
