@@ -11,9 +11,9 @@ const InsightsUpdates = () => {
     return (
         <div>
             <PageHero
-                title="Insights & Updates"
+                title="INSIGHTS"
                 breadcrumbs={[
-                    { label: "Insights & Updates" }
+                    { label: "INSIGHTS" }
                 ]}
                 backgroundImage="/skyline.jpg"
             />
@@ -23,10 +23,10 @@ const InsightsUpdates = () => {
                     {/* Header Section */}
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                            Latest Insights & Updates from <span className="text-orange-500">NICP</span>
+                            Latest Insights & Updates from <span className="text-orange-500">INVEST NICP</span>
                         </h2>
                         <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-                            Stay connected with our latest announcements, market insights, and development updates through our official social media channels.
+                            Stay connected with our latest announcements, market insights, and investment opportunities through our official social media channels.
                         </p>
                     </div>
 
@@ -75,7 +75,7 @@ const InsightsUpdates = () => {
                                         </div>
                                     </div>
                                     <a
-                                        href="https://twitter.com/nicdc01"
+                                        href="https://twitter.com/investnicp"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="bg-white/20 hover:bg-white/30 p-2 rounded-lg transition-colors"
@@ -113,7 +113,7 @@ const InsightsUpdates = () => {
                                     LinkedIn
                                 </a>
                                 <a
-                                    href="https://x.com/nicdc01"
+                                    href="https://x.com/investnicp"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center px-6 py-3 bg-black hover:bg-black/80 text-white rounded-lg transition-colors"

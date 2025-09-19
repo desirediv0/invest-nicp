@@ -9,10 +9,10 @@ const LinkedInFeed = () => {
     const [posts] = useState([
         {
             id: '1',
-            text: '🚀 Exciting developments in India\'s industrial corridor infrastructure! NICP continues to drive innovation and growth across multiple sectors. Our latest initiatives are creating world-class manufacturing hubs that will position India as a global manufacturing powerhouse. Join us in building the future of Indian industry.',
+            text: '🚀 Exciting investment opportunities in India\'s diverse sectors! INVEST NICP connects global investors with India\'s thriving industrial corridors and urban centers. Our platform facilitates seamless investment exploration across manufacturing, IT, agriculture, and emerging industries. Join us in unlocking India\'s investment potential.',
             author: {
-                name: 'National Industrial Corridor Development Corporation',
-                title: 'Government Organization',
+                name: 'INVEST NICP',
+                title: 'Investment Platform',
                 profileImage: '/logo.png',
                 verified: true
             },
@@ -22,15 +22,15 @@ const LinkedInFeed = () => {
                 comments: 23,
                 shares: 45
             },
-            hashtags: ['#NICDC', '#India', '#IndustrialCorridor', '#Infrastructure', '#Manufacturing'],
+            hashtags: ['#INVESTNICP', '#India', '#Investment', '#BusinessOpportunities', '#Manufacturing'],
             image: '/logo.png'
         },
         {
             id: '2',
-            text: '📊 Infrastructure development update: Our latest quarterly report shows significant progress in industrial corridor projects across India. Key achievements include improved logistics networks, enhanced digital infrastructure, and sustainable development practices. The future of Indian manufacturing is bright! 🌟',
+            text: '📊 Investment opportunities update: Our latest market analysis reveals tremendous growth potential across India\'s key investment sectors. Key highlights include expanding IT corridors, thriving agricultural opportunities, and emerging manufacturing hubs. The future of Indian investments is incredibly promising! 🌟',
             author: {
-                name: 'National Industrial Corridor Development Corporation',
-                title: 'Government Organization',
+                name: 'INVEST NICP',
+                title: 'Investment Platform',
                 profileImage: '/logo.png',
                 verified: true
             },
@@ -40,14 +40,14 @@ const LinkedInFeed = () => {
                 comments: 34,
                 shares: 67
             },
-            hashtags: ['#Infrastructure', '#Development', '#India', '#Progress', '#Quarterly'],
+            hashtags: ['#Investment', '#Growth', '#India', '#MarketAnalysis', '#Opportunities'],
             image: null
         },
         {
             id: '3',
-            text: '🌟 Partnering with leading organizations to accelerate India\'s industrial transformation. Together, we\'re creating world-class infrastructure that supports sustainable growth and innovation. New partnerships announced with major global players in manufacturing and technology sectors.',
+            text: '🌟 Connecting global investors with India\'s most promising business opportunities. We facilitate strategic partnerships between international investors and India\'s dynamic sectors. New investment partnerships established with leading global investors in technology and sustainable development.',
             author: {
-                name: 'National Industrial Corridor Development Corporation',
+                name: 'INVEST NICP',
                 title: 'Government Organization',
                 profileImage: '/logo.png',
                 verified: true
@@ -58,7 +58,7 @@ const LinkedInFeed = () => {
                 comments: 28,
                 shares: 52
             },
-            hashtags: ['#Partnership', '#Innovation', '#Growth', '#NICDC', '#GlobalCollaboration'],
+            hashtags: ['#Partnership', '#Investment', '#Growth', '#INVESTNICP', '#GlobalInvestors'],
             image: null
         }
     ]);
@@ -148,7 +148,7 @@ const LinkedInFeed = () => {
 
             <div className="text-center pt-4">
                 <a
-                    href="https://linkedin.com/company/investnicp"
+                    href="https://www.linkedin.com/company/investnicp"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"

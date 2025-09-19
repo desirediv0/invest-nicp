@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 // Twitter API v2 endpoint for user tweets
-const TWITTER_API_URL = 'https://api.twitter.com/2/users/by/username/nicdc01/tweets';
+const TWITTER_API_URL = 'https://api.twitter.com/2/users/by/username/NICP01/tweets';
 const BEARER_TOKEN = process.env.TWITTER_BEARER_TOKEN;
 
 export async function GET() {
@@ -34,7 +34,7 @@ export async function GET() {
             data: [
                 {
                     id: '1',
-                    text: '🚀 Exciting developments in India\'s industrial corridor infrastructure! #NICDC #India #IndustrialCorridor #Infrastructure #development #newindia #indiareimagined #digitandia #smartcities #smartcitiesindia #commerce #manufacturing #nicdc #IndiaReimagined #ministry #goi #plugandplay #industries #AmritKaal #ViksitBharat',
+                    text: '🚀 Exciting developments in India\'s industrial corridor infrastructure! #NICP #India #IndustrialCorridor #Infrastructure #development #newindia #indiareimagined #digitandia #smartcities #smartcitiesindia #commerce #manufacturing #NICP #IndiaReimagined #ministry #goi #plugandplay #industries #AmritKaal #ViksitBharat',
                     created_at: new Date(Date.now() - 18 * 60 * 60 * 1000).toISOString(),
                     public_metrics: {
                         like_count: 8,
@@ -46,7 +46,7 @@ export async function GET() {
                 },
                 {
                     id: '2',
-                    text: 'Replying to @nicdc01\n#governmentofindia #PMGatiShakti #AtmanirbharBharat #greenfieldsmartkities #development',
+                    text: 'Replying to @NICP01\n#governmentofindia #PMGatiShakti #AtmanirbharBharat #greenfieldsmartkities #development',
                     created_at: new Date(Date.now() - 20 * 60 * 60 * 1000).toISOString(),
                     public_metrics: {
                         like_count: 12,
@@ -58,7 +58,7 @@ export async function GET() {
                 },
                 {
                     id: '3',
-                    text: '📊 Latest infrastructure development statistics show remarkable progress in industrial corridors across India. #Infrastructure #Development #NICDC #Progress #Statistics',
+                    text: '📊 Latest infrastructure development statistics show remarkable progress in industrial corridors across India. #Infrastructure #Development #NICP #Progress #Statistics',
                     created_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
                     public_metrics: {
                         like_count: 15,
@@ -73,8 +73,8 @@ export async function GET() {
                 users: [
                     {
                         id: '12345',
-                        name: 'NICDC',
-                        username: 'nicdc01',
+                        name: 'NICP',
+                        username: 'NICP01',
                         verified: true,
                         profile_image_url: '/logo.png'
                     }
@@ -91,7 +91,7 @@ export async function GET() {
             data: [
                 {
                     id: '1',
-                    text: '🚀 Exciting developments in India\'s industrial corridor infrastructure! #NICDC #India #IndustrialCorridor #Infrastructure',
+                    text: '🚀 Exciting developments in India\'s industrial corridor infrastructure! #NICP #India #IndustrialCorridor #Infrastructure',
                     created_at: new Date(Date.now() - 18 * 60 * 60 * 1000).toISOString(),
                     public_metrics: {
                         like_count: 8,
@@ -106,8 +106,8 @@ export async function GET() {
                 users: [
                     {
                         id: '12345',
-                        name: 'NICDC',
-                        username: 'nicdc01',
+                        name: 'NICP',
+                        username: 'NICP01',
                         verified: true,
                         profile_image_url: '/logo.png'
                     }

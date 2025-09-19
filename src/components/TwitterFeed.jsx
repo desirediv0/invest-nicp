@@ -9,7 +9,7 @@ const TwitterFeed = () => {
     const [tweets] = useState([
         {
             id: '1',
-            text: '🚀 Exciting developments in India\'s industrial corridor infrastructure! #NICDC #India #IndustrialCorridor #Infrastructure #development #newindia #indiareimagined #digitandia #smartcities #smartcitiesindia #commerce #manufacturing #nicdc #IndiaReimagined #ministry #goi #plugandplay #industries #AmritKaal #ViksitBharat',
+            text: '🚀 Unlock India\'s investment potential with INVEST NICP! Connecting global investors with thriving sectors. #INVESTNICP #India #Investment #BusinessOpportunities #Manufacturing #IT #Agriculture #GrowingIndia #InvestmentPlatform #GlobalInvestors #IndiaGrowth #InvestInIndia',
             created_at: new Date(Date.now() - 18 * 60 * 60 * 1000).toISOString(),
             public_metrics: {
                 like_count: 24,
@@ -20,7 +20,7 @@ const TwitterFeed = () => {
         },
         {
             id: '2',
-            text: 'Replying to @nicdc01\n#governmentofindia #PMGatiShakti #AtmanirbharBharat #greenfieldsmartkities #development',
+            text: 'Replying to @investnicp\n#InvestInIndia #BusinessOpportunities #Investment #INVESTNICP #GlobalInvestors #IndiaGrowth',
             created_at: new Date(Date.now() - 20 * 60 * 60 * 1000).toISOString(),
             public_metrics: {
                 like_count: 18,
@@ -31,7 +31,7 @@ const TwitterFeed = () => {
         },
         {
             id: '3',
-            text: '📊 Latest infrastructure development statistics show remarkable progress in industrial corridors across India. Major milestones achieved in Q3 2025! #Infrastructure #Development #NICDC #Progress #Statistics #IndiaGrowth',
+            text: '📊 Latest investment analytics reveal tremendous growth opportunities across India\'s key sectors! Major investment milestones achieved in Q3 2025! #Investment #Growth #INVESTNICP #Analytics #MarketTrends #IndiaGrowth',
             created_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
             public_metrics: {
                 like_count: 42,
@@ -42,7 +42,7 @@ const TwitterFeed = () => {
         },
         {
             id: '4',
-            text: '🏭 Industrial corridor projects are transforming India\'s manufacturing landscape. New investment opportunities emerging across multiple sectors. Join the growth story! #Manufacturing #Investment #IndustrialGrowth #MadeInIndia',
+            text: '🏭 INVEST NICP connects you to India\'s thriving manufacturing and emerging sectors. New investment opportunities across states and industries. Join India\'s growth story! #Manufacturing #Investment #INVESTNICP #BusinessGrowth #InvestInIndia',
             created_at: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
             public_metrics: {
                 like_count: 67,
@@ -52,8 +52,7 @@ const TwitterFeed = () => {
             }
         }
     ]);
-    const [loading] = useState(false);
-    const [error] = useState(null);
+
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -78,10 +77,10 @@ const TwitterFeed = () => {
                         </div>
                         <div className="flex-1 min-w-0">
                             <div className="flex items-center space-x-2">
-                                <span className="font-semibold text-gray-900 truncate">NICDC</span>
+                                <span className="font-semibold text-gray-900 truncate">NICP</span>
                                 <span className="text-blue-500 flex-shrink-0">✓</span>
                                 <span className="text-gray-600 text-sm flex-shrink-0">
-                                    @nicdc01 · {formatDate(tweet.created_at)}
+                                    @investnicp · {formatDate(tweet.created_at)}
                                 </span>
                             </div>
                         </div>
@@ -119,7 +118,7 @@ const TwitterFeed = () => {
 
             <div className="text-center pt-4">
                 <a
-                    href="https://x.com/nicdc01"
+                    href="https://x.com/investnicp"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-black hover:bg-black/80 text-white rounded-lg transition-colors"

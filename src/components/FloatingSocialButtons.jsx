@@ -25,7 +25,7 @@ export default function FloatingSocialButtons() {
         {
             name: 'LinkedIn',
             icon: <FaLinkedinIn className="w-6 h-6" />,
-            url: 'https://www.linkedin.com/company/investnicp/',
+            url: 'https://www.linkedin.com/company/investnicp',
             bgColor: 'bg-blue-600 hover:bg-blue-700',
             delay: 'animation-delay-300'
         }

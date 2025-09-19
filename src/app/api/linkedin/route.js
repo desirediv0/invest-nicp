@@ -22,7 +22,7 @@ export async function GET() {
                         comments: 8,
                         shares: 12
                     },
-                    hashtags: ['#NICDC', '#India', '#IndustrialCorridor', '#Infrastructure'],
+                    hashtags: ['#NICP', '#India', '#IndustrialCorridor', '#Infrastructure'],
                     image: '/logo.png'
                 },
                 {
@@ -58,7 +58,7 @@ export async function GET() {
                         comments: 12,
                         shares: 18
                     },
-                    hashtags: ['#Partnership', '#Innovation', '#Growth', '#NICDC'],
+                    hashtags: ['#Partnership', '#Innovation', '#Growth', '#NICP'],
                     image: null
                 }
             ],
