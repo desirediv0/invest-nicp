@@ -66,7 +66,7 @@ export default function HomePage() {
                         </motion.div>
                     ))}
                     {/* Top gradient overlay - only cover top 50vh for stronger foreground contrast */}
-                    <div className="absolute top-0 left-0 right-0 h-[50vh] bg-gradient-to-br from-black/30 via-purple-900/25 to-black/10" />
+                    <div className="absolute top-0 left-0 right-0 h-[60vh] lg:h-[70vh] bg-gradient-to-br from-black/30 via-purple-900/25 to-black/10" />
                 </div>
 
                 {/* BorderBeam Animation */}

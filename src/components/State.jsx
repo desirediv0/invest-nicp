@@ -593,7 +593,7 @@ const ChooseState = () => {
                                     {/* Name Section */}
                                     <div className="p-3 bg-card">
                                         <div className="flex items-center justify-between flex-col">
-                                            <h3 className="text-sm font-bold text-gray-900 leading-tight text-nowrap">{state.name}</h3>
+                                            <h3 className="text-sm font-bold text-gray-900 leading-tight text-center">{state.name}</h3>
                                             <Badge
                                                 variant={state.type === "ut" ? "secondary" : "outline"}
                                                 className={`text-xs font-medium px-2 py-1  ${state.type === "ut"
