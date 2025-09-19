@@ -52,7 +52,7 @@ const Resources = () => {
             <div className="min-h-screen bg-gray-50 py-4">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Header Section */}
-                    <div className="bg-white shadow-lg p-8  mb-4">
+                    <div className="bg-white p-8  ">
                         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
                             Investment <span className="text-orange-500">Resources Hub</span>
                         </h1>
