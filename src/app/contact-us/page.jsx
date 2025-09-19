@@ -7,10 +7,16 @@ import Link from 'next/link'
 const ContactUs = () => {
     const [formData, setFormData] = useState({
         name: "",
+        mobileNumber: "",
         email: "",
-        contactNumber: "",
-        queryType: "",
-        query: "",
+        subject: "",
+        stateOfInterest: "",
+        sectorOfInterest: "",
+        budget: "",
+        appointmentDate: "",
+        message: "",
+        requestOtp: false,
+        agreeTerms: false,
     })
 
     const handleInputChange = (e) => {
@@ -27,10 +33,16 @@ const ContactUs = () => {
         // Reset form after submission
         setFormData({
             name: "",
+            mobileNumber: "",
             email: "",
-            contactNumber: "",
-            queryType: "",
-            query: "",
+            subject: "",
+            stateOfInterest: "",
+            sectorOfInterest: "",
+            budget: "",
+            appointmentDate: "",
+            message: "",
+            requestOtp: false,
+            agreeTerms: false,
         })
         alert("Thank you for your message! We'll get back to you soon.")
     }
@@ -173,14 +185,15 @@ const ContactUs = () => {
                                     <div className="w-12 h-12 bg-orange-500 flex items-center justify-center">
                                         <MessageSquare className="w-6 h-6 text-white" />
                                     </div>
-                                    <h2 className="text-3xl font-bold text-gray-900">Send Us a Message</h2>
+                                    <h2 className="text-3xl font-bold text-gray-900">Appointment Form</h2>
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-6">
+                                    {/* Name and Mobile Number */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                Full Name *
+                                                Name *
                                             </label>
                                             <input
                                                 type="text"
@@ -194,7 +207,25 @@ const ContactUs = () => {
                                         </div>
                                         <div>
                                             <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                Email Address *
+                                                Mobile Number *
+                                            </label>
+                                            <input
+                                                type="tel"
+                                                name="mobileNumber"
+                                                placeholder="Enter your mobile number"
+                                                value={formData.mobileNumber}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Email and Subject */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                                E-mail Address *
                                             </label>
                                             <input
                                                 type="email"
@@ -206,64 +237,197 @@ const ContactUs = () => {
                                                 required
                                             />
                                         </div>
-                                    </div>
-
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                Contact Number *
+                                                Subject for Appointment *
                                             </label>
                                             <input
-                                                type="tel"
-                                                name="contactNumber"
-                                                placeholder="Enter your contact number"
-                                                value={formData.contactNumber}
+                                                type="text"
+                                                name="subject"
+                                                placeholder="Enter appointment subject"
+                                                value={formData.subject}
                                                 onChange={handleInputChange}
                                                 className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
                                                 required
                                             />
                                         </div>
+                                    </div>
+
+                                    {/* State and Sector */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                Query Type *
+                                                State of Interest *
                                             </label>
                                             <select
-                                                name="queryType"
-                                                value={formData.queryType}
+                                                name="stateOfInterest"
+                                                value={formData.stateOfInterest}
                                                 onChange={handleInputChange}
                                                 className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
                                                 required
                                             >
-                                                <option value="">Select query type</option>
-                                                <option value="general">General Inquiry</option>
-                                                <option value="business">Business Partnership</option>
-                                                <option value="investment">Investment Opportunity</option>
-                                                <option value="support">Support</option>
+                                                <option value="">Select state of interest</option>
+                                                <option value="andhra-pradesh">Andhra Pradesh</option>
+                                                <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                                                <option value="assam">Assam</option>
+                                                <option value="bihar">Bihar</option>
+                                                <option value="chhattisgarh">Chhattisgarh</option>
+                                                <option value="goa">Goa</option>
+                                                <option value="gujarat">Gujarat</option>
+                                                <option value="haryana">Haryana</option>
+                                                <option value="himachal-pradesh">Himachal Pradesh</option>
+                                                <option value="jharkhand">Jharkhand</option>
+                                                <option value="karnataka">Karnataka</option>
+                                                <option value="kerala">Kerala</option>
+                                                <option value="madhya-pradesh">Madhya Pradesh</option>
+                                                <option value="maharashtra">Maharashtra</option>
+                                                <option value="manipur">Manipur</option>
+                                                <option value="meghalaya">Meghalaya</option>
+                                                <option value="mizoram">Mizoram</option>
+                                                <option value="nagaland">Nagaland</option>
+                                                <option value="odisha">Odisha</option>
+                                                <option value="punjab">Punjab</option>
+                                                <option value="rajasthan">Rajasthan</option>
+                                                <option value="sikkim">Sikkim</option>
+                                                <option value="tamil-nadu">Tamil Nadu</option>
+                                                <option value="telangana">Telangana</option>
+                                                <option value="tripura">Tripura</option>
+                                                <option value="uttar-pradesh">Uttar Pradesh</option>
+                                                <option value="uttarakhand">Uttarakhand</option>
+                                                <option value="west-bengal">West Bengal</option>
+                                                <option value="delhi">Delhi</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                                Sector of Interest *
+                                            </label>
+                                            <select
+                                                name="sectorOfInterest"
+                                                value={formData.sectorOfInterest}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
+                                                required
+                                            >
+                                                <option value="">Select sector of interest</option>
+                                                <option value="agriculture">Agriculture & Allied Industries</option>
+                                                <option value="automobiles">Automobiles</option>
+                                                <option value="aviation">Aviation</option>
+                                                <option value="banking">Banking</option>
+                                                <option value="biotechnology">Biotechnology</option>
+                                                <option value="chemicals">Chemicals</option>
+                                                <option value="defence-manufacturing">Defence Manufacturing</option>
+                                                <option value="e-commerce">E-Commerce</option>
+                                                <option value="education-training">Education & Training</option>
+                                                <option value="healthcare">Healthcare</option>
+                                                <option value="infrastructure">Infrastructure</option>
+                                                <option value="it-bpm">IT & BPM</option>
+                                                <option value="manufacturing">Manufacturing</option>
+                                                <option value="pharmaceuticals">Pharmaceuticals</option>
+                                                <option value="renewable-energy">Renewable Energy</option>
+                                                <option value="steel">Steel</option>
+                                                <option value="telecommunications">Telecommunications</option>
+                                                <option value="textiles">Textiles</option>
+                                                <option value="tourism-hospitality">Tourism & Hospitality</option>
                                             </select>
                                         </div>
                                     </div>
 
+                                    {/* Budget and Appointment Date */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                                Budget *
+                                            </label>
+                                            <select
+                                                name="budget"
+                                                value={formData.budget}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
+                                                required
+                                            >
+                                                <option value="">Select your budget range</option>
+                                                <option value="under-1cr">Under ₹1 Crore</option>
+                                                <option value="1-5cr">₹1-5 Crores</option>
+                                                <option value="5-10cr">₹5-10 Crores</option>
+                                                <option value="10-25cr">₹10-25 Crores</option>
+                                                <option value="25-50cr">₹25-50 Crores</option>
+                                                <option value="50-100cr">₹50-100 Crores</option>
+                                                <option value="above-100cr">Above ₹100 Crores</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                                Appointment Date of Weekend *
+                                            </label>
+                                            <input
+                                                type="date"
+                                                name="appointmentDate"
+                                                value={formData.appointmentDate}
+                                                onChange={handleInputChange}
+                                                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
+                                                required
+                                                min={new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString().split('T')[0]}
+                                            />
+                                            <p className="text-xs text-gray-500 mt-1">
+                                                Preferred date should be more than 48 hours from today
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Message */}
                                     <div>
                                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                            Your Message *
+                                            MESSAGE/QUERY * Short Description (Max 200 Character)
                                         </label>
                                         <textarea
-                                            name="query"
+                                            name="message"
                                             placeholder="Tell us about your investment goals or business requirements..."
-                                            value={formData.query}
+                                            value={formData.message}
                                             onChange={handleInputChange}
-                                            rows={6}
+                                            rows={4}
+                                            maxLength={200}
                                             className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors resize-none text-gray-900"
                                             required
                                         ></textarea>
+                                        <p className="text-xs text-gray-500 mt-1">
+                                            {formData.message.length}/200 characters
+                                        </p>
+                                    </div>
+
+                                    {/* Checkboxes */}
+                                    <div className="space-y-4">
+                                        <label className="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                                            <input
+                                                type="checkbox"
+                                                name="requestOtp"
+                                                checked={formData.requestOtp}
+                                                onChange={(e) => setFormData(prev => ({ ...prev, requestOtp: e.target.checked }))}
+                                                className="mt-1 w-4 h-4 text-orange-500 bg-white border-gray-300 focus:ring-orange-500"
+                                            />
+                                            <span className="font-semibold">Request for OTP *</span>
+                                        </label>
+
+                                        <label className="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
+                                            <input
+                                                type="checkbox"
+                                                name="agreeTerms"
+                                                checked={formData.agreeTerms}
+                                                onChange={(e) => setFormData(prev => ({ ...prev, agreeTerms: e.target.checked }))}
+                                                className="mt-1 w-4 h-4 text-orange-500 bg-white border-gray-300 focus:ring-orange-500"
+                                                required
+                                            />
+                                            <span>I agree with your <Link href="/terms-and-conditions" className="text-orange-500 hover:text-orange-600 underline font-semibold">terms & conditions</Link></span>
+                                        </label>
                                     </div>
 
                                     <button
                                         type="submit"
-                                        className="w-full md:w-auto bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-4 px-8 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
+                                        className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-4 px-8 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                                        disabled={!formData.agreeTerms}
                                     >
                                         <Send className="w-5 h-5" />
-                                        Send Message
+                                        SUBMIT
                                     </button>
                                 </form>
 
