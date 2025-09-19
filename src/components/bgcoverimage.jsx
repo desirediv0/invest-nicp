@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { MapPin, ExternalLink } from "lucide-react";
 
 const Bgcoverimage = ({
     image = "/cultural.webp",
@@ -8,40 +9,93 @@ const Bgcoverimage = ({
     subheading,
     description1,
     description2,
+    buttonLink = "#",
+    isClickable = false,
 }) => {
-    return (
-        <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl group">
+    const content = (
+        <div className="relative h-[500px] sm:h-[600px] md:h-[650px] lg:h-[700px] overflow-hidden shadow-2xl group cursor-pointer border-4 border-transparent hover:border-orange-500 transition-all duration-500">
             {/* Background Image */}
             <Image
                 src={image}
                 alt={heading}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                className="object-cover group-hover:scale-110 transition-transform duration-1000"
                 priority
             />
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 flex items-end p-8">
-                <div className="text-left text-white space-y-4">
-                    {/* Heading */}
-                    <h2 className="text-2xl md:text-3xl font-extrabold leading-snug drop-shadow-lg">
-                        {heading}
-                    </h2>
+            {/* Enhanced Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/60 to-transparent group-hover:from-black/85 transition-all duration-500"></div>
 
-                    {/* Subheading */}
+            {/* Orange Accent Line */}
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600"></div>
+
+            {/* Top Right Icon */}
+            <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-sm p-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <ExternalLink className="h-6 w-6 text-white" />
+            </div>
+
+            {/* Location Pin */}
+            <div className="absolute top-6 left-6 bg-orange-500/90 backdrop-blur-sm p-3 shadow-lg">
+                <MapPin className="h-6 w-6 text-white" />
+            </div>
+
+            {/* Content Container */}
+            <div className="absolute inset-0 flex flex-col justify-center md:justify-end p-6 md:p-8 lg:p-12">
+                <div className="text-left text-white space-y-4 md:space-y-6 transform group-hover:-translate-y-2 transition-transform duration-500 max-w-full">
+                    {/* Enhanced Heading */}
+                    <div className="space-y-2">
+                        <h2 className="text-xl  sm:text-2xl md:text-3xl lg:text-4xl  font-black leading-tight drop-shadow-2xl break-words">
+                            {heading}
+                        </h2>
+                        {/* Orange Underline */}
+                        <div className="w-16 md:w-24 lg:w-32 h-1 bg-gradient-to-r from-orange-500 to-orange-600"></div>
+                    </div>
+
+                    {/* Enhanced Subheading */}
                     {subheading && (
-                        <p className="text-base md:text-lg text-gray-200">{subheading}</p>
+                        <div className="max-w-4xl">
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-orange-200 font-semibold leading-relaxed break-words">
+                                {subheading}
+                            </p>
+                        </div>
                     )}
 
-                    {/* Body Content */}
-                    <div className="space-y-2 text-sm md:text-base text-gray-300 leading-relaxed">
-                        {description1 && <p>{description1}</p>}
-                        {description2 && <p>{description2}</p>}
+                    {/* Enhanced Body Content */}
+                    <div className="space-y-3 max-w-5xl">
+                        {description1 && (
+                            <div className="backdrop-blur-sm bg-black/30 p-3 md:p-4 border-l-4 border-orange-500 rounded-r">
+                                <p className="text-sm md:text-base lg:text-lg text-gray-200 leading-relaxed break-words">
+                                    {description1}
+                                </p>
+                            </div>
+                        )}
+                        {description2 && (
+                            <div className="backdrop-blur-sm bg-black/30 p-3 md:p-4 border-l-4 border-orange-500 rounded-r">
+                                <p className="text-sm md:text-base lg:text-lg text-gray-200 leading-relaxed break-words">
+                                    {description2}
+                                </p>
+                            </div>
+                        )}
                     </div>
+
+
                 </div>
             </div>
+
+            {/* Hover Effect Overlay */}
+            <div className="absolute inset-0 bg-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
     );
+
+    if (isClickable && buttonLink) {
+        return (
+            <a href={buttonLink} target="_blank" rel="noopener noreferrer" className="block">
+                {content}
+            </a>
+        );
+    }
+
+    return content;
 };
 
 export default Bgcoverimage;
