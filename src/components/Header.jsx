@@ -23,8 +23,9 @@ const navigationItems = [
         ]
     },
     {
-        name: "Insights Updates", href: "/insights-updates", children: [
-            { name: "City Info", href: "/insights-updates#city-info" },
+        name: "INSIGHTS", href: "/insights-updates", children: [
+            { name: "Activity Updates", href: "/insights-updates#activity-updates" },
+            { name: "GROWING CITIES", href: "/insights-updates#growing-cities" },
         ]
     },
     {

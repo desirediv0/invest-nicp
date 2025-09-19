@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import PageHero from '@/components/PageHero'
-import { MapPin, TrendingUp, Users, Building2, ExternalLink } from 'lucide-react'
+import { MapPin, } from 'lucide-react'
 
 // Complete states data from State.jsx component
 const statesData = [
@@ -13,7 +13,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "IT", "Manufacturing"],
         investmentOpportunities: "Strong opportunities in agriculture, IT parks, ports and renewable energy",
-        majorCities: ["Amaravati", "Visakhapatnam", "Vijayawada"],
         economicAchievements: "Andhra Pradesh has seen significant economic growth with a focus on agriculture, IT, and manufacturing sectors.",
         infrastructureHighlights: "Development of Amaravati as the new capital, expansion of ports and airports.",
         demographics: "Diverse population with Telugu as the primary language.",
@@ -25,7 +24,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Tourism", "Handicrafts"],
         investmentOpportunities: "Tourism and handicrafts with scope for niche agri-products",
-        majorCities: ["Kohima", "Dimapur"],
         economicAchievements: "Predominantly agrarian economy with potential for growth in tourism and handicrafts.",
         infrastructureHighlights: "Improving road networks and connectivity in a hilly terrain.",
         demographics: "Predominantly Naga tribal population with diverse languages.",
@@ -37,7 +35,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Hydropower", "Tourism"],
         investmentOpportunities: "Hydropower and eco-tourism",
-        majorCities: ["Itanagar", "Naharlagun"],
         economicAchievements: "Developing its economy with an emphasis on hydropower projects and tourism.",
         infrastructureHighlights: "Expanding road connectivity in a geographically challenging region.",
         demographics: "Diverse tribal population.",
@@ -49,7 +46,7 @@ const statesData = [
         type: "state",
         keyIndustries: ["Mining", "Agriculture", "Manufacturing"],
         investmentOpportunities: "Ports, mining, and downstream industries",
-        majorCities: ["Bhubaneswar", "Cuttack", "Paradip"],
+
         economicAchievements: "Steady growth with a focus on mining, agriculture, and manufacturing.",
         infrastructureHighlights: "Developing ports, highways, and power infrastructure.",
         demographics: "Diverse population with Odia as the primary language.",
@@ -61,7 +58,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tea", "Oil", "Agro-Processing"],
         investmentOpportunities: "Logistics and agro-processing",
-        majorCities: ["Guwahati", "Dibrugarh"],
         economicAchievements: "Economic growth driven by tea, oil, and agriculture.",
         infrastructureHighlights: "Expanding road and rail networks, improving connectivity.",
         demographics: "Diverse ethnic groups and languages.",
@@ -73,7 +69,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Food Processing"],
         investmentOpportunities: "Agri-processing and agro-exports",
-        majorCities: ["Chandigarh", "Ludhiana", "Amritsar"],
         economicAchievements: "Strong agriculture-based economy, with a growing services sector.",
         infrastructureHighlights: "Modern transportation and irrigation facilities.",
         demographics: "Predominantly Punjabi-speaking population.",
@@ -85,7 +80,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Small-scale Industries"],
         investmentOpportunities: "Food processing and skill development",
-        majorCities: ["Patna", "Gaya"],
         economicAchievements: "Gradual economic growth with an emphasis on agriculture and small-scale industries.",
         infrastructureHighlights: "Improvement in road and electricity infrastructure.",
         demographics: "High population density with a predominantly Hindi-speaking population.",
@@ -97,7 +91,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Mining", "Agriculture"],
         investmentOpportunities: "Tourism infrastructure and mining value-chains",
-        majorCities: ["Jaipur", "Jodhpur", "Udaipur"],
         economicAchievements: "Diverse economy with agriculture, tourism, and mining sectors.",
         infrastructureHighlights: "Developing tourism infrastructure, transportation, and irrigation projects.",
         demographics: "Predominantly Rajasthani-speaking population.",
@@ -109,7 +102,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Mining", "Steel", "Power"],
         investmentOpportunities: "Mining and downstream manufacturing",
-        majorCities: ["Raipur", "Bilaspur"],
         economicAchievements: "Rapid industrial growth, especially in the mining and steel sectors.",
         infrastructureHighlights: "Development of industrial and transport infrastructure.",
         demographics: "Diverse population with a focus on tribal communities.",
@@ -121,7 +113,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Organic Agriculture"],
         investmentOpportunities: "Eco-tourism and organic farming",
-        majorCities: ["Gangtok"],
         economicAchievements: "Developing a sustainable economy with a focus on tourism and organic agriculture.",
         infrastructureHighlights: "Improving road connectivity in mountainous terrain.",
         demographics: "Diverse population with Nepali as the primary language.",
@@ -133,7 +124,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Services", "Trade"],
         investmentOpportunities: "Services, education, and healthcare",
-        majorCities: ["New Delhi"],
         economicAchievements: "Strong economy driven by the service sector and trade.",
         infrastructureHighlights: "Modern transportation, educational institutions, and healthcare facilities.",
         demographics: "Diverse population, including people from all over India.",
@@ -145,7 +135,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Manufacturing", "Services", "Automotive"],
         investmentOpportunities: "Manufacturing and exports",
-        majorCities: ["Chennai", "Coimbatore"],
         economicAchievements: "Robust manufacturing and services sector with strong infrastructure.",
         infrastructureHighlights: "Well-developed industrial hubs, ports, and educational institutions.",
         demographics: "Diverse population with Tamil as the primary language.",
@@ -157,7 +146,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Mining"],
         investmentOpportunities: "Tourism and hospitality",
-        majorCities: ["Panaji", "Margao"],
         economicAchievements: "Tourism and mining contribute significantly to the economy.",
         infrastructureHighlights: "Modernized tourism infrastructure and transportation.",
         demographics: "Diverse population with Konkani as the primary language.",
@@ -169,7 +157,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Tourism"],
         investmentOpportunities: "Tourism and agri-value chains",
-        majorCities: ["Agartala"],
         economicAchievements: "Economic growth with an emphasis on agriculture and tourism.",
         infrastructureHighlights: "Developing road and rail connectivity in a hilly region.",
         demographics: "Diverse population with Bengali and Kokborok as prominent languages.",
@@ -181,7 +168,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Manufacturing", "Petrochemicals", "Ports"],
         investmentOpportunities: "Manufacturing, petrochemicals and port-led growth",
-        majorCities: ["Ahmedabad", "Surat"],
         economicAchievements: "Vibrant economy with a focus on manufacturing, petrochemicals, and ports.",
         infrastructureHighlights: "World-class industrial and port facilities.",
         demographics: "Diverse population with a strong industrial and business culture.",
@@ -193,7 +179,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["IT", "Agriculture", "Manufacturing"],
         investmentOpportunities: "IT parks and agro-processing",
-        majorCities: ["Hyderabad"],
         economicAchievements: "Rapid economic growth, driven by IT, agriculture, and manufacturing sectors.",
         infrastructureHighlights: "Well-developed IT parks, transportation, and educational institutions.",
         demographics: "Diverse population with Telugu as the primary language.",
@@ -205,7 +190,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Automotive", "Manufacturing"],
         investmentOpportunities: "Automotive and manufacturing clusters",
-        majorCities: ["Gurugram", "Faridabad"],
         economicAchievements: "Rapid industrial growth with a focus on agriculture and manufacturing.",
         infrastructureHighlights: "Modern infrastructure and connectivity.",
         demographics: "Diverse population with a focus on agriculture and industry.",
@@ -217,7 +201,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Industry", "Services"],
         investmentOpportunities: "Industrial corridors and agro-processing",
-        majorCities: ["Lucknow", "Kanpur", "Noida"],
         economicAchievements: "Mixed economy with agriculture, industry, and services sectors.",
         infrastructureHighlights: "Expanding transportation networks and industrial areas.",
         demographics: "Highly populous with Hindi as the primary language.",
@@ -229,7 +212,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Agriculture"],
         investmentOpportunities: "Eco-tourism and horticulture",
-        majorCities: ["Shimla", "Dharamshala"],
         economicAchievements: "Steady growth in agriculture and tourism sectors.",
         infrastructureHighlights: "Developing road networks in the hilly terrain, improving healthcare and education.",
         demographics: "Diverse population with a mix of languages.",
@@ -241,7 +223,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Agriculture"],
         investmentOpportunities: "Tourism and small-scale industries",
-        majorCities: ["Dehradun", "Nainital"],
         economicAchievements: "Developing its economy with a focus on tourism, agriculture, and small-scale industries.",
         infrastructureHighlights: "Improving road connectivity in a hilly region, promoting tourism.",
         demographics: "Diverse population with various languages.",
@@ -253,7 +234,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Mining", "Manufacturing"],
         investmentOpportunities: "Mining and mineral-based industries",
-        majorCities: ["Ranchi", "Jamshedpur"],
         economicAchievements: "Economic growth driven by mining and mineral resources.",
         infrastructureHighlights: "Improving road and rail connectivity in a resource-rich region.",
         demographics: "Tribal and non-tribal populations with a variety of languages.",
@@ -265,7 +245,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Manufacturing", "Services"],
         investmentOpportunities: "Ports, manufacturing and services",
-        majorCities: ["Kolkata", "Howrah"],
         economicAchievements: "Diverse economy with a focus on agriculture, manufacturing, and services.",
         infrastructureHighlights: "Well-developed transportation networks, ports, and educational institutions.",
         demographics: "Highly populous with Bengali as the primary language.",
@@ -277,7 +256,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["IT", "Manufacturing", "Agriculture"],
         investmentOpportunities: "IT and tech manufacturing",
-        majorCities: ["Bengaluru", "Mysore"],
         economicAchievements: "Strong economy with a focus on IT, manufacturing, and agriculture.",
         infrastructureHighlights: "Well-developed road networks, IT hubs, and educational institutions.",
         demographics: "Diverse population with Kannada as the primary language.",
@@ -289,7 +267,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Tourism", "Fisheries"],
         investmentOpportunities: "Eco-tourism and fisheries",
-        majorCities: ["Port Blair"],
         economicAchievements: "Developing tourism and fisheries sectors.",
         infrastructureHighlights: "Improving connectivity, eco-tourism, and sustainable resource management.",
         demographics: "Diverse population with multiple languages spoken.",
@@ -301,7 +278,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Tourism", "Services"],
         investmentOpportunities: "Healthcare, tourism and services",
-        majorCities: ["Thiruvananthapuram", "Kochi"],
         economicAchievements: "High human development indicators, driven by tourism, remittances, and services.",
         infrastructureHighlights: "Quality healthcare, education, and modern transportation.",
         demographics: "Literate and diverse population with Malayalam as the primary language.",
@@ -313,7 +289,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Services", "Education"],
         investmentOpportunities: "Education and services",
-        majorCities: ["Chandigarh"],
         economicAchievements: "A prosperous city with a diverse economy, including government services and education.",
         infrastructureHighlights: "Well-planned city with modern infrastructure and educational institutions.",
         demographics: "Diverse population, primarily Hindi and Punjabi speakers.",
@@ -325,7 +300,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Finance", "Industry", "Agriculture"],
         investmentOpportunities: "Finance, industry and infrastructure",
-        majorCities: ["Mumbai", "Pune"],
         economicAchievements: "Economic powerhouse with a diverse economy, including finance, industry, and agriculture.",
         infrastructureHighlights: "Well-developed transport, industrial hubs, and educational institutions.",
         demographics: "Diverse population with Marathi as the primary language.",
@@ -337,7 +311,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Small-scale Industry"],
         investmentOpportunities: "Local industry development",
-        majorCities: ["Silvassa"],
         economicAchievements: "Developing agriculture and small-scale industries.",
         infrastructureHighlights: "Improving road networks and promoting local industries.",
         demographics: "Diverse population with various languages.",
@@ -349,7 +322,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Manufacturing"],
         investmentOpportunities: "Agri-processing and industry",
-        majorCities: ["Bhopal", "Indore"],
         economicAchievements: "Gradual economic growth with an emphasis on agriculture and manufacturing.",
         infrastructureHighlights: "Expanding road and rail networks, improving connectivity.",
         demographics: "Diverse population with a predominantly Hindi-speaking population.",
@@ -361,7 +333,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Tourism", "Small Industry"],
         investmentOpportunities: "Tourism and small-scale industry",
-        majorCities: ["Daman"],
         economicAchievements: "Focus on tourism and small-scale industries.",
         infrastructureHighlights: "Improving transportation and tourism infrastructure.",
         demographics: "Diverse population with various languages.",
@@ -373,7 +344,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Handicrafts"],
         investmentOpportunities: "Handicrafts and agri-value chains",
-        majorCities: ["Imphal"],
         economicAchievements: "Developing its economy with a focus on agriculture and handicrafts.",
         infrastructureHighlights: "Improving road connectivity in a hilly region.",
         demographics: "Diverse tribal population with Meiteilon as the primary language.",
@@ -385,7 +355,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Agriculture", "Tourism", "Handicrafts"],
         investmentOpportunities: "Tourism and horticulture",
-        majorCities: ["Srinagar", "Jammu"],
         economicAchievements: "Transitioning economy with agriculture, horticulture, and handicrafts.",
         infrastructureHighlights: "Developing connectivity and tourism infrastructure.",
         demographics: "Diverse population with multiple languages, including Urdu, Dogri, and Kashmiri.",
@@ -397,7 +366,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Tourism", "Minerals"],
         investmentOpportunities: "Eco-tourism and mineral value chains",
-        majorCities: ["Shillong"],
         economicAchievements: "Agriculture, tourism, and mineral resources contribute to the economy.",
         infrastructureHighlights: "Developing transportation and tourism infrastructure.",
         demographics: "Diverse tribal population with Khasi and Garo as prominent languages.",
@@ -409,7 +377,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Fisheries", "Tourism"],
         investmentOpportunities: "Fisheries and eco-tourism",
-        majorCities: ["Kavaratti"],
         economicAchievements: "Economic growth through fisheries and tourism.",
         infrastructureHighlights: "Improving transportation networks and eco-tourism.",
         demographics: "Predominantly Muslim population with Malayalam as the primary language.",
@@ -421,7 +388,6 @@ const statesData = [
         type: "state",
         keyIndustries: ["Agriculture", "Handicrafts"],
         investmentOpportunities: "Handicrafts and niche agriculture",
-        majorCities: ["Aizawl"],
         economicAchievements: "Gradual economic growth with a focus on agriculture and handicrafts.",
         infrastructureHighlights: "Improving road connectivity in a hilly region.",
         demographics: "Diverse tribal population with Mizo as the primary language.",
@@ -433,7 +399,6 @@ const statesData = [
         type: "ut",
         keyIndustries: ["Tourism", "Services"],
         investmentOpportunities: "Tourism and services",
-        majorCities: ["Puducherry"],
         economicAchievements: "Growing economy with tourism, agriculture, and services sectors.",
         infrastructureHighlights: "Well-developed transportation and healthcare facilities.",
         demographics: "Diverse population with multiple languages spoken.",
@@ -511,21 +476,6 @@ const StatesPage = () => {
                                                         className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium"
                                                     >
                                                         {industry}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        {/* Major Cities */}
-                                        <div className="mb-6">
-                                            <h4 className="font-semibold text-lg mb-3 text-gray-800">Major Cities</h4>
-                                            <div className="flex flex-wrap gap-2">
-                                                {state.majorCities.map((city, idx) => (
-                                                    <span
-                                                        key={idx}
-                                                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-                                                    >
-                                                        {city}
                                                     </span>
                                                 ))}
                                             </div>
