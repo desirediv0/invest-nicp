@@ -110,11 +110,18 @@ const ContactUs = () => {
                                         <Mail className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                                         <div>
                                             <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                                            <p className="text-gray-700 text-sm">
-                                                <a href="mailto:info@investnicp.com" className="hover:text-blue-600 transition-colors">
-                                                    info@investnicp.com
-                                                </a>
-                                            </p>
+                                            <div className="space-y-1">
+                                                <p className="text-gray-700 text-sm">
+                                                    <a href="mailto:info@investnicp.com" className="hover:text-blue-600 transition-colors">
+                                                        info@investnicp.com
+                                                    </a>
+                                                </p>
+                                                <p className="text-gray-700 text-sm">
+                                                    <a href="mailto:nicpindia@gmail.com" className="hover:text-blue-600 transition-colors">
+                                                        📧 nicpindia@gmail.com
+                                                    </a>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -138,9 +145,15 @@ const ContactUs = () => {
                                     </div>
 
                                     <div className="space-y-3 text-sm">
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-lg">📧</span>
-                                            <span>Email: info@investnicp.com</span>
+                                        <div className="space-y-2">
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-lg">📧</span>
+                                                <span>Email: info@investnicp.com</span>
+                                            </div>
+                                            <div className="flex items-center gap-3 ml-6">
+                                                <span className="text-lg">📧</span>
+                                                <span>nicpindia@gmail.com</span>
+                                            </div>
                                         </div>
 
                                         <div className="flex items-start gap-3">

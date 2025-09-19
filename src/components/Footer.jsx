@@ -114,9 +114,15 @@ export default function BusinessFooter() {
                                 </div>
 
                                 <div className="space-y-3 text-sm">
-                                    <div className="flex items-center gap-2 text-gray-300">
-                                        <span className="text-base">📧</span>
-                                        <span>Email: info@investnicp.com</span>
+                                    <div className="space-y-2">
+                                        <div className="flex items-center gap-2 text-gray-300">
+                                            <span className="text-base">📧</span>
+                                            <span>Email: info@investnicp.com</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-gray-300 ml-6">
+                                            <span className="text-base">📧</span>
+                                            <span>nicpindia@gmail.com</span>
+                                        </div>
                                     </div>
 
                                     <div className="flex items-center gap-2 text-gray-300">

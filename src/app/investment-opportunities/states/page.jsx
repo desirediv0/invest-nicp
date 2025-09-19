@@ -441,18 +441,7 @@ const StatesPage = () => {
                                 <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
                                     {/* Content Section */}
                                     <div className="lg:w-2/3 p-8 lg:p-12">
-                                        <div className="flex items-center justify-between mb-4">
-                                            <div className="flex items-center">
-                                                <MapPin className="w-6 h-6 text-orange-500 mr-2" />
-                                                <span className="text-orange-500 font-semibold">
-                                                    {state.majorCities && state.majorCities[0] ? state.majorCities[0] : "Capital"}
-                                                </span>
-                                            </div>
-                                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${state.type === 'ut' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700'
-                                                }`}>
-                                                {state.type === 'ut' ? 'Union Territory' : 'State'}
-                                            </span>
-                                        </div>
+
 
                                         <h3 className="text-3xl font-bold text-gray-900 mb-4">{state.name}</h3>
 
