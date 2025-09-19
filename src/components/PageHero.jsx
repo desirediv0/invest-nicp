@@ -9,7 +9,7 @@ export default function PageHero({
 }) {
     return (
         <div
-            className="relative bg-cover bg-center bg-no-repeat h-64 md:h-80 flex items-center justify-center"
+            className="relative bg-cover bg-center bg-no-repeat h-64 md:h-96 flex items-center justify-center"
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
             {/* Dark Overlay */}

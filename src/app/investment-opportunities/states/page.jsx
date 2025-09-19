@@ -1,40 +1,20 @@
-"use client"
+'use client';
 
-import { useState, useEffect } from "react"
-import useResponsiveGrid from "@/lib/useResponsiveGrid"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { motion, AnimatePresence } from "framer-motion"
+import React from 'react'
 import Image from 'next/image'
-import banner1 from '../assets/banner1.jpg'
-import banner2 from '../assets/banner2.jpg'
-import banner3 from '../assets/banner3.jpg'
-const placeholderImg = '/placeholder.svg'
-import { BorderBeam } from "./magicui/border-beam"
-import HeadText from "./head-text"
+import PageHero from '@/components/PageHero'
+import { MapPin, TrendingUp, Users, Building2, ExternalLink } from 'lucide-react'
 
-import {
-    IoTrendingUpOutline,
-    IoStorefrontOutline,
-    IoTrophyOutline,
-    IoPeopleOutline,
-    IoDocumentTextOutline,
-    IoConstructOutline,
-} from "react-icons/io5"
-
+// Complete states data from State.jsx component
 const statesData = [
     {
         id: "andhra-pradesh",
         name: "Andhra Pradesh",
-        cardImage: banner1,
-        gallery: [banner1, banner2, banner3],
-        mapIcon: placeholderImg,
         type: "state",
         keyIndustries: ["Agriculture", "IT", "Manufacturing"],
         investmentOpportunities: "Strong opportunities in agriculture, IT parks, ports and renewable energy",
         majorCities: ["Amaravati", "Visakhapatnam", "Vijayawada"],
-        economicAchievements:
-            "Andhra Pradesh has seen significant economic growth with a focus on agriculture, IT, and manufacturing sectors.",
+        economicAchievements: "Andhra Pradesh has seen significant economic growth with a focus on agriculture, IT, and manufacturing sectors.",
         infrastructureHighlights: "Development of Amaravati as the new capital, expansion of ports and airports.",
         demographics: "Diverse population with Telugu as the primary language.",
         policies: "Focus on promoting industries through policies like 'Sunrise Andhra Pradesh' and 'Ease of Doing Business.'",
@@ -42,9 +22,6 @@ const statesData = [
     {
         id: "nagaland",
         name: "Nagaland",
-        cardImage: banner2,
-        gallery: [banner2, banner3, placeholderImg],
-        mapIcon: placeholderImg,
         type: "state",
         keyIndustries: ["Agriculture", "Tourism", "Handicrafts"],
         investmentOpportunities: "Tourism and handicrafts with scope for niche agri-products",
@@ -57,9 +34,6 @@ const statesData = [
     {
         id: "arunachal-pradesh",
         name: "Arunachal Pradesh",
-        cardImage: banner3,
-        gallery: [banner3, banner1, placeholderImg],
-        mapIcon: placeholderImg,
         type: "state",
         keyIndustries: ["Hydropower", "Tourism"],
         investmentOpportunities: "Hydropower and eco-tourism",
@@ -72,9 +46,6 @@ const statesData = [
     {
         id: "odisha",
         name: "Odisha",
-        cardImage: banner1,
-        gallery: [banner1, banner2],
-        mapIcon: placeholderImg,
         type: "state",
         keyIndustries: ["Mining", "Agriculture", "Manufacturing"],
         investmentOpportunities: "Ports, mining, and downstream industries",
@@ -468,348 +439,144 @@ const statesData = [
         demographics: "Diverse population with multiple languages spoken.",
         policies: "Emphasis on tourism, education, and healthcare.",
     },
-]
+];
 
-const ChooseState = () => {
-    const [selectedState, setSelectedState] = useState(null)
-    const [isDialogOpen, setIsDialogOpen] = useState(false)
-    const [currentPage, setCurrentPage] = useState(0)
-    const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-
-    const { itemsPerPage } = useResponsiveGrid()
-    const totalPages = Math.ceil(statesData.length / itemsPerPage)
-
-    useEffect(() => {
-        let interval = null
-        if (isAutoPlaying) {
-            interval = setInterval(() => {
-                setCurrentPage((prev) => (prev + 1) % totalPages)
-                setSelectedState(null)
-            }, 5000)
-        }
-
-        return () => {
-            if (interval) clearInterval(interval)
-        }
-    }, [isAutoPlaying, totalPages])
-
-    // Reset page when itemsPerPage changes (prevents out-of-range pages)
-    useEffect(() => {
-        setCurrentPage(0)
-    }, [itemsPerPage])
-
-    const getCurrentPageData = () => {
-        const startIndex = currentPage * itemsPerPage
-        return statesData.slice(startIndex, startIndex + itemsPerPage)
-    }
-
-    // helper to pause autoplay and optionally resume after a delay
-    const pauseAutoplay = (duration = 15000) => {
-        setIsAutoPlaying(false)
-        // clear any existing timers stored on the component
-        if (typeof window !== "undefined") {
-            if (window.__resumeStateTimer) {
-                clearTimeout(window.__resumeStateTimer)
-                window.__resumeStateTimer = null
-            }
-            if (duration > 0) {
-                window.__resumeStateTimer = setTimeout(() => {
-                    // only resume if dialog is not open
-                    if (!isDialogOpen) setIsAutoPlaying(true)
-                    window.__resumeStateTimer = null
-                }, duration)
-            }
-        }
-    }
-
-    const handleStateClick = (stateId) => {
-        const newSel = selectedState === stateId ? null : stateId
-        setSelectedState(newSel)
-        // open dialog when selecting a state
-        setIsDialogOpen(newSel !== null)
-        // pause autoplay while user is interacting
-        pauseAutoplay(15000)
-    }
-
+const StatesPage = () => {
     return (
-        <div
-            className="w-full max-w-7xl mx-auto px-4 py-5 bg-background"
-            onMouseEnter={() => pauseAutoplay(0)}
-            onMouseLeave={() => {
-                // only resume when dialog is not open
-                if (!isDialogOpen) setIsAutoPlaying(true)
-            }}
-        >
-            <HeadText
-                title="CHOOSE YOUR"
-                title2="STATE/UT"
-                subtitle="Explore comprehensive investment opportunities across India's states and union territories with detailed insights into economic achievements, infrastructure, and policies."
+        <div>
+            <PageHero
+                title="Investment Opportunities by States"
+                breadcrumbs={[
+                    { label: "Investment Opportunities", href: "/investment-opportunities" },
+                    { label: "States" }
+                ]}
+                backgroundImage="/cultural.webp"
             />
 
-            <motion.div
-                className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4 mt-12"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-            >
-                <AnimatePresence mode="wait">
-                    {getCurrentPageData().map((state, index) => (
-                        <motion.div
-                            key={state.id}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            transition={{ duration: 0.4, delay: index * 0.1 }}
-                        >
-                            <Card
-                                className={`group cursor-pointer transition-all duration-300 transform hover:-translate-y-2 border-2 overflow-hidden relative rounded-none h-full flex flex-col ${selectedState === state.id
-                                    ? "border-orange-500 shadow-2xl ring-2 ring-orange-200 bg-white"
-                                    : "bg-white border-gray-200 hover:border-orange-500 hover:shadow-2xl"
-                                    }`}
-                                onClick={() => handleStateClick(state.id)}
+            <div className="min-h-screen bg-gray-50 py-16">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Header */}
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                            Investment Opportunities by <span className="text-orange-500">States</span>
+                        </h2>
+                        <p className="text-gray-700 text-lg max-w-3xl mx-auto">
+                            Discover investment potential across India&apos;s diverse states with comprehensive data on GDP,
+                            major industries, key projects, and investment opportunities.
+                        </p>
+                    </div>
+
+                    {/* States Grid */}
+                    <div className="space-y-8">
+                        {statesData.map((state, index) => (
+                            <div
+                                key={state.id}
+                                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200"
                             >
-                                <BorderBeam
-                                    duration={12 + index}
-                                    size={250}
-                                    className="from-transparent via-primary to-transparent opacity-40"
-                                    colorFrom="hsl(var(--primary))"
-                                    colorTo="hsl(var(--secondary))"
-                                />
-
-                                <CardContent className="p-0">
-                                    {/* Image Section */}
-                                    <div className="relative h-32 bg-gray-100 overflow-hidden">
-                                        {state.cardImage ? (
-                                            <Image src={state.cardImage} alt={state.name} fill className="object-cover" />
-                                        ) : (
-                                            <div className="absolute inset-0 bg-gray-100" />
-                                        )}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                                    </div>
-
-                                    {/* Name Section */}
-                                    <div className="p-3 bg-card">
-                                        <div className="flex items-center justify-between flex-col">
-                                            <h3 className="text-sm font-bold text-gray-900 leading-tight text-center">{state.name}</h3>
-                                            <Badge
-                                                variant={state.type === "ut" ? "secondary" : "outline"}
-                                                className={`text-xs font-medium px-2 py-1  ${state.type === "ut"
-                                                    ? "bg-accent/20 text-accent-foreground border-accent/30"
-                                                    : "bg-secondary/20 text-secondary-foreground border-secondary/30 "
-                                                    }`}
-                                            >
-                                                {state.type === "ut" ? "UT" : ""}
-                                            </Badge>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-                    ))}
-                </AnimatePresence>
-
-                {/* Details Dialog */}
-                <AnimatePresence>
-                    {isDialogOpen && selectedState && (
-                        <motion.div
-                            key="state-dialog"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="fixed inset-0 z-50 flex items-center justify-center"
-                        >
-                            {/* Backdrop */}
-                            <motion.button
-                                aria-label="Close dialog"
-                                onClick={() => { setIsDialogOpen(false); setSelectedState(null) }}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 0.5 }}
-                                exit={{ opacity: 0 }}
-                                className="absolute inset-0 bg-black"
-                            />
-
-                            <motion.div
-                                initial={{ y: 40, opacity: 0, scale: 0.98 }}
-                                animate={{ y: 0, opacity: 1, scale: 1 }}
-                                exit={{ y: 20, opacity: 0, scale: 0.98 }}
-                                transition={{ duration: 0.35 }}
-                                className="relative w-full max-w-4xl mx-4 my-4 bg-white shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
-                                role="dialog"
-                                aria-modal="true"
-                            >
-                                <div className="p-4 md:p-6 border-b flex items-start justify-between">
-                                    <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
-                                        <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-100 overflow-hidden flex-shrink-0">
-                                            {statesData.find(s => s.id === selectedState)?.cardImage ? (
-                                                <Image
-                                                    src={statesData.find(s => s.id === selectedState)?.cardImage}
-                                                    alt={statesData.find(s => s.id === selectedState)?.name}
-                                                    width={64}
-                                                    height={64}
-                                                    className="object-cover w-full h-full"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full bg-gray-100" />
-                                            )}
-                                        </div>
-                                        <div className="min-w-0 flex-1">
-                                            <h2 className="text-lg md:text-2xl font-bold flex items-center gap-2 flex-wrap">
-                                                <span className="truncate">{statesData.find(s => s.id === selectedState)?.name}</span>
-                                                <Badge
-                                                    variant={statesData.find(s => s.id === selectedState)?.type === "ut" ? "secondary" : "outline"}
-                                                    className="text-xs flex-shrink-0"
-                                                >
-                                                    {statesData.find(s => s.id === selectedState)?.type === "ut" ? "UT" : "State"}
-                                                </Badge>
-                                            </h2>
-                                            <p className="text-sm text-muted-foreground mt-1">Detailed overview</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex-shrink-0">
-                                        <button
-                                            onClick={() => { setIsDialogOpen(false); setSelectedState(null) }}
-                                            className="text-gray-500 hover:text-gray-800 p-2 text-xl"
-                                        >
-                                            ✕
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div className="p-4 md:p-6">
-                                    {(() => {
-                                        const currentItem = statesData.find(item => item.id === selectedState)
-                                        if (!currentItem) return null
-
-                                        return (
-                                            <div className="space-y-4 md:space-y-6">
-                                                {/* Investment Opportunities */}
-                                                {currentItem.investmentOpportunities && (
-                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
-                                                                <IoTrendingUpOutline className="w-5 h-5 text-primary" />
-                                                            </div>
-                                                            <span className="font-bold text-card-foreground">Investment Opportunities</span>
-                                                        </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
-                                                            {currentItem.investmentOpportunities}
-                                                        </p>
-                                                    </div>
-                                                )}
-
-                                                {/* Major Cities */}
-                                                {currentItem.majorCities && currentItem.majorCities.length > 0 && (
-                                                    <div className="bg-accent/5 border border-accent/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
-                                                                <IoStorefrontOutline className="w-5 h-5 text-accent" />
-                                                            </div>
-                                                            <span className="font-bold text-card-foreground">Major Cities</span>
-                                                        </div>
-                                                        <div className="flex flex-wrap gap-2">
-                                                            {currentItem.majorCities.map((city) => (
-                                                                <Badge
-                                                                    key={city}
-                                                                    variant="secondary"
-                                                                    className="text-xs bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
-                                                                >
-                                                                    {city}
-                                                                </Badge>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                )}
-
-                                                {/* Economic Achievements */}
-                                                {currentItem.economicAchievements && (
-                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
-                                                                <IoTrophyOutline className="w-5 h-5 text-primary" />
-                                                            </div>
-                                                            <span className="font-bold text-card-foreground">Economic Achievements</span>
-                                                        </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
-                                                            {currentItem.economicAchievements}
-                                                        </p>
-                                                    </div>
-                                                )}
-
-                                                {/* Infrastructure */}
-                                                {currentItem.infrastructureHighlights && (
-                                                    <div className="bg-secondary/5 border border-secondary/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-secondary/10 flex items-center justify-center">
-                                                                <IoConstructOutline className="w-5 h-5 text-secondary" />
-                                                            </div>
-                                                            <span className="font-bold text-card-foreground">Infrastructure Highlights</span>
-                                                        </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
-                                                            {currentItem.infrastructureHighlights}
-                                                        </p>
-                                                    </div>
-                                                )}
-
-                                                {/* Demographics */}
-                                                {currentItem.demographics && (
-                                                    <div className="bg-accent/5 border border-accent/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
-                                                                <IoPeopleOutline className="w-5 h-5 text-accent" />
-                                                            </div>
-                                                            <span className="font-bold text-card-foreground">Demographics & Workforce</span>
-                                                        </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
-                                                            {currentItem.demographics}
-                                                        </p>
-                                                    </div>
-                                                )}
-
-                                                {/* Government Policies */}
-                                                {currentItem.policies && (
-                                                    <div className="bg-primary/5 border border-primary/20 shadow-sm p-4 md:p-5">
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div className="w-10 h-10 bg-primary/10 flex items-center justify-center">
-                                                                <IoDocumentTextOutline className="w-5 h-5 text-primary" />
-                                                            </div>
-                                                            <span className="font-bold text-card-foreground">Investment Policies</span>
-                                                        </div>
-                                                        <p className="text-sm text-muted-foreground leading-relaxed">
-                                                            {currentItem.policies}
-                                                        </p>
-                                                    </div>
-                                                )}
+                                <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                                    {/* Content Section */}
+                                    <div className="lg:w-2/3 p-8 lg:p-12">
+                                        <div className="flex items-center justify-between mb-4">
+                                            <div className="flex items-center">
+                                                <MapPin className="w-6 h-6 text-orange-500 mr-2" />
+                                                <span className="text-orange-500 font-semibold">
+                                                    {state.majorCities && state.majorCities[0] ? state.majorCities[0] : "Capital"}
+                                                </span>
                                             </div>
-                                        )
-                                    })()}
-                                </div>
-                            </motion.div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </motion.div>
+                                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${state.type === 'ut' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700'
+                                                }`}>
+                                                {state.type === 'ut' ? 'Union Territory' : 'State'}
+                                            </span>
+                                        </div>
 
-            {/* Pagination */}
-            <div className="flex justify-center items-center gap-4 mt-16">
-                {Array.from({ length: totalPages }).map((_, index) => (
-                    <motion.button
-                        key={index}
-                        onClick={() => {
-                            setCurrentPage(index)
-                            setIsAutoPlaying(false)
-                            setTimeout(() => setIsAutoPlaying(true), 10000)
-                        }}
-                        className={`transition-all duration-300 ${index === currentPage
-                            ? "w-12 h-4 bg-orange-500 shadow-lg"
-                            : "w-4 h-4 bg-muted-foreground/30 hover:bg-primary/60 hover:scale-125"
-                            }`}
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
-                    />
-                ))}
+                                        <h3 className="text-3xl font-bold text-gray-900 mb-4">{state.name}</h3>
+
+                                        <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                                            {state.economicAchievements}
+                                        </p>
+
+                                        {/* Investment Opportunities */}
+                                        <div className="bg-orange-50 p-4 rounded-lg mb-6 border-l-4 border-orange-500">
+                                            <h5 className="font-semibold text-gray-800 mb-2">Investment Opportunities</h5>
+                                            <p className="text-gray-700 text-sm">{state.investmentOpportunities}</p>
+                                        </div>
+
+                                        {/* Key Industries */}
+                                        <div className="mb-6">
+                                            <h4 className="font-semibold text-lg mb-3 text-gray-800">Key Industries</h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {state.keyIndustries.map((industry, idx) => (
+                                                    <span
+                                                        key={idx}
+                                                        className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium"
+                                                    >
+                                                        {industry}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Major Cities */}
+                                        <div className="mb-6">
+                                            <h4 className="font-semibold text-lg mb-3 text-gray-800">Major Cities</h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {state.majorCities.map((city, idx) => (
+                                                    <span
+                                                        key={idx}
+                                                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                                                    >
+                                                        {city}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Infrastructure & Policies */}
+                                        <div className="grid md:grid-cols-2 gap-4">
+                                            <div>
+                                                <h5 className="font-semibold text-gray-800 mb-2">Infrastructure</h5>
+                                                <p className="text-gray-700 text-sm">{state.infrastructureHighlights}</p>
+                                            </div>
+                                            <div>
+                                                <h5 className="font-semibold text-gray-800 mb-2">Policies</h5>
+                                                <p className="text-gray-700 text-sm">{state.policies}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Image Section */}
+                                    <div className="lg:w-1/3 h-64 lg:h-auto relative">
+                                        <Image
+                                            src="/cultural.webp"
+                                            alt={`${state.name} Investment Opportunities`}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                        <div className="absolute bottom-4 left-4 text-white">
+                                            <p className="text-sm font-medium">Investment Hub</p>
+                                            <p className="text-lg font-bold">{state.name}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* CTA Section */}
+                    <div className="mt-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl p-8 text-center text-white">
+                        <h3 className="text-2xl font-bold mb-4">Ready to Invest in India&apos;s Growth Story?</h3>
+                        <p className="text-lg mb-6 opacity-90">
+                            Connect with our investment experts to explore opportunities in your preferred state.
+                        </p>
+                        <button className="bg-white text-orange-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Contact Investment Team
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
 
-export default ChooseState
+export default StatesPage

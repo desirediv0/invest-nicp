@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import useResponsiveGrid from "@/lib/useResponsiveGrid"
 import { motion, AnimatePresence } from "framer-motion"
 import HeadText from "./head-text"
 import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogClose } from "./ui/dialog"

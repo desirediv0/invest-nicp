@@ -1,3 +1,4 @@
+"use client"
 import PageHero from '@/components/PageHero'
 import { FileText, Download, ExternalLink } from 'lucide-react'
 

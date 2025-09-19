@@ -18,8 +18,8 @@ const navigationItems = [
     },
     {
         name: "Investment Opportunities", href: "/investment-opportunities", children: [
-            { name: "IO - Sectors", href: "/investment-opportunities#sectors" },
-            { name: "IO - States", href: "/investment-opportunities#states" },
+            { name: "IO - Sectors", href: "/investment-opportunities/sectors" },
+            { name: "IO - States", href: "/investment-opportunities/states" },
         ]
     },
     {
