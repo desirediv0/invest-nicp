@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import PageHero from '@/components/PageHero'
 import { MapPin, Phone, Mail, Building2, Users, Send, MessageSquare } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
 import Link from 'next/link'
 
 const ContactUs = () => {
@@ -93,25 +94,25 @@ const ContactUs = () => {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-start gap-3 p-4 bg-blue-50 hover:bg-blue-100 transition-colors">
-                                        <Phone className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                                    <div className="flex items-start gap-3 p-4 bg-green-50 hover:bg-green-100 transition-colors">
+                                        <FaWhatsapp className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
                                         <div>
-                                            <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
+                                            <h3 className="font-semibold text-gray-900 mb-1">WhatsApp</h3>
                                             <p className="text-gray-700 text-sm">
-                                                <a href="tel:+919891015220" className="hover:text-blue-600 transition-colors">
+                                                <a href="https://api.whatsapp.com/send?phone=+919891015220&text=Hello,%20I%20am%20interested%20in%20Invest%20NICP%20Services!%20Please%20get%C2%A0in%C2%A0touch%E2%80%A6." className="hover:text-green-600 transition-colors">
                                                     +91-9891015220
                                                 </a>
                                             </p>
                                         </div>
                                     </div>
 
-                                    <div className="flex items-start gap-3 p-4 bg-green-50 hover:bg-green-100 transition-colors">
-                                        <Mail className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                                    <div className="flex items-start gap-3 p-4 bg-blue-50 hover:bg-blue-100 transition-colors">
+                                        <Mail className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                                         <div>
                                             <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                                             <p className="text-gray-700 text-sm">
-                                                <a href="mailto:connect@bicsc.com" className="hover:text-green-600 transition-colors">
-                                                    connect[at]bicsc[dot]com
+                                                <a href="mailto:info@investnicp.com" className="hover:text-blue-600 transition-colors">
+                                                    info@investnicp.com
                                                 </a>
                                             </p>
                                         </div>
@@ -132,25 +133,21 @@ const ContactUs = () => {
                                     <div className="flex items-center gap-3">
                                         <span className="text-2xl">📞</span>
                                         <h3 className="text-sm font-semibold">
-                                            Connect with Bharat Industrial Corridor and Smart Cities (BICSC) Investment
+                                            Connect with Invest National Industrial Corridor Projects
                                         </h3>
                                     </div>
 
                                     <div className="space-y-3 text-sm">
                                         <div className="flex items-center gap-3">
                                             <span className="text-lg">📧</span>
-                                            <span>Email: connect[at]bicsc[dot]com</span>
+                                            <span>Email: info@investnicp.com</span>
                                         </div>
 
                                         <div className="flex items-start gap-3">
                                             <span className="text-lg">🌐</span>
                                             <div>
-                                                <span className="block mb-2">Websites:</span>
+                                                <span className="block mb-2">Website:</span>
                                                 <div className="space-y-1">
-                                                    <a href="https://www.bicsc.com" target="_blank" rel="noopener noreferrer"
-                                                        className="block text-orange-200 hover:text-white transition-colors underline">
-                                                        www.bicsc.com
-                                                    </a>
                                                     <a href="https://www.investnicp.com" target="_blank" rel="noopener noreferrer"
                                                         className="block text-orange-200 hover:text-white transition-colors underline">
                                                         www.investnicp.com

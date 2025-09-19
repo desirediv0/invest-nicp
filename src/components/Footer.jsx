@@ -100,7 +100,7 @@ export default function BusinessFooter() {
                                 <div className="w-12 h-12 bg-orange-500 flex items-center justify-center">
                                     <Users className="w-6 h-6 text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-white uppercase tracking-wider">Business Associate</h3>
+                                <h3 className="text-xl font-bold text-white uppercase tracking-wider">Feel free to contact</h3>
                             </div>
                         </div>
 
@@ -109,14 +109,14 @@ export default function BusinessFooter() {
                                 <div className="flex items-center gap-2 text-orange-400">
                                     <span className="text-xl">📞</span>
                                     <h4 className="text-white font-semibold text-sm">
-                                        Connect with Bharat Industrial Corridor and Smart Cities (BICSC) Investment
+                                        Connect with Invest National Industrial Corridor Projects
                                     </h4>
                                 </div>
 
                                 <div className="space-y-3 text-sm">
                                     <div className="flex items-center gap-2 text-gray-300">
                                         <span className="text-base">📧</span>
-                                        <span>Email: connect[at]bicsc[dot]com</span>
+                                        <span>Email: info@investnicp.com</span>
                                     </div>
 
                                     <div className="flex items-center gap-2 text-gray-300">
@@ -124,11 +124,6 @@ export default function BusinessFooter() {
                                         <div className="flex flex-col">
                                             <span>Website:</span>
                                             <div className="space-x-2 mt-1">
-                                                <a href="https://www.bicsc.com" target="_blank" rel="noopener noreferrer"
-                                                    className="text-orange-400 hover:text-orange-300 transition-colors">
-                                                    www.bicsc.com
-                                                </a>
-                                                <span className="text-gray-400">|</span>
                                                 <a href="https://www.investnicp.com" target="_blank" rel="noopener noreferrer"
                                                     className="text-orange-400 hover:text-orange-300 transition-colors">
                                                     www.investnicp.com

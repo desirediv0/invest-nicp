@@ -18,7 +18,7 @@ const AboutUs = () => {
                 {/* Company Header Section */}
                 <div className="py-4 md:py-6 bg-gradient-to-r from-orange-50 to-red-50">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center mb-3 md:mb-12">
+                        <div className="text-center mb-3 ">
                             <div className="inline-block bg-white p-6 shadow-lg mb-6">
                                 <h1 className="text-4xl md:text-6xl font-bold text-orange-500 mb-2">
                                     INVEST NICP
@@ -36,10 +36,10 @@ const AboutUs = () => {
                 </div>
 
                 {/* Mission & Vision Section */}
-                <div className="">
+                <div >
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         {/* Mission & Vision Cards */}
-                        <div className="grid md:grid-cols-2 gap-8 mb-8">
+                        <div className="grid md:grid-cols-2 gap-8">
                             {/* Mission Card */}
                             <div id='mission' className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
                                 <div className="bg-gradient-to-r from-red-500 to-red-600 p-6">

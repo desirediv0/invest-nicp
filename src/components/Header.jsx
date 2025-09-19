@@ -37,6 +37,7 @@ const navigationItems = [
         name: "Resources", href: "/resources", children: [
             { name: "GOI and Ministries", href: "/resources/goinministries" },
             { name: "Schemes", href: "/resources/schemes" },
+            { name: "Authorities, Associations & Councils", href: "/resources/authorities" },
             {
                 name: "Policies", href: "/resources#policies", children: [
                     { name: "Alternative Investment Fund", href: "/aif.pdf" },
@@ -49,7 +50,6 @@ const navigationItems = [
                     { name: "RERA Act", href: "/rera.pdf" },
                 ]
             },
-            { name: "Authorities, Associations & Councils", href: "/resources/authorities" },
             { name: "SIP Agencies", href: "/resources/sip" },
 
         ]
@@ -86,17 +86,17 @@ export default function Header() {
                         : "bg-transparent backdrop-blur-sm",
                 )}
             >
-                <div className=" px-4 py-2">
-                    <div className="flex items-center justify-between">
+                <div className="px-4 py-2">
+                    <div className="flex items-center">
                         {/* Logo on the left */}
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center">
                             <Link href="/" className="flex items-center">
                                 <Image src={"/logo.gif"} alt="Logo" width={85} height={85} className="bg-white rounded-full" />
                             </Link>
                         </div>
 
-                        {/* Desktop Navigation - placed to the right of logo */}
-                        <nav className="hidden lg:flex items-center space-x-6">
+                        {/* Desktop Navigation - placed close to logo */}
+                        <nav className="hidden lg:flex items-center space-x-4 ml-6">
                             {navigationItems.map((item, index) => (
                                 <div
                                     key={item.name}
@@ -120,7 +120,7 @@ export default function Header() {
                                     <Link
                                         href={item.href}
                                         className={cn(
-                                            "transition-colors duration-200 font-[family-name:var(--font-source-sans)] font-medium px-3 py-2 rounded-md flex items-center gap-2",
+                                            "transition-colors duration-200 font-[family-name:var(--font-source-sans)] font-medium px-2 py-2 rounded-md flex items-center gap-1",
                                             isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
                                         )}
                                         aria-expanded={desktopOpenIndex === index}
@@ -196,8 +196,8 @@ export default function Header() {
                             ))}
                         </nav>
 
-                        {/* Right side: mobile toggle and spacer */}
-                        <div className="flex items-center gap-3">
+                        {/* Right side: mobile toggle */}
+                        <div className="flex items-center ml-auto">
                             <Button
                                 variant="ghost"
                                 size="icon"
