@@ -1,5 +1,5 @@
 "use client"
-import { Linkedin, MapPin, Users, Award, Briefcase } from "lucide-react"
+import { Linkedin, MapPin, Users, Award, Briefcase, MailIcon, Globe } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
@@ -107,28 +107,30 @@ export default function BusinessFooter() {
                         <div className=" p-6   hover:border-orange-500/50 transition-colors">
                             <div className="space-y-4">
                                 <div className="flex items-center gap-2 text-orange-400">
-                                    <span className="text-xl">📞</span>
+
                                     <h4 className="text-white font-semibold text-sm">
-                                        Connect with Invest National Industrial Corridor Projects
+                                        Invest National Industrial Corridor Projects
                                     </h4>
                                 </div>
 
                                 <div className="space-y-3 text-sm">
                                     <div className="space-y-2">
                                         <div className="flex items-center gap-2 text-gray-300">
-                                            <span className="text-base">📧</span>
-                                            <span>Email: info@investnicp.com</span>
+                                            <span className="text-base">  <MailIcon className='text-sm' /></span>:
+                                            <span> info@investnicp.com</span>
                                         </div>
-                                        <div className="flex items-center gap-2 text-gray-300 ml-6">
-                                            <span className="text-base">📧</span>
+                                        <div className="flex items-center gap-2 text-gray-300 ml-10">
+
                                             <span>nicpindia@gmail.com</span>
                                         </div>
                                     </div>
 
                                     <div className="flex items-center gap-2 text-gray-300">
-                                        <span className="text-base">🌐</span>
+                                        <span className="text-base">
+                                            <Globe className='text-sm' />
+                                        </span>:
                                         <div className="flex flex-col">
-                                            <span>Website:</span>
+
                                             <div className="space-x-2 mt-1">
                                                 <a href="https://www.investnicp.com" target="_blank" rel="noopener noreferrer"
                                                     className="text-orange-400 hover:text-orange-300 transition-colors">

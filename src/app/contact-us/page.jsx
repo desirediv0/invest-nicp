@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import PageHero from '@/components/PageHero'
-import { MapPin, Phone, Mail, Building2, Users, Send, MessageSquare } from 'lucide-react'
+import { MapPin, Mail, Building2, Users, Send, MessageSquare, MailIcon, Globe } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import Link from 'next/link'
 
@@ -138,28 +138,32 @@ const ContactUs = () => {
 
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3">
-                                        <span className="text-2xl">📞</span>
+
                                         <h3 className="text-sm font-semibold">
-                                            Connect with Invest National Industrial Corridor Projects
+                                            Invest National Industrial Corridor Projects
                                         </h3>
                                     </div>
 
                                     <div className="space-y-3 text-sm">
                                         <div className="space-y-2">
                                             <div className="flex items-center gap-3">
-                                                <span className="text-lg">📧</span>
-                                                <span>Email: info@investnicp.com</span>
+                                                <span className="text-lg">
+                                                    <MailIcon className='text-sm' />
+                                                </span>:
+                                                <span> info@investnicp.com</span>
                                             </div>
-                                            <div className="flex items-center gap-3 ml-6">
-                                                <span className="text-lg">📧</span>
+                                            <div className="flex items-center gap-3 ml-12">
                                                 <span>nicpindia@gmail.com</span>
                                             </div>
+
                                         </div>
 
                                         <div className="flex items-start gap-3">
-                                            <span className="text-lg">🌐</span>
+                                            <span className="text-lg">
+                                                <Globe className='text-sm' />
+                                            </span> :
                                             <div>
-                                                <span className="block mb-2">Website:</span>
+
                                                 <div className="space-y-1">
                                                     <a href="https://www.investnicp.com" target="_blank" rel="noopener noreferrer"
                                                         className="block text-orange-200 hover:text-white transition-colors underline">
