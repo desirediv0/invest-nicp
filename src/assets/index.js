@@ -39,11 +39,13 @@ import renewableEnergy from './sector/renewable-energy.png'
 import roads from "./sector/roads.png"
 import telecommunications from './sector/telecommunications.png'
 import textiles from './sector/textiles.png'
-// import retail from "./sector/retail.jpg"
-// import services from './sector/services.jpg';
-// import steel from "./sector/steel.jpg"
-// import tourismhospitality from "./sector/tourismhospitality.jpg"
+import retail from "./sector/retail.jpg"
+import services from './sector/services.jpg';
+import steel from "./sector/steel.jpg"
+import tourismhospitality from "./sector/tourism-hospitality.jpg"
 import railways from "./sector/railways.png"
+import realestate from "./sector/real-estate.webp"
+import esdm from "./sector/esdm.webp"
 
 
 
@@ -110,6 +112,6 @@ import industrysectorengagementbusinesspartnership from "./what/industry-sector-
 
 export {
     banner1, banner2, banner3,
-    agriculture, autocomponent, automobiles, aviation, banking, biotechnology, cement, chemicals, consumerDurables, defenceManufacturing, eCommerce, educationTraining, electronicSystemDesignManufacturing, engineeringCapitalGoods, financialServices, fmcg, sciencetechnology, gemsJewellery, healthcare, infrastructure, insurance, itBpm, manufacturing, mediaEntertainment, medicalDevices, metalsMining, msme, oilGas, pharmaceuticals, ports, power, renewableEnergy, telecommunications, textiles, roads, railways,
+    agriculture, autocomponent, automobiles, aviation, banking, biotechnology, cement, chemicals, consumerDurables, defenceManufacturing, eCommerce, educationTraining, electronicSystemDesignManufacturing, engineeringCapitalGoods, steel, financialServices, fmcg, sciencetechnology, gemsJewellery, healthcare, infrastructure, insurance, tourismhospitality, retail, itBpm, services, manufacturing, mediaEntertainment, medicalDevices, realestate, metalsMining, msme, oilGas, pharmaceuticals, ports, power, renewableEnergy, telecommunications, textiles, roads, railways, esdm,
     andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli, amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, tirupati, businessmeetinghandshakemergeracquisition, businessworkshoppresentationinvestment, businessseminarconferencepolicydiscussion, investmentadvisoryfinancialconsultation, industrysectorengagementbusinesspartnership
 }
