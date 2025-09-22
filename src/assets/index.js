@@ -16,7 +16,7 @@ import consumerDurables from './sector/consumer-durables.png'
 import defenceManufacturing from './sector/defence-manufacturing.png'
 import eCommerce from './sector/e-commerce.png'
 import educationTraining from './sector/education-training.png'
-// import esdm from './sector/esdm.png'
+import sciencetechnology from './sector/science-technology.png'
 import electronicSystemDesignManufacturing from './sector/electronic-system-design-manufacturing.png'
 import engineeringCapitalGoods from './sector/engineering-capital-goods.png'
 import financialServices from './sector/financial-services.png'
@@ -38,8 +38,7 @@ import power from './sector/power.png'
 import renewableEnergy from './sector/renewable-energy.png'
 // import steel from './sector/steel.png'
 import telecommunications from './sector/telecommunications.png'
-// import tourism from './sector/tourism.png'
-// import railway from "./sector/railways.jpg"
+import textiles from './sector/textiles.png'
 
 
 
@@ -106,6 +105,6 @@ import industrysectorengagementbusinesspartnership from "./what/industry-sector-
 
 export {
     banner1, banner2, banner3,
-    agriculture, autocomponent, automobiles, aviation, banking, biotechnology, cement, chemicals, consumerDurables, defenceManufacturing, eCommerce, educationTraining, electronicSystemDesignManufacturing, engineeringCapitalGoods, financialServices, fmcg, gemsJewellery, healthcare, infrastructure, insurance, itBpm, manufacturing, mediaEntertainment, medicalDevices, metalsMining, msme, oilGas, pharmaceuticals, ports, power, renewableEnergy, telecommunications,
+    agriculture, autocomponent, automobiles, aviation, banking, biotechnology, cement, chemicals, consumerDurables, defenceManufacturing, eCommerce, educationTraining, electronicSystemDesignManufacturing, engineeringCapitalGoods, financialServices, fmcg, sciencetechnology, gemsJewellery, healthcare, infrastructure, insurance, itBpm, manufacturing, mediaEntertainment, medicalDevices, metalsMining, msme, oilGas, pharmaceuticals, ports, power, renewableEnergy, telecommunications, textiles,
     andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli, amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, tirupati, businessmeetinghandshakemergeracquisition, businessworkshoppresentationinvestment, businessseminarconferencepolicydiscussion, investmentadvisoryfinancialconsultation, industrysectorengagementbusinesspartnership
 }
