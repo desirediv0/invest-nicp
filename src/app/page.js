@@ -7,6 +7,7 @@ import ChooseState from '@/components/State'
 import React from 'react'
 import MissionVision from './about/mission-vision'
 import WhatWeDo from '@/components/what-we-do'
+import { infrastructure, renewableEnergy } from '@/assets'
 
 const Home = () => {
   return (
@@ -26,7 +27,7 @@ const Home = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full max-w-7xl mx-auto gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-6">
           {/* First Card */}
           <Bgcoverimage
-            image="/cultural.webp"
+            image={renewableEnergy}
             heading="Growth Unleashed by Uncharted Territories and Trade"
             subheading="Our worldwide aspiration is to stand as a paragon of investment wisdom, radiating the path to lasting prosperity on a global scale."
             description1="We envisage a Bharat where investors seamlessly explore the multifaceted opportunities of India's dynamic urban centers and emerging industrial hubs."
@@ -35,7 +36,7 @@ const Home = () => {
 
           {/* Second Card */}
           <Bgcoverimage
-            image="/cultural.webp"
+            image={infrastructure}
             heading="Empowering Investors, Fueling Growth"
             subheading="At INVEST NICP, our mission is to be the catalyst for investors seeking to grow and expand their businesses across the rich tapestry of INDIA/BHARAT."
             description1="We aim to connect global investors with the upcoming industrial corridors and thriving urban mosaic of tier 1, 2, and 3 cities."
