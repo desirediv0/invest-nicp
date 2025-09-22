@@ -68,4 +68,17 @@ import uttarakhand from "./states/uttarakhand.jpg";
 import westbengal from "./states/west-bengal.jpg"
 
 
-export { banner1, banner2, banner3, tourism, textiles, telecommunications, steel, renewablenergy, pharmaceuticals, manufacturing, itbpm, infrastructure, healthcare, esdm, defencemanufacturing, consumerdurables, chemicals, cement, biotechnology, banking, aviation, automobiles, autocomponents, andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli }
+//  growth 
+import amritsar from "./growth/amritsar.jpg"
+import dehradun from "./growth/dehradun.jpg"
+import delhincr from "./growth/delhi.jpg"
+import dholera from './growth/dholera.jpg'
+import jaipur from "./growth/jaipur.jpg"
+import kochi from "./growth/kochi.jpg"
+import lucknow from "./growth/lucknow.jpg"
+import ludhiana from "./growth/ludhiana.jpg"
+import nagpur from "./growth/nagpur.jpg"
+import tirupati from "./growth/tirupati.jpg"
+
+
+export { banner1, banner2, banner3, tourism, textiles, telecommunications, steel, renewablenergy, pharmaceuticals, manufacturing, itbpm, infrastructure, healthcare, esdm, defencemanufacturing, consumerdurables, chemicals, cement, biotechnology, banking, aviation, automobiles, autocomponents, andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli, amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, tirupati }

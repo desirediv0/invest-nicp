@@ -11,58 +11,69 @@ import {
 } from "@/components/ui/carousel"
 import Autoplay from 'embla-carousel-autoplay'
 import { ExternalLink, MapPin } from 'lucide-react'
+import { amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, tripura } from '@/assets'
 
 const GrowthInvestment = () => {
     const states = [
         {
             name: "Amritsar",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/amritsar",
-            description: "Industrial Hub of Punjab"
+            description: "Industrial Hub of Punjab",
+            img: amritsar,
         },
         {
             name: "Delhi NCR",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "National Capital Region"
+            description: "National Capital Region",
+            img: delhincr
         },
         {
             name: "Dehradun",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Uttarakhand Growth Center"
+            description: "Uttarakhand Growth Center",
+            img: dehradun
         },
         {
             name: "Dholera",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Gujarat Smart City"
+            description: "Gujarat Smart City",
+            img: dholera
         },
         {
             name: "Jaipur",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Pink City Industrial Hub"
+            description: "Pink City Industrial Hub",
+            img: jaipur
         },
         {
             name: "Ludhiana",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Punjab Manufacturing Hub"
+            description: "Punjab Manufacturing Hub",
+            img: ludhiana
         },
         {
             name: "Nagpur",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Central India Logistics"
+            description: "Central India Logistics",
+            img: nagpur
         },
         {
             name: "Lucknow",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "UP Industrial Center"
+            description: "UP Industrial Center",
+            img: lucknow
         },
         {
             name: "Kochi",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Kerala Port City"
+            description: "Kerala Port City",
+            img: kochi
         },
         {
             name: "Tirupati",
             linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Andhra Pradesh Hub"
+            description: "Andhra Pradesh Hub",
+            img: tripura
         }
     ];
 
@@ -99,7 +110,7 @@ const GrowthInvestment = () => {
                                     {/* Image Container - Bigger Height */}
                                     <div className="relative h-64 md:h-72 overflow-hidden">
                                         <Image
-                                            src={"/cultural.webp"}
+                                            src={state.img}
                                             alt={state.name}
                                             width={400}
                                             height={300}
