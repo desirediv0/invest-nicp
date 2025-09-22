@@ -91,7 +91,7 @@ export default function Header() {
                         {/* Logo on the left */}
                         <div className="flex items-center">
                             <Link href="/" className="flex items-center">
-                                <Image src={"/logo.gif"} alt="Logo" width={85} height={85} className="bg-white rounded-full" />
+                                <Image src={"/logo.gif"} alt="Logo" width={85} height={85} className="bg-white rounded-full p-1" />
                             </Link>
                         </div>
 

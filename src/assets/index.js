@@ -4,68 +4,83 @@ import banner2 from "./banner2.jpg"
 import banner3 from "./banner3.jpg"
 
 //  sector images
-import tourism from "./sector/tourism.jpg";
-import textiles from "./sector/textiles.jpg";
-import telecommunications from "./sector/telecommunications.jpg";
-import steel from "./sector/steel.jpg";
-import renewablenergy from "./sector/renewable-energy.jpg";
-import pharmaceuticals from "./sector/pharmaceuticals.jpg";
-import manufacturing from "./sector/manufacturing.jpg";
-import itbpm from "./sector/it-bpm.jpg";
-import infrastructure from "./sector/infrastructure.jpg";
-import healthcare from "./sector/healthcare.jpg";
-import esdm from "./sector/esdm.jpg";
-import defencemanufacturing from "./sector/defence-manufacturing.jpg";
-import consumerdurables from "./sector/consumer-durables.jpg";
-import chemicals from "./sector/chemicals.jpg";
-import cement from "./sector/cement.jpg";
-import biotechnology from "./sector/biotechnology.jpg";
-import banking from "./sector/banking.jpg";
-import aviation from "./sector/aviation.jpg";
-import automobiles from "./sector/automobiles.jpg";
-import autocomponents from "./sector/auto-components.jpg";
-
+import agriculture from "./sector/agriculture.png"
+import autocomponent from "./sector/auto-component.png"
+import automobiles from "./sector/automobiles.png"
+import aviation from "./sector/aviation.png"
+import banking from './sector/banking.png'
+import biotechnology from './sector/biotechnology.png'
+import cement from './sector/cement.png'
+import chemicals from './sector/chemicals.png'
+import consumerDurables from './sector/consumer-durables.png'
+import defenceManufacturing from './sector/defence-manufacturing.png'
+import eCommerce from './sector/e-commerce.png'
+import educationTraining from './sector/education-training.png'
+// import esdm from './sector/esdm.png'
+import electronicSystemDesignManufacturing from './sector/electronic-system-design-manufacturing.png'
+import engineeringCapitalGoods from './sector/engineering-capital-goods.png'
+import financialServices from './sector/financial-services.png'
+import fmcg from './sector/fmcg.png'
+import gemsJewellery from './sector/gems-jewellery.png'
+import healthcare from './sector/healthcare.png'
+import infrastructure from './sector/infrastructure.png'
+import insurance from './sector/insurance.png'
+import itBpm from './sector/it-bpm.png'
+import manufacturing from './sector/manufacturing.png'
+import mediaEntertainment from './sector/media-entertainment.png'
+import medicalDevices from './sector/medical-devices.png'
+import metalsMining from './sector/metals-mining.png'
+import msme from './sector/msme.png'
+import oilGas from './sector/oil-gas.png'
+import pharmaceuticals from './sector/pharmaceuticals.png'
+import ports from './sector/ports.png'
+import power from './sector/power.png'
+import renewableEnergy from './sector/renewable-energy.png'
+// import steel from './sector/steel.png'
+import telecommunications from './sector/telecommunications.png'
+// import tourism from './sector/tourism.png'
+// import railway from "./sector/railways.jpg"
 
 
 
 
 // states
-import andamanandnicobar from "./states/andaman-and-nicobar.jpg"
-import andhrapradesh from "./states/andhra-pradesh.jpg"
-import arunachalpradesh from "./states/arunachal-pradesh.jpg"
-import assam from "./states/assam.jpg"
-import bihar from "./states/bihar.jpg";
-import chandigarh from "./states/chandigarh.jpg"
-import chhattisgarh from "./states/chhattisgarh.jpg"
-import dadraandnagarhaveli from "./states/dadra-and-nagar-haveli.jpg"
-import damananddiu from "./states/daman-and-diu.jpg"
-import delhi from "./states/delhi.jpg"
-import goa from "./states/goa.jpg"
-import gujrat from "./states/gujarat.jpg"
-import haryana from "./states/haryana.jpg";
-import himachalpradesh from "./states/himachal-pradesh.jpg";
-import jammuandkashmir from "./states/jammu-and-kashmir.jpg"
-import jharkhand from "./states/jharkhand.jpg"
-import karnataka from "./states/karnataka.jpg"
-import kerala from "./states/kerala.jpg"
-import lakshadweep from "./states/lakshadweep.jpg";
-import madhyapradesh from "./states/madhya-pradesh.jpg"
-import maharashtra from "./states/maharashtra.jpg";
-import manipur from "./states/manipur.jpg";
-import meghalaya from "./states/meghalaya.jpg";
-import mizoram from "./states/mizoram.jpg";
-import nagaland from "./states/nagaland.jpg";
-import odisha from "./states/odisha.jpg";
-import puducherry from "./states/puducherry.jpg";
-import punjab from "./states/punjab.jpg";
-import rajasthan from "./states/rajasthan.jpg";
-import sikkim from "./states/sikkim.jpg"
-import tamilnadu from "./states/tamil-nadu.jpg"
-import telangana from "./states/telangana.jpg"
-import tripura from "./states/tripura.jpg";
-import uttarpradesh from "./states/uttar-pradesh.jpg";
-import uttarakhand from "./states/uttarakhand.jpg";
-import westbengal from "./states/west-bengal.jpg"
+import andamanandnicobar from "./states/andaman-and-nicobar.png"
+import andhrapradesh from "./states/andhra-pradesh.png"
+import arunachalpradesh from "./states/arunachal-pradesh.png"
+import assam from "./states/assam.png"
+import bihar from "./states/bihar.png";
+import chandigarh from "./states/chandigarh.png"
+import chhattisgarh from "./states/chhattisgarh.png"
+import dadraandnagarhaveli from "./states/dadra-and-nagar-haveli.png"
+import damananddiu from "./states/daman-and-diu.png"
+import delhi from "./states/delhi.png"
+import goa from "./states/goa.png"
+import gujrat from "./states/gujarat.png"
+import haryana from "./states/haryana.png";
+import himachalpradesh from "./states/himachal-pradesh.png";
+import jammuandkashmir from "./states/jammu-and-kashmir.png"
+import jharkhand from "./states/jharkhand.png"
+import karnataka from "./states/karnataka.png"
+import kerala from "./states/kerala.png"
+import lakshadweep from "./states/lakshadweep.png";
+import madhyapradesh from "./states/madhya-pradesh.png"
+import maharashtra from "./states/maharashtra.png";
+import manipur from "./states/manipur.png";
+import meghalaya from "./states/meghalaya.png";
+import mizoram from "./states/mizoram.png";
+import nagaland from "./states/nagaland.png";
+import odisha from "./states/odisha.png";
+import puducherry from "./states/puducherry.png";
+import punjab from "./states/punjab.png";
+import rajasthan from "./states/rajasthan.png";
+import sikkim from "./states/sikkim.png"
+import tamilnadu from "./states/tamil-nadu.png"
+import telangana from "./states/telangana.png"
+import tripura from "./states/tripura.png";
+import uttarpradesh from "./states/uttar-pradesh.png";
+import uttarakhand from "./states/uttarakhand.png";
+import westbengal from "./states/west-bengal.png"
 
 
 //  growth 
@@ -81,4 +96,16 @@ import nagpur from "./growth/nagpur.jpg"
 import tirupati from "./growth/tirupati.jpg"
 
 
-export { banner1, banner2, banner3, tourism, textiles, telecommunications, steel, renewablenergy, pharmaceuticals, manufacturing, itbpm, infrastructure, healthcare, esdm, defencemanufacturing, consumerdurables, chemicals, cement, biotechnology, banking, aviation, automobiles, autocomponents, andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli, amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, tirupati }
+// what we do 
+import businessmeetinghandshakemergeracquisition from "./what/business-meeting-handshake-merger-acquisition.jpg";
+import businessworkshoppresentationinvestment from "./what/business-workshop-presentation-investment.jpg";
+import businessseminarconferencepolicydiscussion from "./what/business-seminar-conference-policy-discussion.jpg";
+import investmentadvisoryfinancialconsultation from "./what/investment-advisory-financial-consultation.jpg";
+import industrysectorengagementbusinesspartnership from "./what/industry-sector-engagement-business-partnership.jpg";
+
+
+export {
+    banner1, banner2, banner3,
+    agriculture, autocomponent, automobiles, aviation, banking, biotechnology, cement, chemicals, consumerDurables, defenceManufacturing, eCommerce, educationTraining, electronicSystemDesignManufacturing, engineeringCapitalGoods, financialServices, fmcg, gemsJewellery, healthcare, infrastructure, insurance, itBpm, manufacturing, mediaEntertainment, medicalDevices, metalsMining, msme, oilGas, pharmaceuticals, ports, power, renewableEnergy, telecommunications,
+    andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli, amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, tirupati, businessmeetinghandshakemergeracquisition, businessworkshoppresentationinvestment, businessseminarconferencepolicydiscussion, investmentadvisoryfinancialconsultation, industrysectorengagementbusinesspartnership
+}

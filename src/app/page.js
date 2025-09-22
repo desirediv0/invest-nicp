@@ -5,16 +5,22 @@ import HeroCarousel from '@/components/Hero'
 import ChooseState from '@/components/State'
 
 import React from 'react'
+import MissionVision from './about/mission-vision'
+import WhatWeDo from '@/components/what-we-do'
 
 const Home = () => {
   return (
     <main className='min-h-screen'>
 
       <HeroCarousel />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <MissionVision />
+      </div>
       <ChooseSector />
       <div className="bg-gray-50">
         <ChooseState />
       </div>
+      <WhatWeDo />
       <GrowthInvestment />
       <div className="w-full bg-gray-50 py-8 sm:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full max-w-7xl mx-auto gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-6">

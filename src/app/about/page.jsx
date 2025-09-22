@@ -1,7 +1,8 @@
 import React from 'react'
 import PageHero from '@/components/PageHero'
 import Image from 'next/image'
-import { Target, Eye, TrendingUp, Users, Zap, Shield, Building2, Globe, Award, BookOpen } from 'lucide-react'
+import { TrendingUp, Users, Zap, Shield, Building2, Globe } from 'lucide-react'
+import MissionVision from './mission-vision'
 
 const AboutUs = () => {
     return (
@@ -39,78 +40,7 @@ const AboutUs = () => {
                 <div >
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         {/* Mission & Vision Cards */}
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {/* Mission Card */}
-                            <div id='mission' className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                                <div className="bg-gradient-to-r from-red-500 to-red-600 p-6">
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                                                <Target className="w-6 h-6 text-white" />
-                                            </div>
-                                            <h2 className="text-2xl font-bold text-white">MISSION</h2>
-                                        </div>
-                                        <div className="relative w-16 h-12 overflow-hidden">
-                                            <Image
-                                                src="/assets/banner1.jpg"
-                                                alt="India Map"
-                                                fill
-                                                className="object-cover opacity-30"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-8 relative">
-                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-orange-500"></div>
-                                    <h3 className="text-lg font-bold mb-4 text-red-600">
-                                        Empowering Investors, Fueling Growth:
-                                    </h3>
-                                    <p className="text-base text-gray-700 leading-relaxed text-justify">
-                                        At INVEST NICP, our mission is to be the catalyst for investors seeking to grow and expand
-                                        their businesses across the rich tapestry of INDIA / BHARAT. We aim to connect global investors
-                                        with the upcoming industrial corridors and thriving urban mosaic of tier 1, 2, and 3 cities.
-                                        Our endeavour is to forge strong, long-lasting partnerships, enabling investors to unlock the
-                                        immense potential of this diverse and dynamic market.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Vision Card */}
-                            <div id='vision' className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                                <div className="bg-gradient-to-r from-red-500 to-red-600 p-6">
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                                                <Eye className="w-6 h-6 text-white" />
-                                            </div>
-                                            <h2 className="text-2xl font-bold text-white">VISION</h2>
-                                        </div>
-                                        <div className="relative w-20 h-12 overflow-hidden">
-                                            <Image
-                                                src="/assets/banner3.jpg"
-                                                alt="Global Business"
-                                                fill
-                                                className="object-cover opacity-30"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-8 relative">
-                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-orange-500"></div>
-                                    <h3 className="text-lg font-bold mb-4 text-red-600">
-                                        Growth Unleashed by Uncharted Territories and Trade:
-                                    </h3>
-                                    <p className="text-base text-gray-700 leading-relaxed text-justify">
-                                        Our worldwide aspiration is to stand as a paragon of investment wisdom, radiating the path to
-                                        lasting prosperity on a global scale. We envisage a Bharat where investors seamlessly explore
-                                        the multifaceted opportunities of India&apos;s dynamic urban centers and emerging industrial hubs.
-                                        INVEST NICP is committed to being a catalyst for international economic growth, nurturing innovation,
-                                        and realizing dreams as global achievements, shaping an elegant, interwoven, and thriving world for all.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
+                        <MissionVision />
                         {/* Strategic Initiatives Section */}
                         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 md:p-12 mb-16 border-l-8 border-orange-500">
                             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
@@ -119,12 +49,12 @@ const AboutUs = () => {
                                         <Globe className="w-8 h-8 text-white" />
                                     </div>
                                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                                        🌐 Invest in India: Strategic Initiatives Driving Growth
+                                        Invest in India: Strategic Initiatives Driving Growth
                                     </h2>
                                 </div>
                                 <div className="relative w-full md:w-32 h-20 md:ml-auto">
                                     <Image
-                                        src="/assets/banner2.jpg"
+                                        src="/indian-growth.jpg"
                                         alt="India Growth"
                                         fill
                                         className="object-cover rounded-lg"
@@ -154,7 +84,7 @@ const AboutUs = () => {
                                         <Zap className="w-8 h-8 text-white" />
                                     </div>
                                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                                        🚀 Why Choose India for Investment?
+                                        Why Choose India for Investment?
                                     </h2>
                                 </div>
                                 <div className="relative w-full md:w-40 h-24 md:ml-auto">
@@ -184,7 +114,7 @@ const AboutUs = () => {
                                 <div className="bg-green-50 p-6 border-l-4 border-green-500">
                                     <div className="flex items-center gap-2 mb-3">
                                         <Zap className="w-5 h-5 text-green-600" />
-                                        <h3 className="font-bold text-gray-900">🚀 Global Startup Powerhouse</h3>
+                                        <h3 className="font-bold text-gray-900">Global Startup Powerhouse</h3>
                                     </div>
                                     <p className="text-base text-gray-700">
                                         Home to the 3rd largest startup ecosystem, India nurtures over 100 unicorns across sectors like
