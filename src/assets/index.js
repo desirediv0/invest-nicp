@@ -26,4 +26,46 @@ import automobiles from "./sector/automobiles.jpg";
 import autocomponents from "./sector/auto-components.jpg";
 
 
-export { banner1, banner2, banner3, tourism, textiles, telecommunications, steel, renewablenergy, pharmaceuticals, manufacturing, itbpm, infrastructure, healthcare, esdm, defencemanufacturing, consumerdurables, chemicals, cement, biotechnology, banking, aviation, automobiles, autocomponents }
+
+
+
+// states
+import andamanandnicobar from "./states/andaman-and-nicobar.jpg"
+import andhrapradesh from "./states/andhra-pradesh.jpg"
+import arunachalpradesh from "./states/arunachal-pradesh.jpg"
+import assam from "./states/assam.jpg"
+import bihar from "./states/bihar.jpg";
+import chandigarh from "./states/chandigarh.jpg"
+import chhattisgarh from "./states/chhattisgarh.jpg"
+import dadraandnagarhaveli from "./states/dadra-and-nagar-haveli.jpg"
+import damananddiu from "./states/daman-and-diu.jpg"
+import delhi from "./states/delhi.jpg"
+import goa from "./states/goa.jpg"
+import gujrat from "./states/gujarat.jpg"
+import haryana from "./states/haryana.jpg";
+import himachalpradesh from "./states/himachal-pradesh.jpg";
+import jammuandkashmir from "./states/jammu-and-kashmir.jpg"
+import jharkhand from "./states/jharkhand.jpg"
+import karnataka from "./states/karnataka.jpg"
+import kerala from "./states/kerala.jpg"
+import lakshadweep from "./states/lakshadweep.jpg";
+import madhyapradesh from "./states/madhya-pradesh.jpg"
+import maharashtra from "./states/maharashtra.jpg";
+import manipur from "./states/manipur.jpg";
+import meghalaya from "./states/meghalaya.jpg";
+import mizoram from "./states/mizoram.jpg";
+import nagaland from "./states/nagaland.jpg";
+import odisha from "./states/odisha.jpg";
+import puducherry from "./states/puducherry.jpg";
+import punjab from "./states/punjab.jpg";
+import rajasthan from "./states/rajasthan.jpg";
+import sikkim from "./states/sikkim.jpg"
+import tamilnadu from "./states/tamil-nadu.jpg"
+import telangana from "./states/telangana.jpg"
+import tripura from "./states/tripura.jpg";
+import uttarpradesh from "./states/uttar-pradesh.jpg";
+import uttarakhand from "./states/uttarakhand.jpg";
+import westbengal from "./states/west-bengal.jpg"
+
+
+export { banner1, banner2, banner3, tourism, textiles, telecommunications, steel, renewablenergy, pharmaceuticals, manufacturing, itbpm, infrastructure, healthcare, esdm, defencemanufacturing, consumerdurables, chemicals, cement, biotechnology, banking, aviation, automobiles, autocomponents, andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli }
