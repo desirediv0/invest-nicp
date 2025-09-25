@@ -5,6 +5,7 @@ import PageHero from '@/components/PageHero'
 
 import { Linkedin } from 'lucide-react'
 import { FaXTwitter } from "react-icons/fa6";
+import GrowthInvestment from '@/components/growth-investment';
 
 const InsightsUpdates = () => {
     return (
@@ -63,6 +64,8 @@ const InsightsUpdates = () => {
                             </div>
                         </div>
                     </div>
+
+                    <GrowthInvestment />
                 </div>
             </div>
         </div>

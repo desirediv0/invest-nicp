@@ -10,14 +10,7 @@ const ContactUs = () => {
         name: "",
         mobileNumber: "",
         email: "",
-        subject: "",
-        stateOfInterest: "",
-        sectorOfInterest: "",
-        budget: "",
-        appointmentDate: "",
         message: "",
-        requestOtp: false,
-        agreeTerms: false,
     })
 
     const handleInputChange = (e) => {
@@ -36,14 +29,7 @@ const ContactUs = () => {
             name: "",
             mobileNumber: "",
             email: "",
-            subject: "",
-            stateOfInterest: "",
-            sectorOfInterest: "",
-            budget: "",
-            appointmentDate: "",
             message: "",
-            requestOtp: false,
-            agreeTerms: false,
         })
         alert("Thank you for your message! We'll get back to you soon.")
     }
@@ -236,7 +222,7 @@ const ContactUs = () => {
                                     </div>
 
                                     {/* Email and Subject */}
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="grid grid-cols-1 gap-6">
                                         <div>
                                             <label className="block text-sm font-semibold text-gray-700 mb-2">
                                                 E-mail Address *
@@ -251,143 +237,10 @@ const ContactUs = () => {
                                                 required
                                             />
                                         </div>
-                                        <div>
-                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                Subject for Appointment *
-                                            </label>
-                                            <input
-                                                type="text"
-                                                name="subject"
-                                                placeholder="Enter appointment subject"
-                                                value={formData.subject}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
-                                                required
-                                            />
-                                        </div>
+
                                     </div>
 
-                                    {/* State and Sector */}
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                State of Interest *
-                                            </label>
-                                            <select
-                                                name="stateOfInterest"
-                                                value={formData.stateOfInterest}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
-                                                required
-                                            >
-                                                <option value="">Select state of interest</option>
-                                                <option value="andhra-pradesh">Andhra Pradesh</option>
-                                                <option value="arunachal-pradesh">Arunachal Pradesh</option>
-                                                <option value="assam">Assam</option>
-                                                <option value="bihar">Bihar</option>
-                                                <option value="chhattisgarh">Chhattisgarh</option>
-                                                <option value="goa">Goa</option>
-                                                <option value="gujarat">Gujarat</option>
-                                                <option value="haryana">Haryana</option>
-                                                <option value="himachal-pradesh">Himachal Pradesh</option>
-                                                <option value="jharkhand">Jharkhand</option>
-                                                <option value="karnataka">Karnataka</option>
-                                                <option value="kerala">Kerala</option>
-                                                <option value="madhya-pradesh">Madhya Pradesh</option>
-                                                <option value="maharashtra">Maharashtra</option>
-                                                <option value="manipur">Manipur</option>
-                                                <option value="meghalaya">Meghalaya</option>
-                                                <option value="mizoram">Mizoram</option>
-                                                <option value="nagaland">Nagaland</option>
-                                                <option value="odisha">Odisha</option>
-                                                <option value="punjab">Punjab</option>
-                                                <option value="rajasthan">Rajasthan</option>
-                                                <option value="sikkim">Sikkim</option>
-                                                <option value="tamil-nadu">Tamil Nadu</option>
-                                                <option value="telangana">Telangana</option>
-                                                <option value="tripura">Tripura</option>
-                                                <option value="uttar-pradesh">Uttar Pradesh</option>
-                                                <option value="uttarakhand">Uttarakhand</option>
-                                                <option value="west-bengal">West Bengal</option>
-                                                <option value="delhi">Delhi</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                Sector of Interest *
-                                            </label>
-                                            <select
-                                                name="sectorOfInterest"
-                                                value={formData.sectorOfInterest}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
-                                                required
-                                            >
-                                                <option value="">Select sector of interest</option>
-                                                <option value="agriculture">Agriculture & Allied Industries</option>
-                                                <option value="automobiles">Automobiles</option>
-                                                <option value="aviation">Aviation</option>
-                                                <option value="banking">Banking</option>
-                                                <option value="biotechnology">Biotechnology</option>
-                                                <option value="chemicals">Chemicals</option>
-                                                <option value="defence-manufacturing">Defence Manufacturing</option>
-                                                <option value="e-commerce">E-Commerce</option>
-                                                <option value="education-training">Education & Training</option>
-                                                <option value="healthcare">Healthcare</option>
-                                                <option value="infrastructure">Infrastructure</option>
-                                                <option value="it-bpm">IT & BPM</option>
-                                                <option value="manufacturing">Manufacturing</option>
-                                                <option value="pharmaceuticals">Pharmaceuticals</option>
-                                                <option value="renewable-energy">Renewable Energy</option>
-                                                <option value="steel">Steel</option>
-                                                <option value="telecommunications">Telecommunications</option>
-                                                <option value="textiles">Textiles</option>
-                                                <option value="tourism-hospitality">Tourism & Hospitality</option>
-                                            </select>
-                                        </div>
-                                    </div>
 
-                                    {/* Budget and Appointment Date */}
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                Budget *
-                                            </label>
-                                            <select
-                                                name="budget"
-                                                value={formData.budget}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
-                                                required
-                                            >
-                                                <option value="">Select your budget range</option>
-                                                <option value="under-1cr">Under ₹1 Crore</option>
-                                                <option value="1-5cr">₹1-5 Crores</option>
-                                                <option value="5-10cr">₹5-10 Crores</option>
-                                                <option value="10-25cr">₹10-25 Crores</option>
-                                                <option value="25-50cr">₹25-50 Crores</option>
-                                                <option value="50-100cr">₹50-100 Crores</option>
-                                                <option value="above-100cr">Above ₹100 Crores</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                Appointment Date of Weekend *
-                                            </label>
-                                            <input
-                                                type="date"
-                                                name="appointmentDate"
-                                                value={formData.appointmentDate}
-                                                onChange={handleInputChange}
-                                                className="w-full px-4 py-3 border-2 border-gray-200 focus:border-orange-500 focus:outline-none transition-colors text-gray-900"
-                                                required
-                                                min={new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString().split('T')[0]}
-                                            />
-                                            <p className="text-xs text-gray-500 mt-1">
-                                                Preferred date should be more than 48 hours from today
-                                            </p>
-                                        </div>
-                                    </div>
 
                                     {/* Message */}
                                     <div>
@@ -409,31 +262,7 @@ const ContactUs = () => {
                                         </p>
                                     </div>
 
-                                    {/* Checkboxes */}
-                                    <div className="space-y-4">
-                                        <label className="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
-                                            <input
-                                                type="checkbox"
-                                                name="requestOtp"
-                                                checked={formData.requestOtp}
-                                                onChange={(e) => setFormData(prev => ({ ...prev, requestOtp: e.target.checked }))}
-                                                className="mt-1 w-4 h-4 text-orange-500 bg-white border-gray-300 focus:ring-orange-500"
-                                            />
-                                            <span className="font-semibold">Request for OTP *</span>
-                                        </label>
 
-                                        <label className="flex items-start gap-3 text-sm text-gray-700 cursor-pointer">
-                                            <input
-                                                type="checkbox"
-                                                name="agreeTerms"
-                                                checked={formData.agreeTerms}
-                                                onChange={(e) => setFormData(prev => ({ ...prev, agreeTerms: e.target.checked }))}
-                                                className="mt-1 w-4 h-4 text-orange-500 bg-white border-gray-300 focus:ring-orange-500"
-                                                required
-                                            />
-                                            <span>I agree with your <Link href="/terms-and-conditions" className="text-orange-500 hover:text-orange-600 underline font-semibold">terms & conditions</Link></span>
-                                        </label>
-                                    </div>
 
                                     <button
                                         type="submit"
