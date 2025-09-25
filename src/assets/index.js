@@ -2,6 +2,8 @@
 import banner1 from "./banner1.jpg"
 import banner2 from "./banner2.jpg"
 import banner3 from "./banner3.jpg"
+import banner4 from "./banner4.jpg"
+import banner5 from "./banner5.jpg"
 
 //  sector images
 import agriculture from "./sector/agriculture.png"
@@ -111,7 +113,7 @@ import industrysectorengagementbusinesspartnership from "./what/industry-sector-
 
 
 export {
-    banner1, banner2, banner3,
+    banner1, banner2, banner3, banner4, banner5,
     agriculture, autocomponent, automobiles, aviation, banking, biotechnology, cement, chemicals, consumerDurables, defenceManufacturing, eCommerce, educationTraining, electronicSystemDesignManufacturing, engineeringCapitalGoods, steel, financialServices, fmcg, sciencetechnology, gemsJewellery, healthcare, infrastructure, insurance, tourismhospitality, retail, itBpm, services, manufacturing, mediaEntertainment, medicalDevices, realestate, metalsMining, msme, oilGas, pharmaceuticals, ports, power, renewableEnergy, telecommunications, textiles, roads, railways, esdm,
     andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli, amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, tirupati, businessmeetinghandshakemergeracquisition, businessworkshoppresentationinvestment, businessseminarconferencepolicydiscussion, investmentadvisoryfinancialconsultation, industrysectorengagementbusinesspartnership
 }

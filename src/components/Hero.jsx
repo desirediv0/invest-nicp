@@ -5,9 +5,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { BorderBeam } from "./magicui/border-beam"
-import { banner1, banner2, banner3 } from "@/assets"
+import { banner1, banner2, banner3, banner4, banner5 } from "@/assets"
 
 const slides = [
+
+
     {
         img: banner1,
         title: "Strategic Investments in India's Infrastructure",
@@ -22,6 +24,16 @@ const slides = [
         img: banner3,
         title: "INVEST SMART - INVEST NOW",
         subtitle: "MISSION GROWTH",
+    },
+    {
+        img: banner4,
+        title: "The Demographic Dividend : Investing in India's Smart Cities",
+        subtitle: "SHAPING THE FUTURE",
+    },
+    {
+        img: banner5,
+        title: "Unlocking India's Economic Potential: A Global Investment Destination",
+        subtitle: "DIVESE OPPORTUNITIES IN A GROWING ECONOMY",
     },
 
 ]
@@ -107,7 +119,7 @@ export default function HomePage() {
 
                         <div className="px-4 py-2 mx-auto inline-block max-w-[95vw]">
                             <motion.h1
-                                className="whitespace-nowrap truncate text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold text-white mb-0 tracking-tight capitalize leading-tight"
+                                className="whitespace-nowrap truncate text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-0 tracking-tight capitalize leading-tight"
                                 style={{ textShadow: "1px 1px 6px rgba(0,0,0,0.8)" }}
                             >
                                 {slides[currentSlide].subtitle}
