@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react'
+import React, { useMemo } from 'react'
 import Image from 'next/image'
 import PageHero from '@/components/PageHero'
 import { TrendingUp, Building2, Users, Target, ExternalLink } from 'lucide-react'
@@ -9,6 +9,16 @@ import sectorsData from '@/lib/sector';
 
 
 const SectorsPage = () => {
+    const sortedSectors = useMemo(() => {
+        const normalize = (s) => String(s || "").normalize("NFKD").replace(/\s+/g, " ").trim().toLowerCase()
+        return [...sectorsData].sort((a, b) => {
+            const na = normalize(a.name)
+            const nb = normalize(b.name)
+            if (na === nb) return String(a.id || "").localeCompare(String(b.id || ""))
+            return na.localeCompare(nb, 'en')
+        })
+    }, [])
+
     return (
         <div>
             <PageHero
@@ -17,7 +27,7 @@ const SectorsPage = () => {
                     { label: "Investment Opportunities", href: "/investment-opportunities" },
                     { label: "Sectors" }
                 ]}
-                backgroundImage="/cultural.webp"
+                backgroundImage="/skyline.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">
@@ -35,7 +45,7 @@ const SectorsPage = () => {
 
                     {/* Sectors Grid */}
                     <div className="space-y-8">
-                        {sectorsData.map((sector, index) => (
+                        {sortedSectors.map((sector, index) => (
                             <div
                                 key={sector.id}
                                 className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200"

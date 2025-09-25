@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import useResponsiveGrid from "@/lib/useResponsiveGrid"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -29,7 +29,19 @@ const ChooseState = () => {
     const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
     const { itemsPerPage } = useResponsiveGrid()
-    const totalPages = Math.ceil(statesData.length / itemsPerPage)
+
+    // create a sorted copy of the states data so list appears in alphabetical order by name
+    const sortedStates = useMemo(() => {
+        const normalize = (s) => String(s || "").normalize("NFKD").replace(/\s+/g, " ").trim().toLowerCase()
+        return [...statesData].sort((a, b) => {
+            const na = normalize(a.name)
+            const nb = normalize(b.name)
+            if (na === nb) return String(a.id || "").localeCompare(String(b.id || ""))
+            return na.localeCompare(nb, "en")
+        })
+    }, [])
+
+    const totalPages = Math.ceil(sortedStates.length / itemsPerPage)
 
     useEffect(() => {
         let interval = null
@@ -52,7 +64,7 @@ const ChooseState = () => {
 
     const getCurrentPageData = () => {
         const startIndex = currentPage * itemsPerPage
-        return statesData.slice(startIndex, startIndex + itemsPerPage)
+        return sortedStates.slice(startIndex, startIndex + itemsPerPage)
     }
 
     // helper to pause autoplay and optionally resume after a delay
@@ -193,10 +205,10 @@ const ChooseState = () => {
                                     <div className="flex items-start justify-between gap-3">
                                         <div className="flex items-center gap-3 flex-1 min-w-0">
                                             <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0 border-2 border-orange-200">
-                                                {statesData.find(s => s.id === selectedState)?.cardImage ? (
+                                                {sortedStates.find(s => s.id === selectedState)?.cardImage ? (
                                                     <Image
-                                                        src={statesData.find(s => s.id === selectedState)?.cardImage}
-                                                        alt={statesData.find(s => s.id === selectedState)?.name}
+                                                        src={sortedStates.find(s => s.id === selectedState)?.cardImage}
+                                                        alt={sortedStates.find(s => s.id === selectedState)?.name}
                                                         width={64}
                                                         height={64}
                                                         className="object-cover w-full h-full"
@@ -208,13 +220,13 @@ const ChooseState = () => {
                                             <div className="min-w-0 flex-1">
                                                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-1">
                                                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 truncate">
-                                                        {statesData.find(s => s.id === selectedState)?.name}
+                                                        {sortedStates.find(s => s.id === selectedState)?.name}
                                                     </h2>
                                                     <Badge
-                                                        variant={statesData.find(s => s.id === selectedState)?.type === "ut" ? "secondary" : "outline"}
+                                                        variant={sortedStates.find(s => s.id === selectedState)?.type === "ut" ? "secondary" : "outline"}
                                                         className="text-xs w-fit bg-orange-100 text-orange-700 border-orange-300"
                                                     >
-                                                        {statesData.find(s => s.id === selectedState)?.type === "ut" ? "Union Territory" : "State"}
+                                                        {sortedStates.find(s => s.id === selectedState)?.type === "ut" ? "Union Territory" : "State"}
                                                     </Badge>
                                                 </div>
                                                 <p className="text-xs sm:text-sm text-gray-600">Investment & Economic Overview</p>
@@ -234,7 +246,7 @@ const ChooseState = () => {
 
                                 <div className="p-3 sm:p-4 md:p-6">
                                     {(() => {
-                                        const currentItem = statesData.find(item => item.id === selectedState)
+                                        const currentItem = sortedStates.find(item => item.id === selectedState)
                                         if (!currentItem) return null
 
                                         return (

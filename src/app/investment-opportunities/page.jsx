@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PageHero from '@/components/PageHero'
 import { MapPin, TrendingUp, Building, ChevronRight } from 'lucide-react'
+import { jaipur, kochi } from '@/assets';
 
 const InvestmentOpportunities = () => {
     const [activeTab, setActiveTab] = useState('states')
@@ -16,7 +17,7 @@ const InvestmentOpportunities = () => {
                 breadcrumbs={[
                     { label: "Investment Opportunities" }
                 ]}
-                backgroundImage="/cultural.webp"
+                backgroundImage="/skyline.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">
@@ -89,7 +90,7 @@ const InvestmentOpportunities = () => {
                                         </div>
                                         <div className="lg:w-1/2 h-64 lg:h-auto relative">
                                             <Image
-                                                src="/cultural.webp"
+                                                src={jaipur}
                                                 alt="States and Cities"
                                                 fill
                                                 className="object-cover"
@@ -131,7 +132,7 @@ const InvestmentOpportunities = () => {
                                         </div>
                                         <div className="lg:w-1/2 h-64 lg:h-auto relative">
                                             <Image
-                                                src="/cultural.webp"
+                                                src={kochi}
                                                 alt="Investment Sectors"
                                                 fill
                                                 className="object-cover"

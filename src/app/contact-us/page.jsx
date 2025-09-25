@@ -118,7 +118,7 @@ const ContactUs = () => {
                                                 </p>
                                                 <p className="text-gray-700 text-sm">
                                                     <a href="mailto:nicpindia@gmail.com" className="hover:text-blue-600 transition-colors">
-                                                        📧 nicpindia@gmail.com
+                                                        nicpindia@gmail.com
                                                     </a>
                                                 </p>
                                             </div>

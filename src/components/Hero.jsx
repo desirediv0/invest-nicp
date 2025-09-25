@@ -21,7 +21,7 @@ const slides = [
     {
         img: banner3,
         title: "INVEST SMART - INVEST NOW",
-        subtitle: "Mission Growth",
+        subtitle: "MISSION GROWTH",
     },
 
 ]

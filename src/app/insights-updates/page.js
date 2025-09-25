@@ -2,9 +2,8 @@
 
 import React from 'react'
 import PageHero from '@/components/PageHero'
-import TwitterFeed from '@/components/TwitterFeed'
-import LinkedInFeed from '@/components/LinkedInFeed'
-import { Linkedin, ExternalLink } from 'lucide-react'
+
+import { Linkedin } from 'lucide-react'
 import { FaXTwitter } from "react-icons/fa6";
 
 const InsightsUpdates = () => {
@@ -30,66 +29,6 @@ const InsightsUpdates = () => {
                         </p>
                     </div>
 
-                    {/* Real Social Media Feeds */}
-                    <div className="grid lg:grid-cols-2 gap-8 mb-16">
-                        {/* LinkedIn Section */}
-                        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="bg-white/20 p-2 rounded-lg">
-                                            <Linkedin className="h-6 w-6 text-white" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-xl font-semibold text-white">LinkedIn</h3>
-                                            <p className="text-blue-100 text-sm">Live Feed</p>
-                                        </div>
-                                    </div>
-                                    <a
-                                        href="https://linkedin.com/company/investnicp"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="bg-white/20 hover:bg-white/30 p-2 rounded-lg transition-colors"
-                                    >
-                                        <ExternalLink className="h-5 w-5 text-white" />
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="p-6">
-                                <LinkedInFeed />
-                            </div>
-                        </div>
-
-                        {/* Twitter Section */}
-                        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div className="bg-gradient-to-r from-black to-black p-6">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="bg-white/20 p-2 rounded-lg">
-                                            <FaXTwitter className="h-6 w-6 text-white" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-xl font-semibold text-white">Twitter</h3>
-                                            <p className="text-blue-100 text-sm">Live Feed</p>
-                                        </div>
-                                    </div>
-                                    <a
-                                        href="https://twitter.com/investnicp"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="bg-white/20 hover:bg-white/30 p-2 rounded-lg transition-colors"
-                                    >
-                                        <ExternalLink className="h-5 w-5 text-white" />
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="p-6">
-                                <TwitterFeed />
-                            </div>
-                        </div>
-                    </div>
 
                     {/* Additional Information Section */}
                     <div className="bg-white rounded-xl shadow-lg p-8">

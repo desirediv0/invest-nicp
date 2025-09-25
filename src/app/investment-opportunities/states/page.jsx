@@ -1,12 +1,22 @@
 'use client';
 
-import React from 'react'
+import React, { useMemo } from 'react'
 import Image from 'next/image'
 import PageHero from '@/components/PageHero'
 import statesData from '@/lib/state';
 
 
 const StatesPage = () => {
+    const sortedStates = useMemo(() => {
+        const normalize = (s) => String(s || "").normalize("NFKD").replace(/\s+/g, " ").trim().toLowerCase()
+        return [...statesData].sort((a, b) => {
+            const na = normalize(a.name)
+            const nb = normalize(b.name)
+            if (na === nb) return String(a.id || "").localeCompare(String(b.id || ""))
+            return na.localeCompare(nb, 'en')
+        })
+    }, [])
+
     return (
         <div>
             <PageHero
@@ -15,7 +25,7 @@ const StatesPage = () => {
                     { label: "Investment Opportunities", href: "/investment-opportunities" },
                     { label: "States" }
                 ]}
-                backgroundImage="/cultural.webp"
+                backgroundImage="/skyline.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">
@@ -33,7 +43,7 @@ const StatesPage = () => {
 
                     {/* States Grid */}
                     <div className="space-y-8">
-                        {statesData.map((state, index) => (
+                        {sortedStates.map((state, index) => (
                             <div
                                 key={state.id}
                                 className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200"
