@@ -29,6 +29,7 @@ const navigationItems = [
             { name: "GROWING CITIES", href: "/insights-updates#growing-cities" },
         ]
     },
+    { name: "What We Do", href: "/#what-we-do" },
     {
         name: "Initiatives", href: "/initiatives", children: [
             { name: "Initiatives List", href: "/initiatives#list" },
@@ -40,7 +41,7 @@ const navigationItems = [
             { name: "Schemes", href: "/resources/schemes" },
             { name: "Authorities, Associations & Councils", href: "/resources/authorities" },
             {
-                name: "Policies", href: "/resources#policies", children: [
+                name: "POLICIES (Download)", href: "/resources#policies", children: [
                     { name: "Alternative Investment Fund", href: "/aif.pdf" },
                     { name: "FDI Policy", href: "/fdi.pdf" },
                     { name: "FDI Policy 2020", href: "/fdi2020.pdf" },

@@ -8,7 +8,6 @@ import React from 'react'
 import MissionVision from './about/mission-vision'
 import WhatWeDo from '@/components/what-we-do'
 import { infrastructure, renewableEnergy } from '@/assets'
-import Link from 'next/link'
 
 const Home = () => {
   return (
@@ -22,9 +21,9 @@ const Home = () => {
       <div className="bg-gray-50">
         <ChooseState />
       </div>
-      <Link href="#what-we-do" className="scroll-mt-20">
+      <div id='what-we-do'>
         <WhatWeDo />
-      </Link>
+      </div>
       <GrowthInvestment />
       <div className="w-full bg-gray-50 py-8 sm:py-12">
         <div className="grid grid-cols-1 w-full max-w-7xl mx-auto gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-6">

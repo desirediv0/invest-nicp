@@ -1,6 +1,6 @@
 import React from 'react'
 import PageHero from '@/components/PageHero'
-import { ArrowRight, Factory, Globe, FileText, Building2, MapPin, TrendingUp } from 'lucide-react'
+import { Factory, Globe, FileText, Building2, MapPin, TrendingUp } from 'lucide-react'
 
 const Initiatives = () => {
     const initiatives = [
@@ -128,8 +128,8 @@ const Initiatives = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Header Section */}
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                            <span className="text-orange-500">NICP</span> Initiatives
+                        <h2 className="text-4xl font-bold text-gray-900 mb-6 uppercase">
+                            Initiatives
                         </h2>
                         <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
                             Discover our ongoing initiatives and projects that drive investment and growth across India.
@@ -142,7 +142,7 @@ const Initiatives = () => {
                     {/* Initiatives Grid */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         {initiatives.map((initiative) => (
-                            <div key={initiative.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div key={initiative.id} className="bg-white  shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                                 {/* Header - icon moved to right and text right-aligned */}
                                 <div className={`p-6 border-l-4 ${getColorClasses(initiative.color)}`}>
                                     <div className="flex items-center mb-4 justify-between">
@@ -154,7 +154,7 @@ const Initiatives = () => {
                                                 {initiative.description}
                                             </p>
                                         </div>
-                                        <div className={`p-3 rounded-lg ml-4 ${getColorClasses(initiative.color)}`} aria-hidden>
+                                        <div className={`p-3  ml-4 ${getColorClasses(initiative.color)}`} aria-hidden>
                                             {initiative.icon}
                                         </div>
                                     </div>
@@ -182,9 +182,9 @@ const Initiatives = () => {
                                     </div>
 
                                     {/* CTA Button */}
-                                    <button className={`w-full ${getButtonClasses(initiative.color)} text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center hover:transform hover:scale-105 transition-all duration-200`}>
+                                    <button className={`w-full ${getButtonClasses(initiative.color)} text-white px-6 py-3  font-semibold flex items-center justify-center hover:transform hover:scale-105 transition-all duration-200`}>
                                         {initiative.ctaText}
-                                        <ArrowRight className="w-5 h-5 ml-2" />
+
                                     </button>
                                 </div>
                             </div>
@@ -199,9 +199,9 @@ const Initiatives = () => {
                         <p className="text-xl mb-6 opacity-90">
                             Explore these initiatives and discover investment opportunities that align with India&apos;s vision for growth and development.
                         </p>
-                        <button className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-200 flex items-center mx-auto">
+                        <button className="bg-white text-orange-600 px-8 py-4  font-bold hover:bg-gray-100 transition-colors duration-200 flex items-center mx-auto">
                             Start Your Investment Journey
-                            <ArrowRight className="w-5 h-5 ml-2" />
+
                         </button>
                     </div>
                 </div>
