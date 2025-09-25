@@ -162,6 +162,16 @@ export default function BusinessFooter() {
                                 </Link>
 
                             </nav>
+
+                            <div className="mt-6">
+                                <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-3">Business Associate</h4>
+                                <div className="flex items-center justify-start">
+                                    <Link href="http://www.rehoindia.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-white  border border-gray-200 shadow-sm">
+                                        {/* Place a logo image named /reho-logo.png in the public/ folder for this to show */}
+                                        <Image src="/Reho.png" alt="ReHo India" width={200} height={40} className="object-cover rounded" />
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
 
                         {/* Contact Form Section */}
