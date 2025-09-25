@@ -60,7 +60,7 @@ export default function BusinessFooter() {
                     <div className="space-y-6">
                         <div className="border-l-4 border-orange-500 pl-6">
                             <Link href="/" className="flex items-center gap-3 mb-4">
-                                <Image src={"/logo2.png"} alt="NICP Logo" width={120} height={60} className="h-16 w-auto object-contain" />
+                                <Image src={"/logo.gif"} alt="NICP Logo" width={120} height={120} className="h-20 w-auto object-contain bg-white rounded-full p-1" />
                                 <span className="text-2xl font-bold text-white uppercase tracking-wider">NICP</span>
                             </Link>
                         </div>
@@ -83,10 +83,10 @@ export default function BusinessFooter() {
                         <div className="pt-4 border-t border-gray-700">
                             <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider">Follow Us</p>
                             <div className="flex gap-3">
-                                <a target="_blank" href="https://x.com/investnicp" className="w-10 h-10 bg-gray-700 hover:bg-orange-500 flex items-center justify-center transition-colors">
-                                    <FaXTwitter size={18} className="text-white" />
+                                <a target="_blank" href="https://x.com/investnicp" className="w-10 h-10 text-white bg-black flex items-center justify-center transition-colors">
+                                    <FaXTwitter size={18} />
                                 </a>
-                                <a target="_blank" href="https://www.linkedin.com/company/investnicp/posts/?feedView=all" className="w-10 h-10 bg-gray-700 hover:bg-orange-500 flex items-center justify-center transition-colors">
+                                <a target="_blank" href="https://www.linkedin.com/company/investnicp/posts/?feedView=all" className="w-10 h-10 bg-[#0063C2]  flex items-center justify-center transition-colors">
                                     <Linkedin size={18} className="text-white" />
                                 </a>
                             </div>

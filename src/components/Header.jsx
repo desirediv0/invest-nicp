@@ -9,6 +9,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 const navigationItems = [
+    { name: "Home", href: "/" },
     {
         name: "About", href: "/about", children: [
             { name: "Mission", href: "/about#mission" },
