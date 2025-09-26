@@ -8,6 +8,7 @@ import React from 'react'
 import MissionVision from './about/mission-vision'
 import WhatWeDo from '@/components/what-we-do'
 import { infrastructure, renewableEnergy } from '@/assets'
+import InvestmentPotential from './about/investment-potential'
 
 const Home = () => {
   return (
@@ -16,6 +17,9 @@ const Home = () => {
       <HeroCarousel />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <MissionVision />
+        <div className="mt-10">
+          <InvestmentPotential />
+        </div>
       </div>
       <ChooseSector />
       <div className="bg-gray-50">
