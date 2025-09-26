@@ -29,7 +29,15 @@ const navigationItems = [
             { name: "GROWING CITIES", href: "/insights-updates#growing-cities" },
         ]
     },
-    { name: "What We Do", href: "/#what-we-do" },
+    {
+        name: "What We Do", href: "/what-we-do", children: [
+            { name: "Market Entry & Expansion Mergers and Acquisitions", href: "/what-we-do#market-entry-expansion-mergers-acquisitions" },
+            { name: "Workshops for Investment Promotions", href: "/what-we-do#workshops-investment-promotions" },
+            { name: "Seminars For New Policies & Opportunities", href: "/what-we-do#seminars-new-policies-opportunities" },
+            { name: "INVESTMENT ADVISORY JVS/FOIS", href: "/what-we-do#investment-advisory-jvs-fois" },
+            { name: "Sector Engagement & Facilitation", href: "/what-we-do#sector-engagement-facilitation" },
+        ]
+    },
     {
         name: "Initiatives", href: "/initiatives", children: [
             { name: "Initiatives List", href: "/initiatives#list" },

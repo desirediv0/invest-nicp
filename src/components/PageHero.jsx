@@ -13,10 +13,10 @@ export default function PageHero({
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/70"></div>
+            <div className="absolute inset-0 bg-black/20"></div>
 
             {/* Orange Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/30 via-transparent to-orange-600/30"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 via-transparent to-orange-600/20"></div>
 
             {/* Content */}
             <div className="relative z-10 text-center text-white w-full max-w-6xl mx-auto px-4 sm:px-6 py-8">

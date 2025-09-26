@@ -7,7 +7,7 @@ const MissionVision = () => {
         <div className="grid md:grid-cols-2 gap-8">
             {/* Mission Card */}
             <div id='mission' className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <div className="bg-gradient-to-r from-orange-500 to-orange-600 flex h-28">
+                <div className="bg-gradient-to-r from-orange-500 to-orange-600 flex h-32">
                     {/* Left - Icon + Heading */}
                     <div className="w-1/2 flex items-center gap-3 p-6">
                         <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
@@ -42,7 +42,7 @@ const MissionVision = () => {
 
             {/* Vision Card */}
             <div id='vision' className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <div className="bg-gradient-to-r from-orange-500 to-orange-600 flex h-28">
+                <div className="bg-gradient-to-r from-orange-500 to-orange-600 flex h-32">
                     {/* Left - Icon + Heading */}
                     <div className="w-1/2 flex items-center gap-3 p-6">
                         <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">

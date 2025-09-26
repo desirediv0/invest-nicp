@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import Image from 'next/image'
 import HeadText from "./head-text"
 import { businessmeetinghandshakemergeracquisition, businessseminarconferencepolicydiscussion, businessworkshoppresentationinvestment, industrysectorengagementbusinesspartnership, investmentadvisoryfinancialconsultation } from "@/assets"
+import { useRouter } from "next/navigation"
 
 
 
@@ -11,30 +12,36 @@ const imageServices = [
         title: "Market Entry & Expansion",
         subtitle: "Mergers and Acquisitions",
         image: businessmeetinghandshakemergeracquisition,
+        href: "/what-we-do#market-entry-expansion-mergers-acquisitions"
     },
     {
         title: "Workshops for Investment Promotions",
         subtitle: "Strategic Planning Sessions",
         image: businessworkshoppresentationinvestment,
+        href: "/what-we-do#workshops-investment-promotions"
     },
     {
         title: "Seminars For New Policies & Opportunities",
         subtitle: "Policy Updates & Market Insights",
         image: businessseminarconferencepolicydiscussion,
+        href: "/what-we-do#seminars-new-policies-opportunities"
     },
     {
         title: "INVESTMENT ADVISORY",
         subtitle: "JVs / FOIs",
         image: investmentadvisoryfinancialconsultation,
+        href: "/what-we-do#investment-advisory-jvs-fois"
     },
     {
         title: "Sector Engagement & Facilitation",
         subtitle: "Industry Partnerships",
         image: industrysectorengagementbusinesspartnership,
+        href: "/what-we-do#sector-engagement-facilitation"
     },
 ]
 
 export default function WhatWeDo() {
+    const route = useRouter()
     return (
         <section className="py-16 bg-background">
             <div className="container mx-auto px-4">
@@ -58,6 +65,7 @@ export default function WhatWeDo() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                            onClick={() => route.push(service.href)}
                             className="relative overflow-hidden bg-card border border-border group cursor-pointer h-48"
                         >
                             <div className="absolute inset-0">

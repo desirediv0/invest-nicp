@@ -87,14 +87,6 @@ const AboutUs = () => {
                                         Why Choose India for Investment?
                                     </h2>
                                 </div>
-                                <div className="relative w-full md:w-40 h-24 md:ml-auto">
-                                    <Image
-                                        src="/assets/banner3.jpg"
-                                        alt="India Investment"
-                                        fill
-                                        className="object-cover rounded-lg shadow-md"
-                                    />
-                                </div>
                             </div>
 
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
