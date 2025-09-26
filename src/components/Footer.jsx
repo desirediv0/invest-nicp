@@ -33,17 +33,15 @@ export default function BusinessFooter() {
             name: "",
             mobileNumber: "",
             email: "",
-
             message: "",
-
         })
     }
 
     return (
         <footer className="relative overflow-hidden text-white"
-            style={{ backgroundImage: `url('/agriculture.png')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'multiply' }}>
+            style={{ backgroundImage: `url('/infrastructure.png')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'multiply' }}>
             {/* Dark overlay to subdue the background image so gradient and content are visible */}
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-black/80 via-black/70 to-black/80 backdrop-blur-sm" />
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-black/90 via-black/70 to-black/90 backdrop-blur-sm" />
 
             <div className="relative z-10">
                 {/* Top Orange Accent Line */}
@@ -79,7 +77,7 @@ export default function BusinessFooter() {
                             <div className="pt-4 border-t border-gray-700">
                                 <p className="text-xs text-gray-400 mb-3 uppercase tracking-wider">Follow Us</p>
                                 <div className="flex gap-3">
-                                    <a target="_blank" href="https://x.com/investnicp" className="w-10 h-10 text-white bg-black flex items-center justify-center transition-colors">
+                                    <a target="_blank" href="https://x.com/investnicp" className="w-10 h-10 text-white bg-black flex items-center justify-center transition-colors border border-gray-600">
                                         <FaXTwitter size={18} />
                                     </a>
                                     <a target="_blank" href="https://www.linkedin.com/company/investnicp/posts/?feedView=all" className="w-10 h-10 bg-[#0063C2]  flex items-center justify-center transition-colors">
