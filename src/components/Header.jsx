@@ -66,7 +66,11 @@ export default function Header() {
     const [mobileOpenIndex, setMobileOpenIndex] = useState(null)
     const [desktopOpenIndex, setDesktopOpenIndex] = useState(null)
     const [desktopOpenSubIndex, setDesktopOpenSubIndex] = useState(null)
+    const [dropdownPosition, setDropdownPosition] = useState({})
+    const [subDropdownPosition, setSubDropdownPosition] = useState({})
     const closeTimerRef = useRef(null)
+    const dropdownRefs = useRef({})
+    const subDropdownRefs = useRef({})
 
     useEffect(() => {
         const handleScroll = () => {
@@ -77,6 +81,90 @@ export default function Header() {
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
+
+    // Calculate dropdown position to prevent overflow
+    useEffect(() => {
+        const calculatePosition = (index) => {
+            try {
+                const el = dropdownRefs.current[index]
+                if (!el) return
+
+                const rect = el.getBoundingClientRect()
+                const viewportWidth = window.innerWidth
+                const dropdownWidth = 256 // w-64 = 16rem = 256px
+
+                // Check if dropdown would overflow on the right
+                const wouldOverflowRight = rect.left + dropdownWidth > viewportWidth - 20
+
+                setDropdownPosition(prev => ({
+                    ...prev,
+                    [index]: {
+                        alignRight: wouldOverflowRight,
+                        style: wouldOverflowRight ? { right: 0 } : { left: 0 }
+                    }
+                }))
+            } catch (e) {
+                console.error('Error calculating dropdown position:', e)
+            }
+        }
+
+        if (desktopOpenIndex !== null) {
+            // Use RAF to ensure DOM is updated
+            requestAnimationFrame(() => calculatePosition(desktopOpenIndex))
+        }
+
+        const handleResize = () => {
+            if (desktopOpenIndex !== null) {
+                calculatePosition(desktopOpenIndex)
+            }
+        }
+
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [desktopOpenIndex])
+
+    // Calculate sub-dropdown position
+    useEffect(() => {
+        const calculateSubPosition = (parentIndex, subIndex) => {
+            try {
+                const parentEl = dropdownRefs.current[parentIndex]
+                const subEl = subDropdownRefs.current[`${parentIndex}-${subIndex}`]
+
+                if (!parentEl || !subEl) return
+
+                const parentRect = parentEl.getBoundingClientRect()
+                const viewportWidth = window.innerWidth
+                const subDropdownWidth = 256
+
+                // Check if parent dropdown is aligned right
+                const isParentAlignedRight = dropdownPosition[parentIndex]?.alignRight
+
+                let shouldAlignLeft = false
+
+                if (isParentAlignedRight) {
+                    // If parent is right-aligned, open submenu to the left
+                    shouldAlignLeft = true
+                } else {
+                    // If parent is left-aligned, check if submenu would overflow
+                    const wouldOverflowRight = parentRect.right + subDropdownWidth > viewportWidth - 20
+                    shouldAlignLeft = wouldOverflowRight
+                }
+
+                setSubDropdownPosition(prev => ({
+                    ...prev,
+                    [`${parentIndex}-${subIndex}`]: {
+                        alignLeft: shouldAlignLeft
+                    }
+                }))
+            } catch (e) {
+                console.error('Error calculating sub-dropdown position:', e)
+            }
+        }
+
+        if (desktopOpenIndex !== null && desktopOpenSubIndex !== null) {
+            requestAnimationFrame(() => calculateSubPosition(desktopOpenIndex, desktopOpenSubIndex))
+        }
+    }, [desktopOpenIndex, desktopOpenSubIndex, dropdownPosition])
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50">
@@ -89,7 +177,7 @@ export default function Header() {
                 )}
             >
                 <div className="px-4 py-2">
-                    <div className="flex items-center">
+                    <div className="flex items-center w-full justify-between">
                         {/* Logo on the left */}
                         <div className="flex items-center">
                             <Link href="/" className="flex items-center">
@@ -97,8 +185,7 @@ export default function Header() {
                             </Link>
                         </div>
 
-                        {/* Desktop Navigation - placed close to logo */}
-                        <nav className="hidden lg:flex items-center space-x-4 ml-6">
+                        <nav className="hidden lg:flex items-center space-x-4 ml-auto">
                             {navigationItems.map((item, index) => (
                                 <div
                                     key={item.name}
@@ -112,7 +199,6 @@ export default function Header() {
                                         setDesktopOpenSubIndex(null)
                                     }}
                                     onMouseLeave={() => {
-                                        // small delay to avoid flicker when moving between menus
                                         closeTimerRef.current = setTimeout(() => {
                                             setDesktopOpenIndex(null)
                                             setDesktopOpenSubIndex(null)
@@ -122,7 +208,7 @@ export default function Header() {
                                     <Link
                                         href={item.href}
                                         className={cn(
-                                            "transition-colors duration-200 font-[family-name:var(--font-source-sans)] font-medium px-2 py-2 rounded-md flex items-center gap-1",
+                                            "transition-colors duration-200 font-[family-name:var(--font-source-sans)] font-medium px-2 py-2 rounded-md flex items-center gap-1 whitespace-nowrap",
                                             isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
                                         )}
                                         aria-expanded={desktopOpenIndex === index}
@@ -131,13 +217,15 @@ export default function Header() {
                                         {item.children && <FiChevronDown className={`ml-1 transition-transform duration-200 text-sm ${desktopOpenIndex === index ? "rotate-180" : ""}`} />}
                                     </Link>
 
-                                    {/* Desktop dropdown (controlled) */}
+                                    {/* Desktop dropdown */}
                                     {item.children && (
                                         <div
+                                            ref={(el) => (dropdownRefs.current[index] = el)}
                                             className={cn(
-                                                "absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-border transition-all duration-200 z-40 transform-gpu",
+                                                "absolute mt-2 w-64 bg-white rounded-md shadow-lg border border-border transition-all duration-200 z-40 transform-gpu",
                                                 desktopOpenIndex === index ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1 pointer-events-none"
                                             )}
+                                            style={dropdownPosition[index]?.style || { left: 0 }}
                                         >
                                             <div className="py-2">
                                                 {item.children.map((sub, sidx) => (
@@ -149,7 +237,6 @@ export default function Header() {
                                                                 clearTimeout(closeTimerRef.current)
                                                                 closeTimerRef.current = null
                                                             }
-                                                            // only set sub index when its parent is open
                                                             if (desktopOpenIndex === index) setDesktopOpenSubIndex(sidx)
                                                         }}
                                                         onMouseLeave={() => {
@@ -161,27 +248,32 @@ export default function Header() {
                                                             className="px-4 py-2 text-sm text-foreground hover:bg-muted flex items-center justify-between"
                                                         >
                                                             <span className="flex items-center gap-3">
-                                                                {/* show eye icon for Resources children */}
                                                                 {item.name === "Resources" && <FiEye className="text-lg text-slate-400" />}
                                                                 {sub.name}
                                                             </span>
                                                             {sub.children && <FiChevronDown className={`text-xs text-slate-400 ${desktopOpenSubIndex === sidx ? "rotate-180" : ""}`} />}
                                                         </Link>
 
-                                                        {/* second level dropdown (controlled) */}
+                                                        {/* Sub-dropdown */}
                                                         {sub.children && (
                                                             <div
+                                                                ref={(el) => (subDropdownRefs.current[`${index}-${sidx}`] = el)}
                                                                 className={cn(
-                                                                    "absolute top-0 left-full ml-2 w-64 bg-white rounded-md shadow-lg border border-border transition-all duration-200 z-50 transform-gpu",
-                                                                    desktopOpenIndex === index && desktopOpenSubIndex === sidx ? "opacity-100 visible translate-x-0" : "opacity-0 invisible -translate-x-1 pointer-events-none"
+                                                                    "absolute top-0 w-64 bg-white rounded-md shadow-lg border border-border transition-all duration-200 z-50 transform-gpu",
+                                                                    subDropdownPosition[`${index}-${sidx}`]?.alignLeft
+                                                                        ? 'right-full mr-2'
+                                                                        : 'left-full ml-2',
+                                                                    desktopOpenIndex === index && desktopOpenSubIndex === sidx
+                                                                        ? "opacity-100 visible translate-x-0"
+                                                                        : "opacity-0 invisible -translate-x-1 pointer-events-none"
                                                                 )}
                                                             >
-                                                                <div className="py-2">
+                                                                <div className="py-2 max-h-80 overflow-y-auto">
                                                                     {sub.children.map((s2) => (
                                                                         <Link
                                                                             key={s2.name}
                                                                             href={s2.href}
-                                                                            className="block px-4 py-2 text-sm text-foreground hover:bg-muted"
+                                                                            className="block px-4 py-2 text-sm text-foreground hover:bg-muted whitespace-nowrap"
                                                                         >
                                                                             {s2.name}
                                                                         </Link>
@@ -198,7 +290,7 @@ export default function Header() {
                             ))}
                         </nav>
 
-                        {/* Right side: mobile toggle */}
+                        {/* Mobile menu toggle */}
                         <div className="flex items-center ml-auto">
                             <Button
                                 variant="ghost"
@@ -214,6 +306,7 @@ export default function Header() {
                 </div>
             </div>
 
+            {/* Mobile menu */}
             <div
                 className={cn(
                     "bg-white/95 backdrop-blur-md border-b border-border transition-all duration-300",
@@ -221,7 +314,6 @@ export default function Header() {
                 )}
             >
                 <div className="container mx-auto px-4">
-                    {/* Mobile Navigation */}
                     <nav className="lg:hidden py-4 space-y-2">
                         {navigationItems.map((item, idx) => (
                             <div key={item.name} className="border-b border-border">
@@ -242,7 +334,7 @@ export default function Header() {
                                     )}
                                 </div>
 
-                                {/* Mobile submenu (expand) */}
+                                {/* Mobile submenu */}
                                 {item.children && mobileOpenIndex === idx && (
                                     <div id={`mobile-submenu-${idx}`} className="pl-6 pb-2">
                                         {item.children.map((sub, sidx) => (
@@ -255,12 +347,11 @@ export default function Header() {
                                                     }}
                                                     className="py-2 px-4 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors duration-200 flex items-center gap-2"
                                                 >
-                                                    {/* eye icon for Resources children */}
                                                     {item.name === "Resources" && <FiEye className="text-green-600" />}
                                                     {sub.name}
                                                 </Link>
 
-                                                {/* nested mobile submenu (sub.children) */}
+                                                {/* Nested mobile submenu */}
                                                 {sub.children && (
                                                     <div className="pl-6">
                                                         {sub.children.map((s2) => (
