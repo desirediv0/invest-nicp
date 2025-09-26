@@ -11,14 +11,14 @@ export default function GOIAndMinistriesPage() {
             "Union Public Service Commission (UPSC)",
             "Comptroller and Auditor General (CAG) of India"
         ],
+        // Move Parliament to appear before Judiciary
         "Parliament": [
             "Rajya Sabha",
             "Lok Sabha"
         ],
+        // Merge Key Commissions under Judiciary as requested
         "Judiciary": [
-            "Supreme Court of India"
-        ],
-        "Key Commissions": [
+            "Supreme Court of India",
             "National Human Rights Commission (NHRC), India",
             "NITI Aayog - National Institution for Transforming India",
             "National Commission for Women (NCW)",
