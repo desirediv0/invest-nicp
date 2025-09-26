@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { BorderBeam } from "./magicui/border-beam"
 import { banner1, banner2, banner3, banner4, banner5 } from "@/assets"
 
 const slides = [
@@ -81,16 +80,7 @@ export default function HomePage() {
                     <div className="absolute top-0 left-0 right-0 h-[60vh] lg:h-[70vh] bg-gradient-to-br from-black/30 via-purple-900/25 to-black/10" />
                 </div>
 
-                {/* BorderBeam Animation */}
-                <div className="absolute inset-0 z-10 pointer-events-none">
-                    <BorderBeam
-                        duration={6}
-                        size={400}
-                        className="from-transparent via-red-500 to-transparent"
-                        colorFrom="#ff3d00"
-                        colorTo="#ff6d00"
-                    />
-                </div>
+
 
                 <button
                     onClick={prevSlide}

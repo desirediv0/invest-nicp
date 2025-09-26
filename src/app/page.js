@@ -31,7 +31,7 @@ const Home = () => {
       <GrowthInvestment />
       <div className="w-full bg-gray-50 py-8 sm:py-12">
         <div className="grid grid-cols-1 w-full max-w-7xl mx-auto gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-6">
-          {/* First Card */}
+
           <Bgcoverimage
             image={renewableEnergy}
             heading="Growth Unleashed by Uncharted Territories and Trade"
@@ -40,7 +40,7 @@ const Home = () => {
             description2="INVEST NICP is committed to being a catalyst for international economic growth, nurturing innovation, and realizing dreams as global achievements — shaping an elegant, interwoven, and thriving world for all."
           />
 
-          {/* Second Card */}
+
           <Bgcoverimage
             image={infrastructure}
             heading="Empowering Investors, Fueling Growth"

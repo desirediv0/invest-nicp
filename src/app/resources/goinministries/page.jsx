@@ -11,12 +11,12 @@ export default function GOIAndMinistriesPage() {
             "Union Public Service Commission (UPSC)",
             "Comptroller and Auditor General (CAG) of India"
         ],
-        // Move Parliament to appear before Judiciary
+
         "Parliament": [
             "Rajya Sabha",
             "Lok Sabha"
         ],
-        // Merge Key Commissions under Judiciary as requested
+
         "Judiciary": [
             "Supreme Court of India",
             "National Human Rights Commission (NHRC), India",
@@ -188,7 +188,7 @@ export default function GOIAndMinistriesPage() {
                             NICP provides expert guidance for interacting with government ministries and regulatory bodies
                         </p>
                         <a href="/contact-us" className="bg-white text-orange-600 hover:bg-orange-50 font-bold py-3 px-8 transition-colors">
-                            Get Government Liaison Support
+                            Get Support
                         </a>
                     </div>
                 </div>

@@ -6,11 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from 'next/image'
-
-
-import { BorderBeam } from "./magicui/border-beam"
 import HeadText from "./head-text"
-
 import {
     IoTrendingUpOutline,
     IoTrophyOutline,
@@ -30,7 +26,6 @@ const ChooseState = () => {
 
     const { itemsPerPage } = useResponsiveGrid()
 
-    // create a sorted copy of the states data so list appears in alphabetical order by name
     const sortedStates = useMemo(() => {
         const normalize = (s) => String(s || "").normalize("NFKD").replace(/\s+/g, " ").trim().toLowerCase()
         return [...statesData].sort((a, b) => {
@@ -57,7 +52,6 @@ const ChooseState = () => {
         }
     }, [isAutoPlaying, totalPages])
 
-    // Reset page when itemsPerPage changes (prevents out-of-range pages)
     useEffect(() => {
         setCurrentPage(0)
     }, [itemsPerPage])
@@ -67,10 +61,10 @@ const ChooseState = () => {
         return sortedStates.slice(startIndex, startIndex + itemsPerPage)
     }
 
-    // helper to pause autoplay and optionally resume after a delay
+
     const pauseAutoplay = (duration = 15000) => {
         setIsAutoPlaying(false)
-        // clear any existing timers stored on the component
+
         if (typeof window !== "undefined") {
             if (window.__resumeStateTimer) {
                 clearTimeout(window.__resumeStateTimer)
@@ -78,7 +72,6 @@ const ChooseState = () => {
             }
             if (duration > 0) {
                 window.__resumeStateTimer = setTimeout(() => {
-                    // only resume if dialog is not open
                     if (!isDialogOpen) setIsAutoPlaying(true)
                     window.__resumeStateTimer = null
                 }, duration)
@@ -89,9 +82,9 @@ const ChooseState = () => {
     const handleStateClick = (stateId) => {
         const newSel = selectedState === stateId ? null : stateId
         setSelectedState(newSel)
-        // open dialog when selecting a state
+
         setIsDialogOpen(newSel !== null)
-        // pause autoplay while user is interacting
+
         pauseAutoplay(15000)
     }
 
@@ -100,7 +93,6 @@ const ChooseState = () => {
             className="w-full max-w-7xl mx-auto px-4 py-5 bg-background"
             onMouseEnter={() => pauseAutoplay(0)}
             onMouseLeave={() => {
-                // only resume when dialog is not open
                 if (!isDialogOpen) setIsAutoPlaying(true)
             }}
         >
@@ -111,7 +103,7 @@ const ChooseState = () => {
             />
 
             <motion.div
-                className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4 mt-12"
+                className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-3 mt-12"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -132,16 +124,10 @@ const ChooseState = () => {
                                     }`}
                                 onClick={() => handleStateClick(state.id)}
                             >
-                                <BorderBeam
-                                    duration={12 + index}
-                                    size={250}
-                                    className="from-transparent via-primary to-transparent opacity-40"
-                                    colorFrom="hsl(var(--primary))"
-                                    colorTo="hsl(var(--secondary))"
-                                />
+
 
                                 <CardContent className="p-0">
-                                    {/* Image Section */}
+
                                     <div className="relative h-32 bg-gray-100 overflow-hidden">
                                         {state.cardImage ? (
                                             <Image src={state.cardImage} alt={state.name} fill className="object-cover" />
@@ -151,8 +137,7 @@ const ChooseState = () => {
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                                     </div>
 
-                                    {/* Name Section */}
-                                    <div className="p-3 bg-card">
+                                    <div className="p-2 bg-card">
                                         <div className="flex items-center justify-between flex-col">
                                             <h3 className="text-sm font-bold text-gray-900 leading-tight text-center">{state.name}</h3>
                                             <Badge
@@ -172,7 +157,7 @@ const ChooseState = () => {
                     ))}
                 </AnimatePresence>
 
-                {/* Details Dialog */}
+
                 <AnimatePresence>
                     {isDialogOpen && selectedState && (
                         <motion.div
@@ -182,7 +167,7 @@ const ChooseState = () => {
                             exit={{ opacity: 0 }}
                             className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
                         >
-                            {/* Backdrop */}
+
                             <motion.button
                                 aria-label="Close dialog"
                                 onClick={() => { setIsDialogOpen(false); setSelectedState(null) }}
@@ -251,7 +236,7 @@ const ChooseState = () => {
 
                                         return (
                                             <div className="space-y-3 sm:space-y-4 md:space-y-6">
-                                                {/* Investment Opportunities */}
+
                                                 {currentItem.investmentOpportunities && (
                                                     <div className="bg-primary/5 border border-primary/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
                                                         <div className="flex items-center gap-3 mb-3">
@@ -265,8 +250,6 @@ const ChooseState = () => {
                                                         </p>
                                                     </div>
                                                 )}
-
-                                                {/* Economic Achievements */}
                                                 {currentItem.economicAchievements && (
                                                     <div className="bg-primary/5 border border-primary/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
                                                         <div className="flex items-center gap-3 mb-3">
@@ -280,8 +263,6 @@ const ChooseState = () => {
                                                         </p>
                                                     </div>
                                                 )}
-
-                                                {/* Infrastructure */}
                                                 {currentItem.infrastructureHighlights && (
                                                     <div className="bg-secondary/5 border border-secondary/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
                                                         <div className="flex items-center gap-3 mb-3">
@@ -295,8 +276,6 @@ const ChooseState = () => {
                                                         </p>
                                                     </div>
                                                 )}
-
-                                                {/* Demographics */}
                                                 {currentItem.demographics && (
                                                     <div className="bg-accent/5 border border-accent/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
                                                         <div className="flex items-center gap-3 mb-3">
@@ -310,8 +289,6 @@ const ChooseState = () => {
                                                         </p>
                                                     </div>
                                                 )}
-
-                                                {/* Government Policies */}
                                                 {currentItem.policies && (
                                                     <div className="bg-primary/5 border border-primary/20 shadow-sm p-3 sm:p-4 md:p-5 rounded-lg">
                                                         <div className="flex items-center gap-3 mb-3">
@@ -328,8 +305,6 @@ const ChooseState = () => {
                                             </div>
                                         )
                                     })()}
-
-                                    {/* Close Button */}
                                     <div className="mt-6 pt-4 border-t border-gray-200 flex justify-center">
                                         <button
                                             onClick={() => { setIsDialogOpen(false); setSelectedState(null) }}
@@ -344,8 +319,6 @@ const ChooseState = () => {
                     )}
                 </AnimatePresence>
             </motion.div>
-
-            {/* Pagination */}
             <div className="flex justify-center items-center gap-4 mt-16">
                 {Array.from({ length: totalPages }).map((_, index) => (
                     <motion.button
