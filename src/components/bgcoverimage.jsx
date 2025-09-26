@@ -26,9 +26,9 @@ const Bgcoverimage = ({
                 {/* Orange Line at Bottom (only for image) */}
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-b-lg z-10" />
                 {/* Top Left Icon */}
-                <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-orange-500/90 backdrop-blur-sm p-2 sm:p-3 shadow-lg rounded-md z-10">
+                {/* <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-orange-500/90 backdrop-blur-sm p-2 sm:p-3 shadow-lg rounded-md z-10">
                     <MapPin className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
-                </div>
+                </div> */}
                 {/* Top Right Icon */}
                 <div className="absolute top-3 right-3 sm:top-6 sm:right-6 bg-white/20 backdrop-blur-sm p-2 sm:p-3 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-md z-10">
                     <ExternalLink className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
