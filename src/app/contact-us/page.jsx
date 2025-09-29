@@ -21,17 +21,27 @@ const ContactUs = () => {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const [submitting, setSubmitting] = useState(false)
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("Form Data:", formData)
-        // Reset form after submission
-        setFormData({
-            name: "",
-            mobileNumber: "",
-            email: "",
-            message: "",
-        })
-        alert("Thank you for your message! We'll get back to you soon.")
+        setSubmitting(true)
+        try {
+            const res = await fetch('/api/form', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            })
+            const data = await res.json()
+            if (!res.ok) throw new Error(data?.error || 'Submission failed')
+            // success
+            alert(data.message || 'Thank you — we will contact you shortly')
+            setFormData({ name: '', mobileNumber: '', email: '', message: '' })
+        } catch (err) {
+            console.error('Submit error', err)
+            alert(err.message || 'Failed to send. Please try again later.')
+        } finally {
+            setSubmitting(false)
+        }
     }
 
     return (
@@ -262,11 +272,11 @@ const ContactUs = () => {
 
                                     <button
                                         type="submit"
+                                        disabled={submitting}
                                         className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-4 px-8 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-
                                     >
                                         <Send className="w-5 h-5" />
-                                        SUBMIT
+                                        {submitting ? 'SENDING...' : 'SUBMIT'}
                                     </button>
                                 </form>
 

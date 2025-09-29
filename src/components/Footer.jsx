@@ -14,6 +14,7 @@ export default function BusinessFooter() {
         email: "",
         message: "",
     })
+    const [submitting, setSubmitting] = useState(false)
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
@@ -23,16 +24,25 @@ export default function BusinessFooter() {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("Form Data:", formData)
-        // Reset form after submission
-        setFormData({
-            name: "",
-            mobileNumber: "",
-            email: "",
-            message: "",
-        })
+        setSubmitting(true)
+        try {
+            const res = await fetch('/api/form', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            })
+            const data = await res.json()
+            if (!res.ok) throw new Error(data?.error || 'Submission failed')
+            alert(data.message || 'Thank you — we will contact you shortly')
+            setFormData({ name: '', mobileNumber: '', email: '', message: '' })
+        } catch (err) {
+            console.error('Footer submit error', err)
+            alert(err.message || 'Failed to send. Please try again later.')
+        } finally {
+            setSubmitting(false)
+        }
     }
 
     return (
@@ -234,10 +244,10 @@ export default function BusinessFooter() {
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 transition-colors duration-200 uppercase tracking-wider text-sm"
-                                    disabled={!formData.agreeTerms}
+                                    disabled={submitting}
+                                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 transition-colors duration-200 uppercase tracking-wider text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    Submit
+                                    {submitting ? 'SENDING...' : 'Submit'}
                                 </button>
                             </form>
                         </div>
