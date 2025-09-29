@@ -27,6 +27,10 @@ const InsightsUpdates = () => {
                         </p>
                     </div>
 
+                    <div id='growing-cities' className="mb-20">
+
+                        <GrowthInvestment />
+                    </div>
 
                     {/* Additional Information Section */}
                     <div className="bg-white rounded-xl shadow-lg p-8">
@@ -61,10 +65,7 @@ const InsightsUpdates = () => {
                             </div>
                         </div>
                     </div>
-                    <div id='growing-cities' className="mt-20">
 
-                        <GrowthInvestment />
-                    </div>
                 </div>
             </div>
         </div>
