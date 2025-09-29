@@ -6,9 +6,6 @@ const whatWeDo = () => {
         <div>
             <PageHero
                 title="What We Do"
-                breadcrumbs={[
-                    { label: "What We Do" }
-                ]}
                 backgroundImage="/whatwedo.jpg"
             />
 

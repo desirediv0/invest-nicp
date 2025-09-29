@@ -97,7 +97,7 @@ export default function GOIAndMinistriesPage() {
         <div>
             <PageHero
                 title="Government of India & Ministries"
-                breadcrumbs={[{ label: "Resources", href: "/resources" }, { label: "GOI and Ministries" }]}
+
                 backgroundImage="/goinministries.jpg"
             />
 

@@ -43,9 +43,7 @@ const Resources = () => {
         <div>
             <PageHero
                 title="Resources"
-                breadcrumbs={[
-                    { label: "Resources" }
-                ]}
+
                 backgroundImage="/resources.jpg"
             />
 

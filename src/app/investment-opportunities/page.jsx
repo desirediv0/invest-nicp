@@ -67,7 +67,7 @@ const InvestmentOpportunities = () => {
                                     <p className="text-gray-600">Explore investment opportunities across India&apos;s growth corridors</p>
                                 </div>
                                 <Link
-                                    href="/investment-opportunities/states"
+                                    href="/investment-opportunities/states#states"
                                     className="block bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-200 hover:border-orange-500"
                                 >
                                     <div className="flex flex-col lg:flex-row">
@@ -109,7 +109,7 @@ const InvestmentOpportunities = () => {
                                     <p className="text-gray-600">Discover high-growth sectors and emerging opportunities</p>
                                 </div>
                                 <Link
-                                    href="/investment-opportunities/sectors"
+                                    href="/investment-opportunities/sectors#sectors"
                                     className="block bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-200 hover:border-orange-500"
                                 >
                                     <div className="flex flex-col lg:flex-row-reverse">

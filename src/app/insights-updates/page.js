@@ -12,9 +12,6 @@ const InsightsUpdates = () => {
         <div>
             <PageHero
                 title="INSIGHTS"
-                breadcrumbs={[
-                    { label: "INSIGHTS" }
-                ]}
                 backgroundImage="/money.jpg"
             />
 

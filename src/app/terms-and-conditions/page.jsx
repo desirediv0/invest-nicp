@@ -5,9 +5,7 @@ export default function TermsAndConditions() {
         <div>
             <PageHero
                 title="Terms & Conditions"
-                breadcrumbs={[
-                    { label: "Terms & Conditions" }
-                ]}
+
                 backgroundImage="/resources.jpg"
             />
 

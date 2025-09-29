@@ -47,10 +47,7 @@ export default function AuthoritiesPage() {
         <div>
             <PageHero
                 title="Regulatory Authorities"
-                breadcrumbs={[
-                    { label: "Resources", href: "/resources" },
-                    { label: "Authorities" }
-                ]}
+
                 backgroundImage="/authorities.jpg"
             />
 

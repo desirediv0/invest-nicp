@@ -38,9 +38,6 @@ const ContactUs = () => {
         <div>
             <PageHero
                 title="Contact Us"
-                breadcrumbs={[
-                    { label: "Contact Us" }
-                ]}
                 backgroundImage="/contact.jpg"
             />
 

@@ -10,9 +10,6 @@ const AboutUs = () => {
         <div>
             <PageHero
                 title="About Us"
-                breadcrumbs={[
-                    { label: "About Us" }
-                ]}
                 backgroundImage="/banner3.jpg"
             />
 

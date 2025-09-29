@@ -21,13 +21,13 @@ const navigationItems = [
     },
     {
         name: "Investment Opportunities", href: "/investment-opportunities", children: [
-            { name: "Sectors", href: "/investment-opportunities/sectors" },
-            { name: "States", href: "/investment-opportunities/states" },
+            { name: "Sectors", href: "/investment-opportunities/sectors#sectors" },
+            { name: "States", href: "/investment-opportunities/states#states" },
         ]
     },
     {
         name: "Insights", href: "/insights-updates", children: [
-            { name: "Activity Updates", href: "/insights-updates#activity-updates" },
+            { name: "News Updates", href: "/insights-updates#activity-updates" },
             { name: "Growing Cities", href: "/insights-updates#growing-cities" },
         ]
     },

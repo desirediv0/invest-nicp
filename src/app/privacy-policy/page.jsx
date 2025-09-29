@@ -5,9 +5,7 @@ export default function PrivacyPolicy() {
         <div>
             <PageHero
                 title="Privacy Policy"
-                breadcrumbs={[
-                    { label: "Privacy Policy" }
-                ]}
+
                 backgroundImage="/states.jpg"
             />
 

@@ -118,9 +118,7 @@ const Initiatives = () => {
         <div>
             <PageHero
                 title="Our Initiatives"
-                breadcrumbs={[
-                    { label: "Initiatives" }
-                ]}
+
                 backgroundImage="/states.jpg"
             />
 

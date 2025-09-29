@@ -40,10 +40,6 @@ export default function SIPAgenciesPage() {
         <div>
             <PageHero
                 title="State Investment Promotion Agencies"
-                breadcrumbs={[
-                    { label: "Resources", href: "/resources" },
-                    { label: "SIP Agencies" }
-                ]}
                 backgroundImage="/agencies.jpg"
             />
 

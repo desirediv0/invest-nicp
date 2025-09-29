@@ -18,10 +18,6 @@ export default function PoliciesPage() {
         <div>
             <PageHero
                 title="Government Policies & Guidelines"
-                breadcrumbs={[
-                    { label: "Resources", href: "/resources" },
-                    { label: "Policies" }
-                ]}
                 backgroundImage="/skyline.jpg"
             />
 

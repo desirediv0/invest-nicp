@@ -36,10 +36,6 @@ export default function SchemesPage() {
         <div>
             <PageHero
                 title="Government Schemes"
-                breadcrumbs={[
-                    { label: "Resources", href: "/resources" },
-                    { label: "Schemes" }
-                ]}
                 backgroundImage="/schemes.jpg"
             />
 
