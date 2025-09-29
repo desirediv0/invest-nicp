@@ -102,6 +102,8 @@ import lucknow from "./growth/lucknow.jpg"
 import ludhiana from "./growth/ludhiana.jpg"
 import nagpur from "./growth/nagpur.jpg"
 import tirupati from "./growth/tirupati.jpg"
+import Tumakuru from "./growth/tumakuru.jpg"
+import Ponneri from "./growth/ponneri.jpg"
 
 
 // what we do 
@@ -115,5 +117,5 @@ import industrysectorengagementbusinesspartnership from "./what/industry-sector-
 export {
     banner1, banner2, banner3, banner4, banner5,
     agriculture, autocomponent, automobiles, aviation, banking, biotechnology, cement, chemicals, consumerDurables, defenceManufacturing, eCommerce, educationTraining, electronicSystemDesignManufacturing, engineeringCapitalGoods, steel, financialServices, fmcg, sciencetechnology, gemsJewellery, healthcare, infrastructure, insurance, tourismhospitality, retail, itBpm, services, manufacturing, mediaEntertainment, medicalDevices, realestate, metalsMining, msme, oilGas, pharmaceuticals, ports, power, renewableEnergy, telecommunications, textiles, roads, railways, esdm,
-    andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli, amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, tirupati, businessmeetinghandshakemergeracquisition, businessworkshoppresentationinvestment, businessseminarconferencepolicydiscussion, investmentadvisoryfinancialconsultation, industrysectorengagementbusinesspartnership
+    andamanandnicobar, westbengal, uttarakhand, uttarpradesh, tripura, telangana, tamilnadu, sikkim, rajasthan, punjab, puducherry, odisha, nagaland, mizoram, meghalaya, manipur, maharashtra, madhyapradesh, lakshadweep, kerala, karnataka, jharkhand, jammuandkashmir, himachalpradesh, andhrapradesh, arunachalpradesh, haryana, gujrat, assam, goa, delhi, damananddiu, bihar, chandigarh, chhattisgarh, dadraandnagarhaveli, amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, Tumakuru, Ponneri, tirupati, businessmeetinghandshakemergeracquisition, businessworkshoppresentationinvestment, businessseminarconferencepolicydiscussion, investmentadvisoryfinancialconsultation, industrysectorengagementbusinesspartnership
 }

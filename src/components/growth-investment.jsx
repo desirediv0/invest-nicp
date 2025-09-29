@@ -11,69 +11,81 @@ import {
 } from "@/components/ui/carousel"
 import Autoplay from 'embla-carousel-autoplay'
 import { ExternalLink, MapPin } from 'lucide-react'
-import { amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, tripura } from '@/assets'
+import { amritsar, dehradun, delhincr, dholera, jaipur, kochi, lucknow, ludhiana, nagpur, Ponneri, tripura, Tumakuru } from '@/assets'
 
 const GrowthInvestment = () => {
     const states = [
         {
-            name: "Amritsar",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/amritsar",
+            name: "DELHI NCR",
+            linkedinUrl: "https://www.linkedin.com/company/investdelhincr/about/",
+            description: "National Capital Region",
+            img: delhincr,
+        },
+        {
+            name: "DHOLERA",
+            linkedinUrl: "https://www.linkedin.com/company/investgujarat/about/",
+            description: "Gujarat Smart City",
+            img: dholera,
+        },
+        {
+            name: "📍DEHRADUN",
+            linkedinUrl: "https://www.linkedin.com/company/investdehradun/about/",
+            description: "Uttarakhand Growth Center",
+            img: dehradun,
+        },
+        {
+            name: "TUMAKURU",
+            linkedinUrl: "https://www.linkedin.com/company/investtumakuru/about/",
+            description: "Tumakuru Industrial Region",
+            img: Tumakuru,
+        },
+        {
+            name: "JAIPUR",
+            linkedinUrl: "https://www.linkedin.com/company/investrajasthan/",
+            description: "Pink City Industrial Hub",
+            img: jaipur,
+        },
+        {
+            name: "AMRITSAR",
+            linkedinUrl: "https://www.linkedin.com/company/investamritsar/about/",
             description: "Industrial Hub of Punjab",
             img: amritsar,
         },
         {
-            name: "Delhi NCR",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "National Capital Region",
-            img: delhincr
-        },
-        {
-            name: "Dehradun",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Uttarakhand Growth Center",
-            img: dehradun
-        },
-        {
-            name: "Dholera",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Gujarat Smart City",
-            img: dholera
-        },
-        {
-            name: "Jaipur",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Pink City Industrial Hub",
-            img: jaipur
-        },
-        {
-            name: "Ludhiana",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/",
+            name: "LUDHIANA",
+            linkedinUrl: "https://www.linkedin.com/company/investludhiana/about/",
             description: "Punjab Manufacturing Hub",
-            img: ludhiana
+            img: ludhiana,
         },
         {
-            name: "Nagpur",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Central India Logistics",
-            img: nagpur
-        },
-        {
-            name: "Lucknow",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/",
+            name: "LUCKNOW",
+            linkedinUrl: "https://www.linkedin.com/company/investuttarpradesh/about/",
             description: "UP Industrial Center",
-            img: lucknow
+            img: lucknow,
         },
         {
-            name: "Kochi",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/",
-            description: "Kerala Port City",
-            img: kochi
+            name: "NAGPUR",
+            linkedinUrl: "https://www.linkedin.com/company/investnagpur/",
+            description: "Central India Logistics",
+            img: nagpur,
         },
         {
-            name: "Tirupati",
-            linkedinUrl: "https://www.linkedin.com/company/investnicp/",
+            name: "TIRUPATI",
+            linkedinUrl: "https://www.linkedin.com/company/investandhrapradesh/",
             description: "Andhra Pradesh Hub",
-            img: tripura
+            img: tripura,
+        },
+        {
+            name: "KOCHI",
+            linkedinUrl: "https://www.linkedin.com/company/investkerala/",
+            description: "Kerala Port City",
+            img: kochi,
+        },
+        {
+            name: "PONNERI",
+            linkedinUrl: "https://www.linkedin.com/company/investponneri/about/",
+            description: "Ponneri Growth Area",
+            img: Ponneri,
         }
     ];
 
