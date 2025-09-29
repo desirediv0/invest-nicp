@@ -24,9 +24,9 @@ const navigationItems = [
         ]
     },
     {
-        name: "INSIGHTS", href: "/insights-updates", children: [
+        name: "Insights", href: "/insights-updates", children: [
             { name: "Activity Updates", href: "/insights-updates#activity-updates" },
-            { name: "GROWING CITIES", href: "/insights-updates#growing-cities" },
+            { name: "Growing Cities", href: "/insights-updates#growing-cities" },
         ]
     },
     {
@@ -34,13 +34,23 @@ const navigationItems = [
             { name: "Market Entry & Expansion Mergers and Acquisitions", href: "/what-we-do#market-entry-expansion-mergers-acquisitions" },
             { name: "Workshops for Investment Promotions", href: "/what-we-do#workshops-investment-promotions" },
             { name: "Seminars For New Policies & Opportunities", href: "/what-we-do#seminars-new-policies-opportunities" },
-            { name: "INVESTMENT ADVISORY JVS/FOIS", href: "/what-we-do#investment-advisory-jvs-fois" },
+            { name: "Investment Advisory JV'S & FOI'S", href: "/what-we-do#investment-advisory-jvs-fois" },
             { name: "Sector Engagement & Facilitation", href: "/what-we-do#sector-engagement-facilitation" },
         ]
     },
     {
         name: "Initiatives", href: "/initiatives", children: [
-            { name: "Initiatives List", href: "/initiatives#list" },
+            { name: "Make in India", href: "/initiatives#make-in-india" },
+            { name: "Bonded Manufacturing Scheme", href: "/initiatives#bonded-manufacturing" },
+            {
+                name: "National Single Window System (NSWS)", href: "/initiatives#nsws"
+            }, {
+                name: "DPIIT – Department for Promotion of Industry and Internal Trade", href: "/initiatives#dpiit"
+            }, {
+                name: "India Investment Grid (IIG)", href: "/initiatives#iig"
+            }, {
+                name: "One District One Product (ODOP)", href: "/initiatives#odop"
+            }
         ]
     },
     {

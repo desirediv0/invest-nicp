@@ -24,13 +24,10 @@ const Bgcoverimage = ({
                 />
                 {/* Orange Line at Bottom (only for image) */}
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-b-lg z-10" />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-500 z-0" />
             </div>
 
             {/* Right Side Content */}
-            <div className="w-full lg:w-1/2 bg-black text-white p-6 sm:p-8 md:p-10 lg:p-12 space-y-4 lg:space-y-6 relative z-10">
+            <div className="w-full lg:w-1/2 bg-white text-black p-6 sm:p-8 md:p-10 lg:p-12 space-y-4 lg:space-y-6 relative z-10">
                 <div className="space-y-2">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight break-words">
                         {heading}
@@ -40,22 +37,22 @@ const Bgcoverimage = ({
                 </div>
 
                 {subheading && (
-                    <p className="text-orange-200 font-semibold text-base sm:text-lg leading-relaxed break-words">
+                    <p className="text-orange-600 font-semibold text-base sm:text-lg leading-relaxed break-words">
                         {subheading}
                     </p>
                 )}
 
                 <div className="space-y-4">
                     {description1 && (
-                        <div className="bg-black/30 backdrop-blur-sm p-4 border-l-4 border-orange-500 rounded-r">
-                            <p className="text-gray-200 text-base leading-relaxed break-words">
+                        <div className="bg-orange-50 p-4 border-l-4 border-orange-500 rounded-r">
+                            <p className="text-gray-800 text-base leading-relaxed break-words">
                                 {description1}
                             </p>
                         </div>
                     )}
                     {description2 && (
-                        <div className="bg-black/30 backdrop-blur-sm p-4 border-l-4 border-orange-500 rounded-r">
-                            <p className="text-gray-200 text-base leading-relaxed break-words">
+                        <div className="bg-orange-50 p-4 border-l-4 border-orange-500 rounded-r">
+                            <p className="text-gray-800 text-base leading-relaxed break-words">
                                 {description2}
                             </p>
                         </div>

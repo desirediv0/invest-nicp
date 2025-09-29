@@ -7,13 +7,13 @@ const MissionVision = () => {
         <div className="grid md:grid-cols-2 gap-8">
             {/* Mission Card */}
             <div id='mission' className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <div className="bg-gradient-to-r from-orange-500 to-orange-600 flex h-32">
+                <div className="bg-gradient-to-r from-orange-500 to-orange-600 flex h-32 p-1 md:p-2">
                     {/* Left - Icon + Heading */}
-                    <div className="w-1/2 flex items-center gap-3 p-6">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <div className="w-1/2 flex items-center gap-2 md:gap-3 p-3 md:p-6">
+                        <div className="md:w-12 md:h-12 h-10 w-10 bg-white/20 rounded-full flex items-center justify-center">
                             <Target className="w-6 h-6 text-white" />
                         </div>
-                        <h2 className="text-2xl font-bold text-white">MISSION</h2>
+                        <h2 className="text-xl md:text-2xl font-bold text-white">MISSION</h2>
                     </div>
                     {/* Right - Image */}
                     <div className="relative w-1/2 h-full">
@@ -41,22 +41,22 @@ const MissionVision = () => {
             </div>
 
             {/* Vision Card */}
-            <div id='vision' className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <div className="bg-gradient-to-r from-orange-500 to-orange-600 flex h-32">
+            <div id='vision' className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group ">
+                <div className="bg-gradient-to-r from-orange-500 to-orange-600 flex h-32 p-1 md:p-2">
                     {/* Left - Icon + Heading */}
-                    <div className="w-1/2 flex items-center gap-3 p-6">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <div className="w-1/2 flex items-center gap-2 md:gap-3 p-3 md:p-6">
+                        <div className="md:w-12 md:h-12 h-10 w-10 bg-white/20 rounded-full flex items-center justify-center">
                             <Eye className="w-6 h-6 text-white" />
                         </div>
-                        <h2 className="text-2xl font-bold text-white">VISION</h2>
+                        <h2 className="text-xl md:text-2xl font-bold text-white">VISION</h2>
                     </div>
                     {/* Right - Image */}
-                    <div className="relative w-1/2 h-full">
+                    <div className="relative w-1/2 h-full ">
                         <Image
-                            src="/vision.jpg"
+                            src="/vision.png"
                             alt="Global Business"
                             fill
-                            className="object-cover opacity-80 object-right"
+                            className="object-cover opacity-80 object-center"
                         />
                     </div>
                 </div>

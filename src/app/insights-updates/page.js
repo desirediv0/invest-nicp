@@ -22,7 +22,7 @@ const InsightsUpdates = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Header Section */}
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        <h2 className="text-center  text-2xl md:text-3xl lg:text-4xl  font-extrabold tracking-tight leading-tight text-gray-900  mb-4 uppercase">
                             Latest Insights & Updates from <span className="text-orange-500">INVEST NICP</span>
                         </h2>
                         <p className="text-gray-700 text-lg max-w-3xl mx-auto">
@@ -64,8 +64,10 @@ const InsightsUpdates = () => {
                             </div>
                         </div>
                     </div>
+                    <div id='growing-cities' className="mt-20">
 
-                    <GrowthInvestment />
+                        <GrowthInvestment />
+                    </div>
                 </div>
             </div>
         </div>

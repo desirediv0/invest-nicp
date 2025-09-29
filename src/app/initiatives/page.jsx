@@ -142,7 +142,7 @@ const Initiatives = () => {
                     {/* Initiatives Grid */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         {initiatives.map((initiative) => (
-                            <div key={initiative.id} className="bg-white  shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div key={initiative.id} id={initiative.id} className="bg-white  shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                                 {/* Header - icon moved to right and text right-aligned */}
                                 <div className={`p-6 border-l-4 ${getColorClasses(initiative.color)}`}>
                                     <div className="flex items-center mb-4 justify-between">

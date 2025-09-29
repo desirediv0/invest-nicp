@@ -30,7 +30,7 @@ export default function FloatingSocialButtons() {
     return (
         <>
             {/* WhatsApp Button - Right Bottom */}
-            <div className="fixed right-6 bottom-6 z-50">
+            <div className="fixed right-0 bottom-1/2 translate-y-1/2 z-50">
                 <a
                     href={socialLinks[0].url}
                     target="_blank"
@@ -47,7 +47,7 @@ export default function FloatingSocialButtons() {
             </div>
 
             {/* Twitter & LinkedIn Buttons - Left Bottom */}
-            <div className="fixed left-6 bottom-6 z-50 space-y-2">
+            <div className="fixed left-0 bottom-1/2 z-50 space-y-2 translate-y-1/2 ">
                 {socialLinks.slice(1).map((social) => (
                     <a
                         key={social.name}

@@ -39,7 +39,7 @@ export default function BusinessFooter() {
         <footer className="relative overflow-hidden text-white"
             style={{ backgroundImage: `url('/science-technology.png')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'multiply' }}>
             {/* Dark overlay to subdue the background image so gradient and content are visible */}
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-black/70 via-black/70 to-black/70 backdrop-blur-sm" />
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-black/20 via-black/20 to-black/20 backdrop-blur-sm" />
 
             <div className="relative z-10">
                 {/* Top Orange Accent Line */}
