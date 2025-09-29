@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
                 breadcrumbs={[
                     { label: "Privacy Policy" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/states.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">

@@ -44,7 +44,7 @@ export default function SIPAgenciesPage() {
                     { label: "Resources", href: "/resources" },
                     { label: "SIP Agencies" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/agencies.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">

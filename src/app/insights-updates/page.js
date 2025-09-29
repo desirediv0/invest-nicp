@@ -15,7 +15,7 @@ const InsightsUpdates = () => {
                 breadcrumbs={[
                     { label: "INSIGHTS" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/money.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">

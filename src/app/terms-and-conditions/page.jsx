@@ -8,7 +8,7 @@ export default function TermsAndConditions() {
                 breadcrumbs={[
                     { label: "Terms & Conditions" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/resources.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">

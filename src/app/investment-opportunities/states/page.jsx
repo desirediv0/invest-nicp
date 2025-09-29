@@ -25,14 +25,14 @@ const StatesPage = () => {
                     { label: "Investment Opportunities", href: "/investment-opportunities" },
                     { label: "States" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/states.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Header */}
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4 uppercase">
                             Investment Opportunities by <span className="text-orange-500">States</span>
                         </h2>
                         <p className="text-gray-700 text-lg max-w-3xl mx-auto">

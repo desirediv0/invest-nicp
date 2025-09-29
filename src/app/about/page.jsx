@@ -13,7 +13,7 @@ const AboutUs = () => {
                 breadcrumbs={[
                     { label: "About Us" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/banner3.jpg"
             />
 
             <div className=" bg-gray-50">
@@ -53,14 +53,7 @@ const AboutUs = () => {
                                         Invest in India: Strategic Initiatives Driving Growth
                                     </h2>
                                 </div>
-                                <div className="relative w-full md:w-32 h-20 md:ml-auto">
-                                    <Image
-                                        src="/indian-growth.jpg"
-                                        alt="India Growth"
-                                        fill
-                                        className="object-cover rounded-lg"
-                                    />
-                                </div>
+
                             </div>
 
                             <div className="bg-white p-6 rounded-lg shadow-md mb-6">

@@ -41,7 +41,7 @@ const ContactUs = () => {
                 breadcrumbs={[
                     { label: "Contact Us" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/contact.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">
@@ -116,10 +116,10 @@ const ContactUs = () => {
                             </div>
 
                             {/* Business Associate Info */}
-                            <div className="bg-gradient-to-br from-orange-500 to-red-600 text-white p-8 shadow-lg">
+                            <div className="bg-gradient-to-br from-orange-500 to-red-600 text-white p-6 shadow-lg">
                                 <div className="flex items-center gap-3 mb-6">
                                     <Users className="w-8 h-8 text-white" />
-                                    <h2 className="text-xl font-bold">Business Associate</h2>
+                                    <h2 className="text-lg font-bold">Business Associate :: REHO INDIA</h2>
                                 </div>
 
                                 <div className="space-y-4">
@@ -267,7 +267,7 @@ const ContactUs = () => {
                                     <button
                                         type="submit"
                                         className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-4 px-8 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-                                        disabled={!formData.agreeTerms}
+
                                     >
                                         <Send className="w-5 h-5" />
                                         SUBMIT

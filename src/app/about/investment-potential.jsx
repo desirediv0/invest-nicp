@@ -3,7 +3,7 @@ import React from 'react'
 
 const InvestmentPotential = () => {
     return (
-        <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white p-8 md:p-12 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white   p-8 md:p-12 relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
                 <Image

@@ -101,7 +101,7 @@ export default function GOIAndMinistriesPage() {
                     { label: "Resources", href: "/resources" },
                     { label: "GOI and Ministries" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/goinministries.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">

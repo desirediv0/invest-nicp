@@ -40,7 +40,7 @@ export default function SchemesPage() {
                     { label: "Resources", href: "/resources" },
                     { label: "Schemes" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/schemes.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">

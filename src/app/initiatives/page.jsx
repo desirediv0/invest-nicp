@@ -121,7 +121,7 @@ const Initiatives = () => {
                 breadcrumbs={[
                     { label: "Initiatives" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/states.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">
@@ -129,15 +129,13 @@ const Initiatives = () => {
                     {/* Header Section */}
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-6 uppercase">
-                            Initiatives
+                            Government Initiatives
                         </h2>
                         <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
                             Discover our ongoing initiatives and projects that drive investment and growth across India.
                             These strategic programs are designed to transform India into a global manufacturing and investment hub.
                         </p>
                     </div>
-
-
 
                     {/* Initiatives Grid */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

@@ -51,7 +51,7 @@ export default function AuthoritiesPage() {
                     { label: "Resources", href: "/resources" },
                     { label: "Authorities" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/authorities.jpg"
             />
 
             <div className="min-h-screen bg-gray-50 py-16">

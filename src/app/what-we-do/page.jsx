@@ -9,7 +9,7 @@ const whatWeDo = () => {
                 breadcrumbs={[
                     { label: "What We Do" }
                 ]}
-                backgroundImage="/skyline.jpg"
+                backgroundImage="/whatwedo.jpg"
             />
 
             <div className="bg-gray-50">

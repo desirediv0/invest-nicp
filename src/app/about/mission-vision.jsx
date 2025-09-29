@@ -4,7 +4,7 @@ import React from 'react'
 
 const MissionVision = () => {
     return (
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Mission Card */}
             <div id='mission' className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
                 <div className="bg-gradient-to-r from-orange-500 to-orange-600 flex h-32 p-1 md:p-2">
