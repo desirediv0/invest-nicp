@@ -15,6 +15,8 @@ const navigationItems = [
             { name: "Mission", href: "/about#mission" },
             { name: "Vision", href: "/about#vision" },
             { name: "Opportunities", href: "/about#opportunities" },
+            { name: "Invest In India", href: "/about#invest-in-india" },
+            { name: "Why Choose India", href: "/about#why-choose-india" },
         ]
     },
     {

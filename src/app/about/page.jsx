@@ -43,7 +43,7 @@ const AboutUs = () => {
                         {/* Mission & Vision Cards */}
                         <MissionVision />
                         {/* Strategic Initiatives Section */}
-                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 md:p-12 mb-16 border-l-8 border-orange-500">
+                        <div id='invest-in-india' className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 md:p-12 mb-16 border-l-8 border-orange-500">
                             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
                                 <div className="flex items-center gap-3">
                                     <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
@@ -71,7 +71,7 @@ const AboutUs = () => {
                         </div>
 
                         {/* Why Choose India Section */}
-                        <div className="bg-white shadow-xl p-8 md:p-12 mb-16 border-t-4 border-orange-500">
+                        <div id='why-choose-india' className="bg-white shadow-xl p-8 md:p-12 mb-16 border-t-4 border-orange-500">
                             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
                                 <div className="flex items-center gap-3">
                                     <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">

@@ -16,7 +16,7 @@ const whatWeDo = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
 
                     {/* 1 - Market Entry & Expansion */}
-                    <section id="market-entry-expansion-mergers-acquisitions" className="bg-white shadow-md rounded-lg p-8">
+                    <section id="market-entry-expansion-mergers-acquisitions" className="bg-white  p-8">
                         <div className="flex items-start gap-4 mb-4">
                             <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
                             <div>
@@ -42,16 +42,16 @@ const whatWeDo = () => {
                     </section>
 
                     {/* 2 - Investment Promotion */}
-                    <section id="workshops-investment-promotions" className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-lg">
+                    <section id="workshops-investment-promotions" className="bg-gray-50  p-8 rounded-lg">
                         <div className="flex items-start gap-4 mb-4">
-                            <div className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
+                            <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Investment Promotion</h2>
                                 <p className="text-sm text-gray-600">Driving Growth Through Targeted Investment Opportunities</p>
                             </div>
                         </div>
 
-                        <blockquote className="border-l-4 border-blue-600 pl-4 italic text-gray-800 mb-4">
+                        <blockquote className="border-l-4 border-orange-500 pl-4 italic text-gray-800 mb-4">
                             &quot;From Opportunity to Action : STRATEGIC PLANNING and PROCESS IMPLEMENTATION.&quot;
                         </blockquote>
 
@@ -68,9 +68,9 @@ const whatWeDo = () => {
                     </section>
 
                     {/* 3 - Seminars for New Policies and Opportunities */}
-                    <section id="seminars-new-policies-opportunities" className="bg-white shadow-md rounded-lg p-8">
+                    <section id="seminars-new-policies-opportunities" className="bg-gray-50  p-8">
                         <div className="flex items-start gap-4 mb-4">
-                            <div className="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
+                            <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Seminars for New Policies and Opportunities</h2>
                                 <p className="text-sm text-gray-600">Empowering Decisions Through Expertise - Insights that Shape Tomorrow</p>
@@ -91,9 +91,9 @@ const whatWeDo = () => {
                     </section>
 
                     {/* 4 - Investment Advisory */}
-                    <section id="investment-advisory-jvs-fois" className="bg-gradient-to-r from-yellow-50 to-amber-50 p-8 rounded-lg">
+                    <section id="investment-advisory-jvs-fois" className="bg-gray-50 p-8 rounded-lg">
                         <div className="flex items-start gap-4 mb-4">
-                            <div className="w-14 h-14 bg-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
+                            <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Investment Advisory</h2>
                                 <p className="text-sm text-gray-600">Expert Advisory for Joint Ventures, Fractional Ownership, Buying and Selling</p>
@@ -123,9 +123,9 @@ const whatWeDo = () => {
                     </section>
 
                     {/* 5 - Sector Engagement & Facilitation Services */}
-                    <section id="sector-engagement-facilitation" className="bg-white shadow-md rounded-lg p-8">
+                    <section id="sector-engagement-facilitation" className="bg-gray-50  p-8">
                         <div className="flex items-start gap-4 mb-4">
-                            <div className="w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">5</div>
+                            <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">5</div>
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Sector Engagement & Facilitation Services</h2>
                                 <p className="text-sm text-gray-600">Strategic Sector Engagement and Market Facilitation</p>
