@@ -13,10 +13,7 @@ const InvestmentOpportunities = () => {
     return (
         <div>
             <PageHero
-                title="Investment Opportunities"
-                breadcrumbs={[
-                    { label: "Investment Opportunities" }
-                ]}
+
                 backgroundImage="/skyline.jpg"
             />
 

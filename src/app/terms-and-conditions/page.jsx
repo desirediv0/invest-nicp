@@ -4,7 +4,6 @@ export default function TermsAndConditions() {
     return (
         <div>
             <PageHero
-                title="Terms & Conditions"
 
                 backgroundImage="/resources.jpg"
             />

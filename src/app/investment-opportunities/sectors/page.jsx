@@ -22,7 +22,7 @@ const SectorsPage = () => {
     return (
         <div>
             <PageHero
-                title="Investment opportunities in Sectors"
+
 
                 backgroundImage="/sector.jpg"
             />

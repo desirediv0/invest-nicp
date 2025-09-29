@@ -11,7 +11,7 @@ const InsightsUpdates = () => {
     return (
         <div>
             <PageHero
-                title="INSIGHTS"
+
                 backgroundImage="/money.jpg"
             />
 

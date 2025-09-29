@@ -42,7 +42,7 @@ const Resources = () => {
     return (
         <div>
             <PageHero
-                title="Resources"
+
 
                 backgroundImage="/resources.jpg"
             />

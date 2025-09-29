@@ -5,7 +5,7 @@ const whatWeDo = () => {
     return (
         <div>
             <PageHero
-                title="What We Do"
+
                 backgroundImage="/whatwedo.jpg"
             />
 

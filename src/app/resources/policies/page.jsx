@@ -17,7 +17,7 @@ export default function PoliciesPage() {
     return (
         <div>
             <PageHero
-                title="Government Policies & Guidelines"
+
                 backgroundImage="/skyline.jpg"
             />
 

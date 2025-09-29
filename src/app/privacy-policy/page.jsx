@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
     return (
         <div>
             <PageHero
-                title="Privacy Policy"
+
 
                 backgroundImage="/states.jpg"
             />

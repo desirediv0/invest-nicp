@@ -20,7 +20,6 @@ const StatesPage = () => {
     return (
         <div>
             <PageHero
-                title="Investment Opportunities by States"
 
                 backgroundImage="/states.jpg"
             />

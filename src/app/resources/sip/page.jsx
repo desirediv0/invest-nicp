@@ -39,7 +39,7 @@ export default function SIPAgenciesPage() {
     return (
         <div>
             <PageHero
-                title="State Investment Promotion Agencies"
+
                 backgroundImage="/agencies.jpg"
             />
 

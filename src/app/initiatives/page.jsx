@@ -117,7 +117,7 @@ const Initiatives = () => {
     return (
         <div>
             <PageHero
-                title="Our Initiatives"
+
 
                 backgroundImage="/states.jpg"
             />

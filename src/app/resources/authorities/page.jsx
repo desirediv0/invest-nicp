@@ -46,7 +46,7 @@ export default function AuthoritiesPage() {
     return (
         <div>
             <PageHero
-                title="Regulatory Authorities"
+
 
                 backgroundImage="/authorities.jpg"
             />

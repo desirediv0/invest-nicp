@@ -96,7 +96,6 @@ export default function GOIAndMinistriesPage() {
     return (
         <div>
             <PageHero
-                title="Government of India & Ministries"
 
                 backgroundImage="/goinministries.jpg"
             />

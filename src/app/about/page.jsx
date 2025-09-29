@@ -9,7 +9,7 @@ const AboutUs = () => {
     return (
         <div>
             <PageHero
-                title="About Us"
+
                 backgroundImage="/banner3.jpg"
             />
 

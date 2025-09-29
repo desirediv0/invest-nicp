@@ -47,7 +47,7 @@ const ContactUs = () => {
     return (
         <div>
             <PageHero
-                title="Contact Us"
+
                 backgroundImage="/contact.jpg"
             />
 

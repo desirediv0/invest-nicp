@@ -35,7 +35,7 @@ export default function SchemesPage() {
     return (
         <div>
             <PageHero
-                title="Government Schemes"
+
                 backgroundImage="/schemes.jpg"
             />
 
