@@ -128,15 +128,14 @@ const ContactUs = () => {
                                     </div>
 
                                     <div className="space-y-3 text-sm">
+
                                         <div className="space-y-2">
                                             <div className="flex items-center gap-3">
                                                 <span className="text-lg">
                                                     <MailIcon className='text-sm' />
                                                 </span>:
-                                                <span> info@investnicp.com</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 ml-12">
-                                                <span>nicpindia@gmail.com</span>
+                                                <span>  corp.comm@rehoindia.com
+                                                </span>
                                             </div>
 
                                         </div>
@@ -148,9 +147,9 @@ const ContactUs = () => {
                                             <div>
 
                                                 <div className="space-y-1">
-                                                    <a href="https://www.investnicp.com" target="_blank" rel="noopener noreferrer"
+                                                    <a href="www.rehoindia.com" target="_blank" rel="noopener noreferrer"
                                                         className="block text-orange-200 hover:text-white transition-colors underline">
-                                                        www.investnicp.com
+                                                        www.rehoindia.com
                                                     </a>
                                                 </div>
                                             </div>
