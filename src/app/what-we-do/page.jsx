@@ -41,14 +41,14 @@ const whatWeDo = () => {
                     {/* 2 - Investment Promotion */}
                     <section id="workshops-investment-promotions" className="bg-gray-50  p-8 rounded-lg">
                         <div className="flex items-start gap-4 mb-4">
-                            <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
+                            <div className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Investment Promotion</h2>
                                 <p className="text-sm text-gray-600">Driving Growth Through Targeted Investment Opportunities</p>
                             </div>
                         </div>
 
-                        <blockquote className="border-l-4 border-orange-500 pl-4 italic text-gray-800 mb-4">
+                        <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-800 mb-4">
                             &quot;From Opportunity to Action : STRATEGIC PLANNING and PROCESS IMPLEMENTATION.&quot;
                         </blockquote>
 
@@ -67,7 +67,7 @@ const whatWeDo = () => {
                     {/* 3 - Seminars for New Policies and Opportunities */}
                     <section id="seminars-new-policies-opportunities" className="bg-gray-50  p-8">
                         <div className="flex items-start gap-4 mb-4">
-                            <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
+                            <div className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Seminars for New Policies and Opportunities</h2>
                                 <p className="text-sm text-gray-600">Empowering Decisions Through Expertise - Insights that Shape Tomorrow</p>
@@ -90,7 +90,7 @@ const whatWeDo = () => {
                     {/* 4 - Investment Advisory */}
                     <section id="investment-advisory-jvs-fois" className="bg-gray-50 p-8 rounded-lg">
                         <div className="flex items-start gap-4 mb-4">
-                            <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
+                            <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Investment Advisory</h2>
                                 <p className="text-sm text-gray-600">Expert Advisory for Joint Ventures, Fractional Ownership, Buying and Selling</p>
@@ -122,7 +122,7 @@ const whatWeDo = () => {
                     {/* 5 - Sector Engagement & Facilitation Services */}
                     <section id="sector-engagement-facilitation" className="bg-gray-50  p-8">
                         <div className="flex items-start gap-4 mb-4">
-                            <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">5</div>
+                            <div className="w-14 h-14 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl">5</div>
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Sector Engagement & Facilitation Services</h2>
                                 <p className="text-sm text-gray-600">Strategic Sector Engagement and Market Facilitation</p>
