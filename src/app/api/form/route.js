@@ -91,7 +91,7 @@ function buildUserTemplate({ name, message }) {
       <body>
         <div class="card">
           <div class="hero">
-            <img src="https://www.investnicp.com/logo.png" alt="NICP" class="logo" />
+            
             <div class="title">Thanks for contacting NICP</div>
           </div>
           <div class="body">
