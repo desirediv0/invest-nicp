@@ -27,8 +27,8 @@ const navigationItems = [
     },
     {
         name: "Insights", href: "/insights-updates", children: [
+            { name: "GROWING CITIES", href: "/insights-updates#growing-cities" },
             { name: "News Updates", href: "/insights-updates#activity-updates" },
-            { name: "Growing Cities", href: "/insights-updates#growing-cities" },
         ]
     },
     {
