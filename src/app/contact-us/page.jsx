@@ -173,7 +173,7 @@ const ContactUs = () => {
                                 <h3 className="text-xl font-bold text-gray-900 mb-6">Follow Us</h3>
                                 <div className="flex gap-4">
                                     <a href="https://x.com/investnicp" target="_blank" rel="noopener noreferrer"
-                                        className="w-12 h-12 bg-blue-500 hover:bg-blue-600 flex items-center justify-center text-white transition-colors">
+                                        className="w-12 h-12 bg-black hover:bg-black flex items-center justify-center text-white transition-colors">
                                         <span className="text-lg">𝕏</span>
                                     </a>
                                     <a href="https://www.linkedin.com/company/investnicp/posts/?feedView=all" target="_blank" rel="noopener noreferrer"
