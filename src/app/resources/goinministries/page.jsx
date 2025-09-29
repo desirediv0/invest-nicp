@@ -97,10 +97,7 @@ export default function GOIAndMinistriesPage() {
         <div>
             <PageHero
                 title="Government of India & Ministries"
-                breadcrumbs={[
-                    { label: "Resources", href: "/resources" },
-                    { label: "GOI and Ministries" }
-                ]}
+                breadcrumbs={[{ label: "Resources", href: "/resources" }, { label: "GOI and Ministries" }]}
                 backgroundImage="/goinministries.jpg"
             />
 
@@ -129,7 +126,9 @@ export default function GOIAndMinistriesPage() {
                                     </h3>
                                     {bodies.map((body, index) => (
                                         <div key={index} className="bg-white shadow p-4 hover:shadow-md transition-shadow border-l-4 border-orange-200 hover:border-orange-500">
-                                            <p className="text-gray-800 text-sm font-medium">{body}</p>
+                                            <p className="text-gray-800 text-sm font-medium">
+                                                {index + 1}. {body}
+                                            </p>
                                         </div>
                                     ))}
                                 </div>
@@ -148,11 +147,8 @@ export default function GOIAndMinistriesPage() {
                                 <div key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow p-4 border-l-4 border-blue-200 hover:border-blue-500 group">
                                     <div className="flex items-center justify-between">
                                         <p className="text-gray-800 font-medium group-hover:text-blue-600 transition-colors">
-                                            {ministry}
+                                            {index + 1}. {ministry}
                                         </p>
-                                        <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 font-semibold">
-                                            {index + 1}
-                                        </span>
                                     </div>
                                 </div>
                             ))}
@@ -170,11 +166,8 @@ export default function GOIAndMinistriesPage() {
                                 <div key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow p-4 border-l-4 border-green-200 hover:border-green-500 group">
                                     <div className="flex items-center justify-between">
                                         <p className="text-gray-800 font-medium group-hover:text-green-600 transition-colors text-sm">
-                                            {force}
+                                            {index + 1}. {force}
                                         </p>
-                                        <span className="text-xs bg-green-100 text-green-800 px-2 py-1 font-semibold">
-                                            {index + 1}
-                                        </span>
                                     </div>
                                 </div>
                             ))}
