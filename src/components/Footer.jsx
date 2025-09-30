@@ -71,7 +71,7 @@ export default function BusinessFooter() {
                                 <div className="flex items-start gap-3 hover:bg-gray-800/50 p-3 transition-colors">
                                     <MapPin className="w-5 h-5 text-orange-400 mt-1 flex-shrink-0" />
                                     <div>
-                                        <p className="text-gray-300 text-sm leading-relaxed">
+                                        <p className="text-gray-300 text-sm leading-relaxed font-bold">
                                             Plot No. 4, 2nd Floor, Sector 44,<br />
                                             Gurgaon, Haryana - 122003
                                         </p>
@@ -135,7 +135,7 @@ export default function BusinessFooter() {
 
                                                 <div className="space-x-2 mt-1">
                                                     <a href="https://www.investnicp.com" target="_blank" rel="noopener noreferrer"
-                                                        className="text-orange-400 hover:text-orange-300 transition-colors">
+                                                        className="text-orange-400 hover:text-orange-300 font-bold transition-colors">
                                                         www.investnicp.com
                                                     </a>
                                                 </div>
