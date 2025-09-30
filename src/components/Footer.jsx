@@ -88,8 +88,9 @@ export default function BusinessFooter() {
                                     <a target="_blank" href="https://x.com/investnicp" className="w-10 h-10 text-white bg-black flex items-center justify-center transition-colors border border-gray-600">
                                         <FaXTwitter size={18} />
                                     </a>
-                                    <a target="_blank" href="https://www.linkedin.com/company/investnicp/posts/?feedView=all" className="w-10 h-10 bg-[#0063C2]  flex items-center justify-center transition-colors">
-                                        <Linkedin size={18} className="text-white" />
+                                    <a href="https://www.linkedin.com/company/investnicp/posts/?feedView=all" target="_blank" rel="noopener noreferrer"
+                                        className="w-10 h-10 bg-blue-700 hover:bg-blue-800 flex items-center justify-center text-white transition-colors">
+                                        <span className="text-2xl">in</span>
                                     </a>
                                 </div>
                             </div>
@@ -117,11 +118,11 @@ export default function BusinessFooter() {
 
                                     <div className="space-y-3 text-sm">
                                         <div className="space-y-2">
-                                            <div className="flex items-center gap-2 text-gray-300">
-                                                <span className="text-base">  <MailIcon className='text-sm text-orange-500' /></span>:
+                                            <div className="flex items-center gap-2 text-gray-200 font-bold">
+                                                <span className="text-base ">  <MailIcon className='text-sm text-orange-500' /></span>:
                                                 <span> info@investnicp.com</span>
                                             </div>
-                                            <div className="flex items-center gap-2 text-gray-300 ml-10">
+                                            <div className="flex items-center gap-2 text-gray-200 ml-10 font-bold">
 
                                                 <span>nicpindia@gmail.com</span>
                                             </div>
