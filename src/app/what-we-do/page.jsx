@@ -101,7 +101,7 @@ const whatWeDo = () => {
 
                         <p className="text-gray-700 mb-3">At INVEST NICP, our multidisciplinary advisory team — including financial analysts, market researchers, and industry experts — delivers tailored investment solutions across joint ventures, fractional ownership structures, and buy/sell transactions.</p>
 
-                        <div className="grid md:grid-cols-3 gap-4 text-gray-700">
+                        <div className="grid md:grid-cols-1 gap-4 text-gray-700">
                             <div>
                                 <h4 className="font-semibold">In-Depth Market Intelligence</h4>
                                 <p>Comprehensive analysis and due diligence to assess the viability and potential of each investment opportunity.</p>

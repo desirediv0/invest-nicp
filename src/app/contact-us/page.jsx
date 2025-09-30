@@ -174,11 +174,11 @@ const ContactUs = () => {
                                 <div className="flex gap-4">
                                     <a href="https://x.com/investnicp" target="_blank" rel="noopener noreferrer"
                                         className="w-12 h-12 bg-black hover:bg-black flex items-center justify-center text-white transition-colors">
-                                        <span className="text-lg">𝕏</span>
+                                        <span className="text-2xl">𝕏</span>
                                     </a>
                                     <a href="https://www.linkedin.com/company/investnicp/posts/?feedView=all" target="_blank" rel="noopener noreferrer"
                                         className="w-12 h-12 bg-blue-700 hover:bg-blue-800 flex items-center justify-center text-white transition-colors">
-                                        <span className="text-lg">in</span>
+                                        <span className="text-2xl">in</span>
                                     </a>
                                 </div>
                             </div>
