@@ -17,25 +17,25 @@ const GrowthInvestment = () => {
     const states = [
         {
             name: "DELHI NCR",
-            linkedinUrl: "https://www.linkedin.com/company/investdelhincr/about/",
+            linkedinUrl: "https://www.linkedin.com/company/investdelhincr",
             description: "National Capital Region",
             img: delhincr,
         },
         {
             name: "DHOLERA",
-            linkedinUrl: "https://www.linkedin.com/company/investgujarat/about/",
+            linkedinUrl: "https://www.linkedin.com/company/investgujarat",
             description: "Gujarat Smart City",
             img: dholera,
         },
         {
             name: "DEHRADUN",
-            linkedinUrl: "https://www.linkedin.com/company/investdehradun/about/",
+            linkedinUrl: "https://www.linkedin.com/company/investdehradun",
             description: "Uttarakhand Growth Center",
             img: dehradun,
         },
         {
             name: "TUMAKURU",
-            linkedinUrl: "https://www.linkedin.com/company/investtumakuru/about/",
+            linkedinUrl: "https://www.linkedin.com/company/investtumakuru",
             description: "Tumakuru Industrial Region",
             img: Tumakuru,
         },
@@ -47,19 +47,19 @@ const GrowthInvestment = () => {
         },
         {
             name: "AMRITSAR",
-            linkedinUrl: "https://www.linkedin.com/company/investamritsar/about/",
+            linkedinUrl: "https://www.linkedin.com/company/investamritsar",
             description: "Industrial Hub of Punjab",
             img: amritsar,
         },
         {
             name: "LUDHIANA",
-            linkedinUrl: "https://www.linkedin.com/company/investludhiana/about/",
+            linkedinUrl: "https://www.linkedin.com/company/investludhiana",
             description: "Punjab Manufacturing Hub",
             img: ludhiana,
         },
         {
             name: "LUCKNOW",
-            linkedinUrl: "https://www.linkedin.com/company/investuttarpradesh/about/",
+            linkedinUrl: "https://www.linkedin.com/company/investuttarpradesh",
             description: "UP Industrial Center",
             img: lucknow,
         },
@@ -83,7 +83,7 @@ const GrowthInvestment = () => {
         },
         {
             name: "PONNERI",
-            linkedinUrl: "https://www.linkedin.com/company/investponneri/about/",
+            linkedinUrl: "https://www.linkedin.com/company/investponneri",
             description: "Ponneri Growth Area",
             img: Ponneri,
         }
