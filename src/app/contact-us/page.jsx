@@ -126,14 +126,14 @@ const ContactUs = () => {
                             <div className="bg-gradient-to-br from-orange-500 to-red-600 text-white p-6 shadow-lg">
                                 <div className="flex items-center gap-3 mb-6">
                                     <Users className="w-8 h-8 text-white" />
-                                    <h2 className="text-lg font-bold">Business Associate :: REHO INDIA</h2>
+                                    <h2 className="text-lg font-bold capitalize">Invest National Industrial Corridor Projects</h2>
                                 </div>
 
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3">
 
                                         <h3 className="text-sm font-semibold">
-                                            Invest National Industrial Corridor Projects
+                                            REHO INDIA
                                         </h3>
                                     </div>
 
@@ -145,6 +145,16 @@ const ContactUs = () => {
                                                     <MailIcon className='text-sm' />
                                                 </span>:
                                                 <span>  corp.comm@rehoindia.com
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                        <div className="space-y-2">
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-lg">
+                                                    <FaWhatsapp className='text-2xl' />
+                                                </span>:
+                                                <span>   +91 72900 04886
                                                 </span>
                                             </div>
 

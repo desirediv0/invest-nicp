@@ -28,7 +28,7 @@ const GrowthInvestment = () => {
             img: dholera,
         },
         {
-            name: "📍DEHRADUN",
+            name: "DEHRADUN",
             linkedinUrl: "https://www.linkedin.com/company/investdehradun/about/",
             description: "Uttarakhand Growth Center",
             img: dehradun,
