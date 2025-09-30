@@ -102,8 +102,8 @@ import lucknow from "./growth/lucknow.jpg"
 import ludhiana from "./growth/ludhiana.jpg"
 import nagpur from "./growth/nagpur.jpg"
 import tirupati from "./growth/tirupati.jpg"
-import Tumakuru from "./growth/tumakuru.jpg"
-import Ponneri from "./growth/ponneri.jpg"
+import Tumakuru from "./growth/Tumakuru.jpg"
+import Ponneri from "./growth/Ponneri.jpg"
 
 
 // what we do 
