@@ -116,7 +116,7 @@ export default function HomePage() {
                             </motion.h1>
                         </div>
                         <motion.div className="flex flex-col  px-6 py-4 my-4  w-fit mx-auto">
-                            <p className="text-2xl md:text-3xl  font-semibold text-white tracking-wide uppercase">
+                            <p className="text-2xl md:text-3xl   text-white tracking-wider uppercase brushScriptMT ">
                                 {slides[currentSlide].title}
                             </p>
                         </motion.div>

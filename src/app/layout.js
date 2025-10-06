@@ -15,6 +15,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const brushScriptMT = localFont({
+  src: "./fonts/BrushScriptStd.otf",
+  variable: "--font-brush-script-mt",
+  weight: "400",
+});
+
 export const metadata = {
   title: "INVEST NICP",
   description: "Your Gateway to Smart Investments in India",
@@ -24,7 +30,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${brushScriptMT.variable} antialiased overflow-x-hidden`}
       >
         <Header />
         {children}
