@@ -167,7 +167,7 @@ const ContactUs = () => {
                                             <div>
 
                                                 <div className="space-y-1">
-                                                    <a href="www.rehoindia.com" target="_blank" rel="noopener noreferrer"
+                                                    <a href="http://www.rehoindia.com" target="_blank" rel="noopener noreferrer"
                                                         className="block text-orange-200 hover:text-white transition-colors underline">
                                                         www.rehoindia.com
                                                     </a>
