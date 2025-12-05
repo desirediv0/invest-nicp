@@ -4,17 +4,17 @@ import nodemailer from "nodemailer";
 
 // Configure transporter using environment variables
 const transporter = nodemailer.createTransport({
-    host: process.env.NEXT_PUBLIC_SMTP_HOST,
-    port: Number(process.env.NEXT_PUBLIC_SMTP_PORT || 587),
-    secure: false,
-    auth: {
-        user: process.env.NEXT_PUBLIC_SMTP_USER,
-        pass: process.env.NEXT_PUBLIC_SMTP_PASSWORD,
-    },
+  host: process.env.NEXT_PUBLIC_SMTP_HOST,
+  port: Number(process.env.NEXT_PUBLIC_SMTP_PORT || 587),
+  secure: false,
+  auth: {
+    user: process.env.NEXT_PUBLIC_SMTP_USER,
+    pass: process.env.NEXT_PUBLIC_SMTP_PASSWORD,
+  },
 });
 
 function buildAdminTemplate({ name, email, mobileNumber, message }) {
-    return `
+  return `
     <!doctype html>
     <html>
       <head>
@@ -56,7 +56,10 @@ function buildAdminTemplate({ name, email, mobileNumber, message }) {
             <div class="value">${message.replace(/\n/g, "<br>")}</div>
           </div>
 
-          <p style="font-size:12px;color:#666;margin-top:18px">Submitted on: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</p>
+          <p style="font-size:12px;color:#666;margin-top:18px">Submitted on: ${new Date().toLocaleString(
+            "en-IN",
+            { timeZone: "Asia/Kolkata" }
+          )}</p>
         </div>
       </body>
     </html>
@@ -64,8 +67,8 @@ function buildAdminTemplate({ name, email, mobileNumber, message }) {
 }
 
 function buildUserTemplate({ name, message }) {
-    // A polished, responsive confirmation email for the user
-    return `
+  // A polished, responsive confirmation email for the user
+  return `
     <!doctype html>
     <html>
       <head>
@@ -98,7 +101,10 @@ function buildUserTemplate({ name, message }) {
             <p class="greeting">Hi ${name},</p>
             <p class="muted">Thanks for reaching out — we received your message and one of our team members will respond within 24 business hours. Below is a copy of your message for your records.</p>
 
-            <div class="message-box">${(message || '').replace(/\n/g, '<br>')}</div>
+            <div class="message-box">${(message || "").replace(
+              /\n/g,
+              "<br>"
+            )}</div>
 
            
 
@@ -112,61 +118,109 @@ function buildUserTemplate({ name, message }) {
 }
 
 export async function POST(request) {
-    try {
-        // Ensure SMTP config exists
-        if (!process.env.NEXT_PUBLIC_SMTP_HOST || !process.env.NEXT_PUBLIC_SMTP_USER || !process.env.NEXT_PUBLIC_SMTP_PASSWORD) {
-            console.error("Missing SMTP environment variables");
-            return NextResponse.json({ error: "Email service configuration error" }, { status: 500 });
-        }
-
-        const payload = await request.json();
-        const { name, email, mobileNumber, message } = payload;
-
-        // Basic validation
-        if (!name || !email || !mobileNumber || !message) {
-            return NextResponse.json({ error: "Please fill in all required fields" }, { status: 400 });
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return NextResponse.json({ error: "Please enter a valid email address" }, { status: 400 });
-        }
-
-        if (String(mobileNumber).replace(/\D/g, '').length < 10) {
-            return NextResponse.json({ error: "Please enter a valid mobile number" }, { status: 400 });
-        }
-
-        // Build and send admin email
-        const adminHtml = buildAdminTemplate({ name, email, mobileNumber, message });
-        const adminMail = {
-            from: process.env.NEXT_PUBLIC_FROM_EMAIL,
-            to: process.env.NEXT_PUBLIC_TO_EMAIL,
-            subject: `New Contact: ${name} | ${mobileNumber}`,
-            html: adminHtml,
-            replyTo: email,
-        };
-
-        await transporter.sendMail(adminMail);
-
-        // Send confirmation email to user (if allowed)
-        try {
-            const userHtml = buildUserTemplate({ name });
-            const userMail = {
-                from: process.env.NEXT_PUBLIC_FROM_EMAIL,
-                to: email,
-                subject: `We've received your message — NICP`,
-                html: userHtml,
-            };
-
-            await transporter.sendMail(userMail);
-        } catch (uErr) {
-            // Log user mail failure but don't fail the whole request
-            console.warn('User confirmation email failed:', uErr?.message || uErr);
-        }
-
-        return NextResponse.json({ success: true, message: "Your message has been sent successfully!" }, { status: 200 });
-    } catch (error) {
-        console.error("Email sending error:", error);
-        return NextResponse.json({ error: "Failed to send message. Please try again later." }, { status: 500 });
+  try {
+    // Ensure SMTP config exists
+    if (
+      !process.env.NEXT_PUBLIC_SMTP_HOST ||
+      !process.env.NEXT_PUBLIC_SMTP_USER ||
+      !process.env.NEXT_PUBLIC_SMTP_PASSWORD
+    ) {
+      console.error("Missing SMTP environment variables");
+      return NextResponse.json(
+        { error: "Email service configuration error" },
+        { status: 500 }
+      );
     }
+
+    const payload = await request.json();
+    const { name, email, mobileNumber, message } = payload;
+
+    // Basic validation - trim all string fields
+    const trimmedName = name?.trim() || "";
+    const trimmedEmail = email?.trim() || "";
+    const trimmedMobileNumber = mobileNumber?.trim() || "";
+    const trimmedMessage = message?.trim() || "";
+
+    if (
+      !trimmedName ||
+      !trimmedEmail ||
+      !trimmedMobileNumber ||
+      !trimmedMessage
+    ) {
+      return NextResponse.json(
+        { error: "Please fill in all required fields" },
+        { status: 400 }
+      );
+    }
+
+    // Validate message is not empty after trimming
+    if (trimmedMessage.length === 0) {
+      return NextResponse.json(
+        { error: "Message cannot be empty. Please enter your message." },
+        { status: 400 }
+      );
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedEmail)) {
+      return NextResponse.json(
+        { error: "Please enter a valid email address" },
+        { status: 400 }
+      );
+    }
+
+    if (String(trimmedMobileNumber).replace(/\D/g, "").length < 10) {
+      return NextResponse.json(
+        { error: "Please enter a valid mobile number" },
+        { status: 400 }
+      );
+    }
+
+    // Build and send admin email
+    const adminHtml = buildAdminTemplate({
+      name: trimmedName,
+      email: trimmedEmail,
+      mobileNumber: trimmedMobileNumber,
+      message: trimmedMessage,
+    });
+    const adminMail = {
+      from: process.env.NEXT_PUBLIC_FROM_EMAIL,
+      to: "nicpindia@gmail.com",
+      subject: `New Contact: ${trimmedName} | ${trimmedMobileNumber}`,
+      html: adminHtml,
+      replyTo: trimmedEmail,
+    };
+
+    await transporter.sendMail(adminMail);
+
+    // Send confirmation email to user (if allowed)
+    try {
+      const userHtml = buildUserTemplate({
+        name: trimmedName,
+        message: trimmedMessage,
+      });
+      const userMail = {
+        from: process.env.NEXT_PUBLIC_FROM_EMAIL,
+        to: trimmedEmail,
+        subject: `We've received your message — NICP`,
+        html: userHtml,
+      };
+
+      await transporter.sendMail(userMail);
+    } catch (uErr) {
+      // Log user mail failure but don't fail the whole request
+      console.warn("User confirmation email failed:", uErr?.message || uErr);
+    }
+
+    return NextResponse.json(
+      { success: true, message: "Your message has been sent successfully!" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Email sending error:", error);
+    return NextResponse.json(
+      { error: "Failed to send message. Please try again later." },
+      { status: 500 }
+    );
+  }
 }

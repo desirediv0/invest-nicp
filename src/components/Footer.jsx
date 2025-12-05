@@ -33,6 +33,24 @@ export default function BusinessFooter() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Client-side validation - check if message is not empty after trimming
+    const trimmedMessage = formData.message?.trim() || "";
+    if (!trimmedMessage) {
+      alert("Message cannot be empty. Please enter your message.");
+      return;
+    }
+
+    // Validate all fields are filled
+    if (
+      !formData.name?.trim() ||
+      !formData.email?.trim() ||
+      !formData.mobileNumber?.trim()
+    ) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
     setSubmitting(true);
     try {
       const res = await fetch("/api/form", {
@@ -155,7 +173,10 @@ export default function BusinessFooter() {
                           {" "}
                           <MailIcon className="text-sm text-orange-500" />
                         </span>
-                        :<span>nicpindia@gmail.com</span>
+                        :
+                        <a href="mailto:nicpindia@gmail.com">
+                          nicpindia@gmail.com
+                        </a>
                       </div>
                     </div>
 
